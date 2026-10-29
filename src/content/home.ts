@@ -99,6 +99,18 @@ export const philosophy = {
       text: "Experiencias que generan interés, confianza y conexiones reales.",
     },
   ],
+  process: {
+    label: "How we work",
+    title: "Cómo llevamos una idea a la realidad",
+    note: "No todos los proyectos necesitan un proceso tan extenso: la metodología se adapta a cada servicio.",
+    steps: [
+      { title: "Discover", subtitle: "Conocemos tu marca", text: "Escuchamos tus ideas, conocemos tu negocio y entendemos qué necesitas lograr." },
+      { title: "Imagine", subtitle: "Desarrollamos el concepto", text: "Propuesta creativa, referencias visuales, mensajes, estilo y dirección estratégica." },
+      { title: "Create", subtitle: "Hacemos que suceda", text: "Elegimos las herramientas: producción tradicional, IA, diseño o desarrollo digital." },
+      { title: "Refine", subtitle: "Cuidamos cada detalle", text: "Revisamos, ajustamos y verificamos la coherencia con la identidad de la marca." },
+      { title: "Launch", subtitle: "Llevamos la idea al mundo", text: "Entregamos o implementamos la solución, lista para los canales definidos." },
+    ],
+  },
 };
 
 export const transformation = {
@@ -122,30 +134,6 @@ export const work = {
   empty:
     "Estamos preparando la selección de proyectos. Muy pronto podrás explorar nuestras producciones aquí.",
   cta: "¿Tu marca podría ser nuestro próximo proyecto?",
-};
-
-export const useCases = {
-  label: "Different brands",
-  title: ["Diferentes necesidades,", "diferentes soluciones"],
-  note: "Ejemplos de lo que puedes crear con VINK. No es una lista cerrada ni obliga a contratar varios servicios.",
-  items: [
-    { who: "Una joyería", what: "Un photoshoot con IA y un comercial de producto, sin manejo de redes." },
-    { who: "Un arquitecto", what: "Un sitio web y un video conceptual de sus proyectos." },
-    {
-      who: "Una clínica odontológica",
-      what: "Contenido educativo mensual para redes y una página para recibir solicitudes de valoración.",
-    },
-    { who: "Una marca de skincare", what: "Branding, fotografías comerciales y campaña de lanzamiento." },
-    { who: "Un restaurante", what: "Gestión mensual de redes con reels y una landing con menú y contacto." },
-    { who: "Una marca personal", what: "Identidad visual, sitio web y contenido mensual." },
-  ],
-};
-
-export const specialtiesSection = {
-  label: "Work with us",
-  title: "Elige tu especialidad",
-  sub: "Puedes contratar un servicio específico, el servicio mensual de redes o desarrollar un proyecto completamente personalizado.",
-  quote: "Cotización personalizada",
 };
 
 export const contact = {

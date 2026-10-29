@@ -66,14 +66,15 @@ export const specialties: {
   },
 ];
 
-export const serviceHref = (slug: ServiceSlug) => `/services/${slug}`;
+/** Cada especialidad es una sección de la página principal. */
+export const serviceHref = (slug: ServiceSlug) => `/#${slug}`;
 
 export const mainNav = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/#about" },
   { label: "Services", href: "/#services", children: specialties },
   { label: "Our Work", href: "/work" },
-  { label: "Contact", href: "/contact" },
+  { label: "Contact", href: "/#contact" },
 ] as const;
 
 export const legalNav = [

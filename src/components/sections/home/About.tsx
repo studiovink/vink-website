@@ -65,7 +65,7 @@ export function About() {
             </ul>
 
             <div className="mt-10">
-              <PillLink href="/contact" variant="light">
+              <PillLink href="/#contact" variant="light">
                 Start a project
               </PillLink>
             </div>

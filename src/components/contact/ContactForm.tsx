@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useActionState, useEffect, useRef } from "react";
 import { sendContact } from "@/app/actions/contact";
 import { PillButton } from "@/components/ui/Button";
+import { SERVICE_EVENT } from "./QuoteLink";
 import { cn } from "@/lib/cn";
 import { serviceOptions, type ContactField, type ContactState } from "@/lib/contact-schema";
 
@@ -17,11 +18,23 @@ export function ContactForm() {
   useEffect(() => {
     startedAt.current = Date.now();
     // Preselecciona el servicio si se llega desde un CTA (?service=branding)
-    const s = new URLSearchParams(window.location.search).get("service");
-    if (s && serviceRef.current && serviceOptions.some((o) => o.value === s)) {
-      serviceRef.current.value = s;
-    }
+    const select = (s: string | null) => {
+      if (s && serviceRef.current && serviceOptions.some((o) => o.value === s)) {
+        serviceRef.current.value = s;
+      }
+    };
+    select(new URLSearchParams(window.location.search).get("service"));
+    const onSelect = (e: Event) => select((e as CustomEvent<string>).detail);
+    window.addEventListener(SERVICE_EVENT, onSelect);
+    return () => window.removeEventListener(SERVICE_EVENT, onSelect);
   }, []);
+
+  // El <select> no recupera su valor tras el reinicio del formulario: lo restauramos.
+  useEffect(() => {
+    if (state.status === "error" && state.values?.service && serviceRef.current) {
+      serviceRef.current.value = state.values.service;
+    }
+  }, [state]);
 
   // Se adjunta al enviar: un reinicio del formulario no puede borrarlo.
   const submit = (formData: FormData) => {

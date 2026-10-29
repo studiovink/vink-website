@@ -22,7 +22,7 @@ export function Hero() {
           <p className="display text-2xl leading-[1.05] md:text-[1.7rem]">{hero.statement}</p>
           <p className="mt-3 text-sm text-cream/80 md:text-base">{hero.sub}</p>
           <div className="mt-7 flex flex-wrap gap-3">
-            <PillLink href="/contact">Start a project</PillLink>
+            <PillLink href="/#contact">Start a project</PillLink>
           </div>
         </Reveal>
 

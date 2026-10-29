@@ -3,17 +3,20 @@ import { MediaSlot } from "@/components/media/MediaSlot";
 import { Reveal } from "@/components/motion/Reveal";
 import { PillLink } from "@/components/ui/Button";
 import { work } from "@/content/home";
-import { publishedProjects } from "@/content/projects";
+import { visibleProjects } from "@/content/projects";
+import { WorkCard } from "@/components/work/WorkCard";
 
 export function SignatureWorkSection() {
-  const hasProjects = publishedProjects.length > 0;
+  const featured = visibleProjects.filter((p) => p.featured).slice(0, 5);
+  const highlights = featured.length ? featured : visibleProjects.slice(0, 3);
+  const hasProjects = highlights.length > 0;
 
   return (
-    <section className="bg-cream pt-24 md:pt-36">
+    <section id="work" className="bg-cream pt-24 md:pt-36">
       <div className="container-vink">
         <Reveal>
           <p className="label text-charcoal">{work.label}</p>
-          <h2 className="display mt-3 text-giant text-charcoal">Our Signature</h2>
+          <h2 className="display mt-3 text-giant text-charcoal">Our Signature Work</h2>
         </Reveal>
       </div>
 
@@ -28,6 +31,20 @@ export function SignatureWorkSection() {
         }
       />
 
+      {hasProjects && (
+        <div className="container-vink pt-14">
+          <ul className="grid gap-4 md:grid-cols-3 md:gap-5">
+            {highlights.map((p, i) => (
+              <li key={p.slug} className={i === 0 ? "md:col-span-2" : undefined}>
+                <Reveal delay={(i % 3) * 0.08}>
+                  <WorkCard project={p} wide={i === 0} />
+                </Reveal>
+              </li>
+            ))}
+          </ul>
+        </div>
+      )}
+
       <div className="container-vink grid gap-8 pb-24 pt-14 md:grid-cols-2 md:pb-36">
         <p className="max-w-lg text-lg leading-relaxed text-charcoal-soft">
           {hasProjects
@@ -37,10 +54,10 @@ export function SignatureWorkSection() {
         <div className="flex flex-wrap items-start gap-3 md:justify-end">
           {hasProjects && (
             <PillLink href="/work" variant="dark">
-              Explorar proyectos
+              Explorar todos los proyectos
             </PillLink>
           )}
-          <PillLink href="/contact" variant={hasProjects ? "light" : "dark"}>
+          <PillLink href="/#contact" variant={hasProjects ? "light" : "dark"}>
             {work.cta}
           </PillLink>
         </div>

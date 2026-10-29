@@ -12,6 +12,8 @@ type MediaSlotProps = {
   priority?: boolean;
   /** Oculta la etiqueta de desarrollo (para miniaturas pequeñas). */
   quiet?: boolean;
+  /** Videos: "preview" se reproduce al pasar el cursor (o visible en táctil). */
+  videoMode?: "loop" | "preview";
 };
 
 const toneClasses: Record<AssetTone, string> = {
@@ -28,7 +30,7 @@ const toneClasses: Record<AssetTone, string> = {
  * Espacio visual gestionado desde `src/content/assets.ts`.
  * Sin archivo → espacio reservado con la proporción exacta.
  */
-export function MediaSlot({ id, className, fill, sizes, priority, quiet }: MediaSlotProps) {
+export function MediaSlot({ id, className, fill, sizes, priority, quiet, videoMode }: MediaSlotProps) {
   const asset = getAsset(id);
   const [w, h] = asset.ratio.split(":").map(Number);
   const box = cn(
@@ -61,6 +63,7 @@ export function MediaSlot({ id, className, fill, sizes, priority, quiet }: Media
           poster={asset.poster ?? undefined}
           posterMobile={asset.posterMobile ?? undefined}
           label={asset.alt}
+          mode={videoMode}
         />
       ) : (
         <Image

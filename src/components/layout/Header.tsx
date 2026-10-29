@@ -179,8 +179,6 @@ function ServicesPill({ label, href, dark }: { label: string; href: string; dark
   const [open, setOpen] = useState(false);
   const menuId = useId();
   const ref = useRef<HTMLDivElement>(null);
-  const pathname = usePathname();
-  const active = pathname.startsWith("/services");
 
   useEffect(() => {
     if (!open) return;
@@ -209,8 +207,8 @@ function ServicesPill({ label, href, dark }: { label: string; href: string; dark
         if (!e.currentTarget.contains(e.relatedTarget as Node)) setOpen(false);
       }}
     >
-      <div className={cn(pillBase, pillTone(dark, active), "gap-1 pr-2")}>
-        <Link href={href} aria-current={active ? "page" : undefined}>
+      <div className={cn(pillBase, pillTone(dark), "gap-1 pr-2")}>
+        <Link href={href}>
           {label}
         </Link>
         <button

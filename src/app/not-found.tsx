@@ -14,7 +14,7 @@ export default function NotFound() {
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <PillLink href="/">Volver al inicio</PillLink>
-          <PillLink href="/contact" variant="burgundy" className="ring-1 ring-cream/30">
+          <PillLink href="/#contact" variant="burgundy" className="ring-1 ring-cream/30">
             Let&apos;s talk
           </PillLink>
         </div>

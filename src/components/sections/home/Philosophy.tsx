@@ -2,6 +2,7 @@ import { PillarRing } from "@/components/interactive/PillarRing";
 import { Reveal } from "@/components/motion/Reveal";
 import { WordReveal } from "@/components/motion/WordReveal";
 import { philosophy } from "@/content/home";
+import { ProcessTimeline } from "@/components/interactive/ProcessTimeline";
 
 export function Philosophy() {
   return (
@@ -24,6 +25,15 @@ export function Philosophy() {
           <div className="lg:col-span-6 lg:col-start-7">
             <PillarRing items={philosophy.pillars} />
           </div>
+        </div>
+
+        <div className="mt-24 md:mt-36">
+          <Reveal>
+            <p className="label text-rose">{philosophy.process.label}</p>
+            <h3 className="display mt-4 max-w-4xl text-headline">{philosophy.process.title}</h3>
+          </Reveal>
+          <ProcessTimeline steps={philosophy.process.steps} />
+          <p className="mt-6 text-sm text-cream/60">{philosophy.process.note}</p>
         </div>
       </div>
     </section>

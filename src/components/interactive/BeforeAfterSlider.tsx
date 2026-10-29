@@ -30,13 +30,6 @@ export function BeforeAfterSlider({ before, after, beforeLabel, afterLabel }: Pr
         {afterLabel}
       </span>
 
-      {/* Línea y tirador */}
-      <div className="pointer-events-none absolute inset-y-0 w-0.5 bg-cream" style={{ left: `${pos}%` }}>
-        <span className="absolute left-1/2 top-1/2 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-cream text-lg text-burgundy shadow-lg">
-          ↔
-        </span>
-      </div>
-
       <input
         type="range"
         min={0}
@@ -44,8 +37,19 @@ export function BeforeAfterSlider({ before, after, beforeLabel, afterLabel }: Pr
         value={pos}
         onChange={(e) => setPos(Number(e.target.value))}
         aria-label={`Comparar: ${beforeLabel} y ${afterLabel}`}
-        className="absolute inset-0 size-full cursor-ew-resize opacity-0"
+        aria-valuetext={`${pos}% ${afterLabel}`}
+        className="peer absolute inset-0 z-10 size-full cursor-ew-resize opacity-0"
       />
+
+      {/* Línea y tirador (el foco del teclado se marca con un anillo) */}
+      <div
+        className="pointer-events-none absolute inset-y-0 w-0.5 bg-cream peer-focus-visible:[&>span]:scale-110 peer-focus-visible:[&>span]:ring-4 peer-focus-visible:[&>span]:ring-rose"
+        style={{ left: `${pos}%` }}
+      >
+        <span className="absolute left-1/2 top-1/2 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-cream text-lg text-burgundy shadow-lg transition-transform">
+          ↔
+        </span>
+      </div>
     </div>
   );
 }

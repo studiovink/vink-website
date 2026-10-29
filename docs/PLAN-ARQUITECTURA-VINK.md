@@ -378,6 +378,28 @@ A petición del cliente, la interfaz se rediseñó tomando como referencia **Lux
 - Naranja de la referencia → rosa VINK; marrón → burgundy; negro → charcoal.
 - Sin estadísticas inventadas (se usan los 4 diferenciadores), sin testimonios inventados (se usan los casos de uso del documento) y sin precios (la sección de planes muestra las 4 especialidades con "Cotización personalizada").
 
+### Estructura definitiva del sitio (29-oct-2026) — reemplaza D1
+
+Las cuatro especialidades son **secciones de la página principal**, no páginas propias:
+
+1 Header · 2 Hero · 3 About Us · 4 Our Philosophy (pilares + proceso) · 5 Our Services (4 tarjetas interactivas) ·
+6 Creative Studio · 7 Branding · 8 Web Studio · 9 Social & Content · 10 Our Work · 11 Let's Work Together · 12 Footer
+
+Páginas independientes: `/work`, `/work/[slug]`, `/aviso-de-privacidad`, `/terminos-y-condiciones`.
+El menú Services enlaza a `/#creative-studio`, `/#branding`, `/#web-studio`, `/#social-content`; Contact a `/#contact`.
+
+### Interactividad implementada
+
+| Interacción | Dónde | Teclado / táctil / movimiento reducido |
+|---|---|---|
+| Comparador Before/After | Creative Studio, detalle de proyecto | Flechas del teclado, arrastre y toque; anillo de foco visible |
+| Tarjetas dinámicas de servicios | Our Services | Se revelan con cursor o foco; en táctil la información está siempre visible |
+| Filtros del portafolio (+ subfiltros de producción) | /work | Botones con `aria-pressed`; filtros en la URL (`?category=&type=`) para compartir |
+| Vistas previas audiovisuales | Tarjetas de proyecto, servicios, galería social, dron | Cursor/foco en escritorio; visibles en pantalla en táctil; carga diferida; sin reproducción con ahorro de datos o movimiento reducido |
+| Animaciones de scroll | Títulos, texto que se ilumina, línea de proceso, WO■RK | Desactivadas con `prefers-reduced-motion` |
+| Acordeones, pestañas, visor (lightbox), vista Desktop/Mobile, anillo de pilares | Secciones 4, 6–9 | Enter/Espacio, flechas, Esc; el foco vuelve al cerrar |
+| Botones "Cotizar" | Secciones 6–9 | Bajan al formulario con el servicio preseleccionado |
+
 ### Texto original de las decisiones (histórico)
 
 **D1 — ¿Páginas propias por servicio?**
