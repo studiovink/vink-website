@@ -370,6 +370,14 @@ En cada fase te muestro una vista previa antes de avanzar a la siguiente.
 | D7 | Sí habrá video vertical 9:16 del hero para móvil |
 | Logo | Recibido: `VINK_logo.svg` (wordmark blanco sobre burgundy). Se derivan versiones transparentes (crema/burgundy) |
 
+### Cambio de dirección visual (29-oct-2026)
+
+A petición del cliente, la interfaz se rediseñó tomando como referencia **Luxfolio – Digital Agency Website Design** (Dribbble), adaptada a VINK:
+
+- Títulos en sans condensada (Anton) en mayúsculas; texto en Manrope. Sustituye a Satoshi + Instrument Serif.
+- Naranja de la referencia → rosa VINK; marrón → burgundy; negro → charcoal.
+- Sin estadísticas inventadas (se usan los 4 diferenciadores), sin testimonios inventados (se usan los casos de uso del documento) y sin precios (la sección de planes muestra las 4 especialidades con "Cotización personalizada").
+
 ### Texto original de las decisiones (histórico)
 
 **D1 — ¿Páginas propias por servicio?**

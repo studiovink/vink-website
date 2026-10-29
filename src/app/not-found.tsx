@@ -1,20 +1,23 @@
-import { ButtonLink } from "@/components/ui/Button";
+import { PillLink } from "@/components/ui/Button";
 
 export default function NotFound() {
   return (
-    <section className="container-vink flex min-h-[80dvh] flex-col justify-center pb-24 pt-36">
-      <p className="eyebrow text-burgundy">404</p>
-      <h1 className="mt-4 max-w-3xl text-headline font-semibold text-burgundy">
-        Esta página todavía no existe.{" "}
-        <span className="font-serif font-normal italic">Pero las ideas sí.</span>
-      </h1>
-      <div className="mt-10 flex flex-wrap gap-3">
-        <ButtonLink href="/" arrow>
-          Volver al inicio
-        </ButtonLink>
-        <ButtonLink href="/contact" variant="outline">
-          Let&apos;s talk
-        </ButtonLink>
+    <section
+      data-header="dark"
+      className="flex min-h-[100svh] flex-col justify-end bg-burgundy pb-16 pt-36 text-cream"
+    >
+      <div className="container-vink">
+        <p className="label text-rose">Error 404</p>
+        <h1 className="display mt-4 text-mega">Página no encontrada</h1>
+        <p className="mt-6 max-w-md text-lg text-cream/80">
+          Esta página todavía no existe. Pero las ideas sí.
+        </p>
+        <div className="mt-10 flex flex-wrap gap-3">
+          <PillLink href="/">Volver al inicio</PillLink>
+          <PillLink href="/contact" variant="burgundy" className="ring-1 ring-cream/30">
+            Let&apos;s talk
+          </PillLink>
+        </div>
       </div>
     </section>
   );

@@ -1,22 +1,18 @@
-import { Instrument_Serif, Manrope } from "next/font/google";
+import { Anton, Manrope } from "next/font/google";
 
 /*
- * Tipografía principal. La decisión es Satoshi (Fontshare); mientras no
- * estén sus archivos usamos Manrope, también referida en el documento.
- * Para cambiar: colocar Satoshi-Variable.woff2 en src/fonts/ y sustituir
- * por `localFont({ src: "../fonts/Satoshi-Variable.woff2", variable: "--font-display" })`.
+ * Títulos: sans condensada de alto impacto, en mayúsculas (dirección visual
+ * inspirada en la referencia Luxfolio). Texto corrido: sans legible.
  */
-export const displayFont = Manrope({
+export const headingFont = Anton({
   subsets: ["latin"],
-  variable: "--font-display",
+  weight: "400",
+  variable: "--font-heading",
   display: "swap",
 });
 
-/* Serif editorial para frases y palabras destacadas. */
-export const editorialFont = Instrument_Serif({
+export const bodyFont = Manrope({
   subsets: ["latin"],
-  weight: "400",
-  style: ["normal", "italic"],
-  variable: "--font-editorial",
+  variable: "--font-body",
   display: "swap",
 });

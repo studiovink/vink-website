@@ -17,20 +17,17 @@ export function Footer() {
   ].filter((l): l is { label: string; href: string } => Boolean(l.href));
 
   return (
-    <footer className="bg-burgundy text-cream">
-      <div className="container-vink pb-10 pt-20 md:pt-28">
+    <footer data-header="dark" className="bg-burgundy-deep text-cream">
+      <div className="container-vink pt-20 md:pt-28">
         <div className="grid gap-14 md:grid-cols-12">
-          <div className="md:col-span-5">
+          <div className="md:col-span-4">
             <Link href="/" aria-label="VINK Creative Studio — inicio" className="inline-block">
-              <Logo className="h-12 md:h-16" />
+              <Logo className="h-10 md:h-12" />
             </Link>
-            <p className="eyebrow mt-6 text-rose">Think with Vink.</p>
-            <p className="mt-6 max-w-sm font-serif text-2xl leading-snug text-cream/90">
-              Ideas humanas. <em>Posibilidades extraordinarias.</em>
-            </p>
+            <p className="mt-6 max-w-xs text-sm leading-relaxed text-cream/70">{site.description}</p>
           </div>
 
-          <FooterColumn title="Explore" className="md:col-span-2">
+          <FooterColumn title="Explore" className="md:col-span-2 md:col-start-6">
             {mainNav.map((item) => (
               <FooterLink key={item.label} href={item.href}>
                 {item.label}
@@ -64,7 +61,11 @@ export function Footer() {
           </div>
         </div>
 
-        <div className="mt-20 flex flex-col gap-3 border-t border-cream/15 pt-6 text-xs text-cream/70 sm:flex-row sm:items-center sm:justify-between">
+        <p aria-hidden className="display mt-20 whitespace-nowrap text-center text-[13.5vw] leading-[0.8] text-cream md:mt-28">
+          Think with Vink.
+        </p>
+
+        <div className="flex flex-col gap-3 border-t border-cream/15 py-6 text-xs text-cream/60 sm:flex-row sm:items-center sm:justify-between">
           <p>© 2026 VINK Creative Studio. Todos los derechos reservados.</p>
           <a href={`mailto:${site.contact.email}`} className="hover:text-cream">
             {site.contact.email}
@@ -86,7 +87,7 @@ function FooterColumn({
 }) {
   return (
     <div className={className}>
-      <h2 className="eyebrow text-rose">{title}</h2>
+      <h2 className="label text-rose">{title}</h2>
       <ul className="mt-5 space-y-1">{children}</ul>
     </div>
   );
@@ -102,7 +103,7 @@ function FooterLink({
   children: React.ReactNode;
 }) {
   const className =
-    "inline-flex min-h-9 items-center text-sm text-cream/85 transition-colors hover:text-cream";
+    "inline-flex min-h-9 items-center text-sm text-cream/80 transition-colors hover:text-cream";
   return (
     <li>
       {external || href.startsWith("mailto:") ? (

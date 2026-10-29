@@ -4,8 +4,8 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
   return (
     <article className="container-vink pb-24 pt-36 md:pb-32 md:pt-44">
       <header className="max-w-3xl">
-        <p className="eyebrow text-burgundy">{doc.eyebrow}</p>
-        <h1 className="mt-4 text-headline font-semibold text-burgundy">{doc.title}</h1>
+        <p className="label text-burgundy">{doc.eyebrow}</p>
+        <h1 className="display mt-4 text-giant text-charcoal">{doc.title}</h1>
         <p className="mt-6 text-sm text-charcoal-soft">
           Última actualización: {doc.updatedAt ?? "pendiente de publicación"}
         </p>
@@ -33,7 +33,7 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
 
           {doc.sections.map((s) => (
             <section key={s.id} id={s.id} className="mt-14 scroll-mt-28">
-              <h2 className="text-title font-semibold text-burgundy">{s.title}</h2>
+              <h2 className="display text-title text-burgundy">{s.title}</h2>
               <div className="mt-4 space-y-4">
                 {s.body?.map((p) => <p key={p}>{p}</p>)}
                 {s.pending && <Pending>{s.pending}</Pending>}

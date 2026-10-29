@@ -3,7 +3,7 @@ import { MotionConfig } from "motion/react";
 import { Header } from "@/components/layout/Header";
 import { Footer } from "@/components/layout/Footer";
 import { site } from "@/content/site";
-import { displayFont, editorialFont } from "./fonts";
+import { bodyFont, headingFont } from "./fonts";
 import "./globals.css";
 
 export const metadata: Metadata = {
@@ -26,7 +26,7 @@ export const viewport: Viewport = {
 
 export default function RootLayout({ children }: LayoutProps<"/">) {
   return (
-    <html lang="es" className={`${displayFont.variable} ${editorialFont.variable}`}>
+    <html lang="es" className={`${bodyFont.variable} ${headingFont.variable}`}>
       <body className="flex min-h-dvh flex-col">
         {/* reducedMotion="user": respeta la preferencia del dispositivo en todas las animaciones */}
         <MotionConfig reducedMotion="user">
