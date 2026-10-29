@@ -15,17 +15,18 @@ export const site = {
   locale: "es_MX",
   contact: {
     email: "studiovink27@gmail.com",
-    /** Número en formato internacional sin signos, p. ej. 5213312345678 — PENDIENTE */
-    whatsapp: null as string | null,
-    /** URL completa del perfil — PENDIENTE */
-    instagram: null as string | null,
+    /** Números en formato internacional sin signos ni espacios. */
+    whatsapp: [
+      { name: "Pau", fullName: "Paulina Winkler", number: "526241598365", display: "+52 624 159 8365" },
+      { name: "Dany", fullName: "Daniel Vazquez", number: "523328361311", display: "+52 33 2836 1311" },
+    ],
+    instagram: "https://www.instagram.com/vinkcreativestudio/",
+    instagramHandle: "@vinkcreativestudio",
   },
 } as const;
 
-export const whatsappUrl = (message?: string) =>
-  site.contact.whatsapp
-    ? `https://wa.me/${site.contact.whatsapp}${message ? `?text=${encodeURIComponent(message)}` : ""}`
-    : null;
+export const whatsappUrl = (number: string, message?: string) =>
+  `https://wa.me/${number}${message ? `?text=${encodeURIComponent(message)}` : ""}`;
 
 export type ServiceSlug =
   | "creative-studio"

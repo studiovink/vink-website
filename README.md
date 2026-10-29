@@ -25,6 +25,5 @@ npm run lint
 
 ## Pendientes de datos
 
-- WhatsApp e Instagram oficiales → `src/content/site.ts` (los enlaces aparecen solos al completarlos).
 - Datos legales reales → `src/content/legal.ts`.
 - Archivos de Satoshi → ver instrucciones en `src/app/fonts.ts` (hoy se usa Manrope).

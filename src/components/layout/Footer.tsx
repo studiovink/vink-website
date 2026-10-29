@@ -11,10 +11,10 @@ import {
 
 export function Footer() {
   const connect = [
-    { label: "Instagram", href: site.contact.instagram },
-    { label: "WhatsApp", href: whatsappUrl() },
+    { label: `Instagram ${site.contact.instagramHandle}`, href: site.contact.instagram },
+    ...site.contact.whatsapp.map((w) => ({ label: `WhatsApp · ${w.name}`, href: whatsappUrl(w.number) })),
     { label: "Email", href: `mailto:${site.contact.email}` },
-  ].filter((l): l is { label: string; href: string } => Boolean(l.href));
+  ];
 
   return (
     <footer data-header="dark" className="bg-burgundy-deep text-cream">

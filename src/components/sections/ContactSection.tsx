@@ -5,7 +5,6 @@ import { site, whatsappUrl } from "@/content/site";
 
 export function ContactSection({ headingLevel = "h2" }: { headingLevel?: "h1" | "h2" }) {
   const Heading = headingLevel;
-  const whatsapp = whatsappUrl("Hola VINK, tengo una idea para mi marca.");
 
   return (
     <section id="contact" data-header="dark" className="bg-burgundy pb-24 pt-32 text-cream md:pb-32 md:pt-40">
@@ -30,16 +29,34 @@ export function ContactSection({ headingLevel = "h2" }: { headingLevel?: "h1" | 
                 >
                   {site.contact.email}
                 </a>
-                {whatsapp && (
-                  <a
-                    href={whatsapp}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="display text-2xl underline decoration-rose decoration-1 underline-offset-4 hover:decoration-2 md:text-3xl"
-                  >
-                    WhatsApp
-                  </a>
-                )}
+              </div>
+              <ul className="mt-6 grid gap-3 sm:grid-cols-2">
+                {site.contact.whatsapp.map((w) => (
+                  <li key={w.number}>
+                    <a
+                      href={whatsappUrl(w.number, `Hola ${w.name}, tengo una idea para mi marca.`)}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="group flex items-center justify-between gap-3 rounded-2xl border border-cream/20 px-4 py-3 transition-colors hover:border-rose hover:bg-white/5"
+                    >
+                      <span>
+                        <span className="block text-xs uppercase tracking-[0.16em] text-rose">WhatsApp · {w.name}</span>
+                        <span className="mt-0.5 block text-sm text-cream/85">{w.display}</span>
+                      </span>
+                      <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
+                    </a>
+                  </li>
+                ))}
+              </ul>
+              <div className="mt-4">
+                <a
+                  href={site.contact.instagram}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-sm text-cream/80 underline decoration-rose underline-offset-4 hover:text-cream"
+                >
+                  Instagram {site.contact.instagramHandle}
+                </a>
               </div>
             </Reveal>
 

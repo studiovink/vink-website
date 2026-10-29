@@ -43,29 +43,36 @@ export const about = {
   ],
 };
 
-export const founders = [
-  {
-    id: "together" as const,
-    label: "Pau & Dany",
-    image: "founders.together" as const,
-    role: "Fundadoras de VINK Creative Studio",
-    bio: null as string | null,
-  },
-  {
-    id: "pau" as const,
-    label: "Pau",
-    image: "founders.pau" as const,
-    role: null as string | null, // PENDIENTE: rol de Pau
-    bio: null as string | null, // PENDIENTE: bio corta de Pau
-  },
-  {
-    id: "dany" as const,
-    label: "Dany",
-    image: "founders.dany" as const,
-    role: null as string | null, // PENDIENTE: rol de Dany
-    bio: null as string | null, // PENDIENTE: bio corta de Dany
-  },
-];
+export const meetFounders = {
+  label: "Meet the Founders",
+  title: "Dos mentes. Una misma visión.",
+  intro:
+    "Somos Pau y Dany, las personas detrás de VINK Creative Studio. Combinamos creatividad, estrategia y tecnología para transformar ideas en proyectos con personalidad, intención y una identidad propia.",
+  together: "founders.together" as const,
+  people: [
+    {
+      name: "Pau",
+      role: "Co-Founder & Creative Director",
+      image: "founders.pau" as const,
+      bio: [
+        "Pau es la mente creativa detrás de VINK. Le apasiona transformar ideas en conceptos visuales, explorar nuevas tendencias y encontrar formas diferentes de contar la historia de cada marca.",
+        "Desde la dirección creativa hasta la producción de contenido, busca que cada proyecto tenga una identidad auténtica, cuidando tanto la estética como los pequeños detalles que hacen la diferencia.",
+      ],
+    },
+    {
+      name: "Dany",
+      role: "Co-Founder & Digital Strategist",
+      image: "founders.dany" as const,
+      bio: [
+        "Dany aporta la visión estratégica que conecta las ideas con los objetivos de cada marca. Le gusta entender los negocios, identificar oportunidades y desarrollar soluciones digitales que tengan sentido para cada proyecto.",
+        "En VINK se enfoca en la estrategia, la planificación y el desarrollo de experiencias digitales, buscando que la creatividad también genere valor.",
+      ],
+    },
+  ],
+  closingTitle: "Different minds. Shared vision.",
+  closing:
+    "Tenemos formas diferentes de pensar, pero compartimos una misma idea: crear proyectos que combinen creatividad, estrategia y tecnología sin perder el lado humano.",
+};
 
 export const philosophy = {
   label: "Our Philosophy",
