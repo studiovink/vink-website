@@ -27,6 +27,13 @@ export const numa = {
   },
 
 
+  about: {
+    label: "About us",
+    statement:
+      "NUMA es property marketing: comunicamos propiedades con la misma exigencia que una marca de lujo o una revista de arquitectura.",
+    text: "Dirección de arte editorial, fotografía, video y estrategia comercial para desarrolladores, asesores, inversionistas, hoteles y empresas náuticas en Los Cabos y Guadalajara.",
+  },
+
   segments: {
     label: "¿Para quién es NUMA?",
     title: "Para quienes tienen algo que vale la pena mostrar.",

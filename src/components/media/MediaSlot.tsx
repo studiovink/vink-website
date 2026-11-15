@@ -16,19 +16,19 @@ type MediaSlotProps = {
   videoMode?: "loop" | "preview";
 };
 
-/* Espacios reservados en tonos oscuros, con acento vino en algunos. */
+/*
+ * Espacios reservados: colores planos y neutros (sin degradados ni brillos),
+ * para que no compitan con el diseño mientras llegan las fotos reales.
+ */
 const toneClasses: Record<AssetTone, string> = {
-  burgundy:
-    "bg-[radial-gradient(120%_90%_at_70%_20%,#5a2533_0%,#3f1521_45%,#1a0a0f_100%)] text-cream/50",
-  rose: "bg-[radial-gradient(120%_90%_at_30%_20%,#3a2028_0%,#20121a_60%,#120b0e_100%)] text-cream/50",
-  cream:
-    "bg-[radial-gradient(120%_90%_at_50%_10%,#2e2b2d_0%,#1b191a_60%,#121112_100%)] text-cream/40",
-  charcoal:
-    "bg-[radial-gradient(120%_90%_at_60%_10%,#262324_0%,#121112_70%)] text-cream/40",
+  burgundy: "bg-[#1a1617] text-cream/40",
+  rose: "bg-[#171415] text-cream/40",
+  cream: "bg-[#161415] text-cream/40",
+  charcoal: "bg-[#141213] text-cream/40",
   /* NUMA (landing blanca) */
-  sage: "bg-[radial-gradient(120%_90%_at_70%_20%,#8a977a_0%,#687656_55%,#4e5a40_100%)] text-white/60",
-  red: "bg-[radial-gradient(120%_90%_at_70%_25%,#b2462f_0%,#7a2418_45%,#2a0b07_100%)] text-white/60",
-  light: "bg-[radial-gradient(120%_90%_at_50%_10%,#fdfcf6_0%,#f0ecdc_60%,#e2ddc8_100%)] text-charcoal/40",
+  sage: "bg-[#e9e8e3] text-charcoal/40",
+  red: "bg-[#e9e8e3] text-charcoal/40",
+  light: "bg-[#efeeea] text-charcoal/40",
 };
 
 /**
@@ -49,7 +49,6 @@ export function MediaSlot({ id, className, fill, sizes, priority, quiet, videoMo
   if (!asset.src) {
     return (
       <div className={box} style={style} role={asset.alt ? "img" : undefined} aria-label={asset.alt || undefined}>
-        <div aria-hidden className="grain absolute inset-0" />
         {process.env.NODE_ENV !== "production" && !quiet && (
           <span className="absolute bottom-3 left-3 rounded-full bg-black/25 px-2.5 py-1 font-mono text-[10px] tracking-wide text-white/80 backdrop-blur">
             {id} · {asset.ratio} · pendiente

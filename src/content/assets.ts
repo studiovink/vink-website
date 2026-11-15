@@ -413,7 +413,7 @@ export const assets = {
     alt: "",
     source: "client",
     status: "pending",
-    tone: "red",
+    tone: "charcoal",
     brief: "Imagen o video de fondo para el inicio de NUMA, en tonos rojos/cálidos (atardecer, terracota, interiores con luz cálida). Sin texto. El logo de NUMA va encima en blanco, así que debe tener zonas oscuras o tranquilas. Entregar también la versión vertical 9:16.",
   },
   "numa.segment.hotels": {

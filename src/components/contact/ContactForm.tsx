@@ -18,7 +18,8 @@ export function ContactForm({
   /** Color de acento del formulario: vino (VINK) o verde (NUMA). */
   brand?: "vink" | "numa";
 }) {
-  const accent = brand === "numa" ? "[--accent:var(--color-numa-deep)]" : "[--accent:var(--color-burgundy)]";
+  // Formulario de líneas finas sobre fondo oscuro; el acento marca errores y detalles.
+  const accent = brand === "numa" ? "[--accent:#b9c7a5]" : "[--accent:var(--color-rose)]";
   const [state, action, pending] = useActionState(sendContact, initial);
   const startedAt = useRef(0);
   const serviceRef = useRef<HTMLSelectElement>(null);
@@ -52,9 +53,9 @@ export function ContactForm({
 
   if (state.status === "success") {
     return (
-      <div role="status" className={cn("rounded-2xl bg-cream p-8 text-charcoal md:p-10", accent)}>
-        <p className="display text-5xl text-(--accent)">¡Gracias!</p>
-        <p className="mt-4 text-lg">
+      <div role="status" className={cn("border-t border-cream/20 pt-8 text-cream", accent)}>
+        <p className="display text-5xl">¡Gracias!</p>
+        <p className="mt-4 text-lg text-cream/80">
           Recibimos tu mensaje. Revisaremos tu idea y nos pondremos en contacto contigo muy pronto.
         </p>
         <p className="display mt-8 text-2xl text-(--accent)">{brand === "numa" ? "NUMA Real Estate" : "Think with Vink."}</p>
@@ -67,11 +68,11 @@ export function ContactForm({
   const val = (f: ContactField) => (state.status === "error" ? state.values?.[f] : undefined);
 
   return (
-    <form action={submit} noValidate className={cn("rounded-2xl bg-cream p-6 text-charcoal md:p-10", accent)}>
-      <p className="display text-3xl text-(--accent) md:text-4xl">Tell us about your project.</p>
-      <p className="mt-2 text-sm text-charcoal-soft">Nos encantaría conocer tu idea.</p>
+    <form action={submit} noValidate className={cn("text-cream", accent)}>
+      <p className="display text-3xl md:text-4xl">Tell us about your project.</p>
+      <p className="mt-2 text-sm text-cream/60">Nos encantaría conocer tu idea.</p>
 
-      <div className="mt-8 grid gap-5 md:grid-cols-2">
+      <div className="mt-10 grid gap-x-8 gap-y-8 md:grid-cols-2">
         <Field label="¿Cómo te llamas?" name="name" defaultValue={val("name")} error={err("name")} autoComplete="name" required />
         <Field label="¿Cuál es tu marca o negocio?" name="brand" defaultValue={val("brand")} error={err("brand")} autoComplete="organization" />
         <Field
@@ -85,7 +86,7 @@ export function ContactForm({
           className="md:col-span-2"
         />
         <div className="md:col-span-2">
-          <label htmlFor="service" className="text-sm font-semibold">
+          <label htmlFor="service" className={labelClass}>
             ¿Qué servicio te interesa? <span aria-hidden className="text-(--accent)">*</span>
           </label>
           <select
@@ -110,7 +111,7 @@ export function ContactForm({
           <FieldError id="service-error" message={err("service")} />
         </div>
         <div className="md:col-span-2">
-          <label htmlFor="message" className="text-sm font-semibold">
+          <label htmlFor="message" className={labelClass}>
             Cuéntanos sobre tu proyecto <span aria-hidden className="text-(--accent)">*</span>
           </label>
           <textarea
@@ -122,7 +123,7 @@ export function ContactForm({
             aria-invalid={Boolean(err("message"))}
             aria-describedby={err("message") ? "message-error" : undefined}
             placeholder="Qué tienes en mente, qué te gustaría crear o qué buscas mejorar…"
-            className={cn(inputClass(Boolean(err("message"))), "resize-y py-3")}
+            className={cn(inputClass(Boolean(err("message"))), "resize-y py-2")}
           />
           <FieldError id="message-error" message={err("message")} />
         </div>
@@ -137,7 +138,7 @@ export function ContactForm({
       </div>
 
       <div className="mt-6">
-        <label className="flex items-start gap-3 text-sm">
+        <label className="flex items-start gap-3 text-sm text-cream/75">
           <input
             type="checkbox"
             name="privacy"
@@ -149,7 +150,7 @@ export function ContactForm({
           />
           <span>
             He leído el{" "}
-            <Link href="/aviso-de-privacidad" className="font-semibold text-(--accent) underline underline-offset-2">
+            <Link href="/aviso-de-privacidad" className="font-semibold text-cream underline underline-offset-2">
               Aviso de Privacidad
             </Link>{" "}
             y conozco cómo se utilizarán mis datos para atender mi solicitud.
@@ -159,22 +160,24 @@ export function ContactForm({
       </div>
 
       {state.status === "error" && (
-        <p role="alert" className="mt-6 rounded-2xl bg-(--accent)/10 px-4 py-3 text-sm text-(--accent)">
+        <p role="alert" className="mt-6 border-l-2 border-(--accent) pl-4 text-sm text-(--accent)">
           {state.message}
         </p>
       )}
 
-      <PillButton type="submit" variant={brand === "numa" ? "numa" : "burgundy"} wide disabled={pending} className="mt-8">
+      <PillButton type="submit" variant="light" wide disabled={pending} className="mt-10">
         {pending ? "Enviando…" : "Enviar solicitud"}
       </PillButton>
     </form>
   );
 }
 
+const labelClass = "text-[11px] font-medium uppercase tracking-[0.06em] text-cream/60";
+
 function inputClass(invalid: boolean) {
   return cn(
-    "mt-2 block min-h-12 w-full rounded-2xl border bg-white px-4 text-base text-charcoal outline-none transition-colors placeholder:text-charcoal/40 focus:border-(--accent)",
-    invalid ? "border-(--accent)" : "border-charcoal/15",
+    "mt-2 block min-h-11 w-full rounded-none border-0 border-b bg-transparent px-0 text-base text-cream outline-none transition-colors placeholder:text-cream/30 focus:border-cream [&>option]:text-charcoal",
+    invalid ? "border-(--accent)" : "border-cream/25",
   );
 }
 
@@ -199,7 +202,7 @@ function Field({
 }) {
   return (
     <div className={className}>
-      <label htmlFor={name} className="text-sm font-semibold">
+      <label htmlFor={name} className={labelClass}>
         {label} {required && <span aria-hidden className="text-(--accent)">*</span>}
       </label>
       <input

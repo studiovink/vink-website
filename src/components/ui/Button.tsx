@@ -14,27 +14,17 @@ const pill: Record<Variant, string> = {
   numaOutline: "bg-transparent text-current ring-1 ring-current",
 };
 
-const dot: Record<Variant, string> = {
-  light: "bg-burgundy text-cream",
-  dark: "bg-burgundy text-cream",
-  burgundy: "bg-cream text-burgundy",
-  numa: "bg-numa-light text-numa-deep",
-  numaLight: "bg-numa-deep text-numa-light",
-  numaOutline: "bg-numa-deep text-numa-light",
-};
-
-/** Flecha dentro de un círculo, como en los CTA "Start a project". */
-export function ArrowDot({ variant = "light", className }: { variant?: Variant; className?: string }) {
+/** Flecha fina que acompaña a los CTA. Toma el color del texto. */
+export function ArrowDot({ className }: { variant?: Variant; className?: string }) {
   return (
     <span
       aria-hidden
       className={cn(
-        "inline-flex size-9 shrink-0 items-center justify-center rounded-full transition-transform duration-500 ease-vink group-hover:-rotate-45 motion-reduce:transition-none",
-        dot[variant],
+        "inline-flex size-4 shrink-0 items-center justify-center opacity-80 transition-transform duration-500 ease-vink group-hover:translate-x-1 motion-reduce:transition-none",
         className,
       )}
     >
-      <svg viewBox="0 0 16 16" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.6">
+      <svg viewBox="0 0 16 16" className="size-4" fill="none" stroke="currentColor" strokeWidth="1.25">
         <path d="M2.5 8h11M9 3.5 13.5 8 9 12.5" />
       </svg>
     </span>
@@ -43,13 +33,13 @@ export function ArrowDot({ variant = "light", className }: { variant?: Variant; 
 
 type PillLinkProps = ComponentProps<typeof Link> & { variant?: Variant; wide?: boolean };
 
-/** CTA principal en píldora con flecha. */
+/** CTA principal: píldora sobria con flecha fina. */
 export function PillLink({ variant = "light", wide, className, children, ...props }: PillLinkProps) {
   return (
     <Link
       {...props}
       className={cn(
-        "group inline-flex min-h-11 items-center gap-4 rounded-full py-1 pl-5 pr-1 text-[13px] font-medium tracking-wide transition-opacity duration-300 hover:opacity-90",
+        "group inline-flex min-h-11 items-center gap-3 rounded-full px-6 text-[13px] font-medium tracking-wide transition-opacity duration-300 hover:opacity-90",
         wide && "w-full justify-between",
         pill[variant],
         className,
@@ -68,7 +58,7 @@ export function PillButton({ variant = "light", wide, className, children, ...pr
     <button
       {...props}
       className={cn(
-        "group inline-flex min-h-11 items-center gap-4 rounded-full py-1 pl-5 pr-1 text-[13px] font-medium tracking-wide transition-opacity duration-300 hover:opacity-90 disabled:cursor-wait disabled:opacity-70",
+        "group inline-flex min-h-11 items-center gap-3 rounded-full px-6 text-[13px] font-medium tracking-wide transition-opacity duration-300 hover:opacity-90 disabled:cursor-wait disabled:opacity-70",
         wide && "w-full justify-between",
         pill[variant],
         className,

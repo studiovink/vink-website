@@ -2,6 +2,7 @@ import { MediaSlot } from "@/components/media/MediaSlot";
 import { Reveal } from "@/components/motion/Reveal";
 import { WordReveal } from "@/components/motion/WordReveal";
 import { PillLink } from "@/components/ui/Button";
+import { SectionLabel } from "@/components/ui/SectionLabel";
 import { about, meetFounders } from "@/content/home";
 import { cn } from "@/lib/cn";
 
@@ -17,12 +18,12 @@ export function About() {
   return (
     <section id="about" className="bg-ink text-cream">
       <div className="container-vink py-24 md:py-36">
-        <div className="grid gap-6 lg:grid-cols-12">
-          <p className="label text-cream/55 lg:col-span-2 lg:pt-4">{about.label}</p>
+        <SectionLabel index={2}>{about.label}</SectionLabel>
+        <div className="mt-10 grid gap-6 lg:grid-cols-12">
           <WordReveal
             lead={about.lead}
             text={about.statement}
-            className="display text-headline lg:col-span-10"
+            className="display text-headline uppercase lg:col-span-11"
             leadClassName="text-rose"
             wordClassName="text-cream"
           />
@@ -70,10 +71,10 @@ export function About() {
       {/* Meet the Founders */}
       <div id="founders" className="bg-ink-2 py-24 text-cream md:py-36">
         <div className="container-vink">
-          <div className="grid gap-6 lg:grid-cols-12">
-            <p className="label text-cream/55 lg:col-span-3 lg:pt-4">{meetFounders.label}</p>
-            <div className="lg:col-span-9">
-              <WordReveal text={meetFounders.title} className="display text-giant" />
+          <SectionLabel>{meetFounders.label}</SectionLabel>
+          <div className="mt-10 grid gap-6 lg:grid-cols-12">
+            <div className="lg:col-span-10">
+              <WordReveal text={meetFounders.title} className="display text-giant uppercase" />
               <Reveal>
                 <p className="mt-8 max-w-3xl text-lg leading-relaxed text-cream/80 md:text-xl">{meetFounders.intro}</p>
               </Reveal>
@@ -93,7 +94,7 @@ export function About() {
                         0{i + 1} — {f.role}
                       </span>
                     </div>
-                    <h3 className="display mt-6 text-mega leading-[0.8] transition-colors duration-500 group-hover:text-rose">
+                    <h3 className="display mt-6 text-mega uppercase leading-[0.8] transition-colors duration-500 group-hover:text-rose">
                       {f.name}
                     </h3>
                     <p className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-rose">{f.role}</p>

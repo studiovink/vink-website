@@ -21,7 +21,7 @@ export function SpecialtyIntro({ page, index, theme }: { page: ServicePage; inde
       </Reveal>
 
       <Reveal y={60}>
-        <h2 className={cn("display mt-8 text-mega", theme.heading)}>{page.short}</h2>
+        <h2 className={cn("display mt-8 text-mega uppercase", theme.heading)}>{page.short}</h2>
       </Reveal>
 
       <div className="mt-10 grid gap-10 lg:mt-14 lg:grid-cols-12">

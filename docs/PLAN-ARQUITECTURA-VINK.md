@@ -419,6 +419,16 @@ El menú Services enlaza a `/#creative-studio`, `/#branding`, `/#web-studio`, `/
 - VINK: negro con acentos vino (vino empolvado #B85A6F para texto, #3F1521 para bloques).
 - NUMA: blanco con su verde (Fresh-Cut #052F17 en botones y contacto, Vintage Green en detalles).
 
+### Referencias BROG (VINK) y Korda (NUMA) (15-nov-2026)
+
+- Tipografía grotesca: Inter Tight (títulos) + Inter (texto). Sustituye a Instrument Serif.
+- VINK (ref. BROG): header con datos de contacto y menú a pantalla completa; inicio con imagen entintada en vino,
+  "VINK® / STUDIO" escalonado, servicios y hora local en vivo; etiquetas "⊕ (01) …"; lista "SERVICES/" con
+  vista previa que sigue al cursor; pilares con íconos de línea; "Latest Works".
+- NUMA (ref. Korda): header transparente con "MENU +", inicio a pantalla completa, bloque "About us",
+  carrusel con foco central y escuadras, formulario de líneas finas.
+- Espacios reservados planos y neutros; botones con flecha fina.
+
 ### Texto original de las decisiones (histórico)
 
 **D1 — ¿Páginas propias por servicio?**

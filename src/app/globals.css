@@ -32,19 +32,19 @@
   --color-numa-deep: #052f17; /* Fresh-Cut */
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
-  --font-display: var(--font-heading), "Times New Roman", Georgia, serif;
+  --font-display: var(--font-heading), "Helvetica Neue", Arial, sans-serif;
 
   --ease-vink: cubic-bezier(0.22, 1, 0.36, 1);
 
   /* Escala de títulos condensados */
-  --text-mega: clamp(3.5rem, 1rem + 8.5vw, 10rem);
-  --text-mega--line-height: 0.92;
-  --text-giant: clamp(2.6rem, 1rem + 5vw, 6.25rem);
-  --text-giant--line-height: 0.98;
-  --text-headline: clamp(2.1rem, 1rem + 3.1vw, 4.4rem);
-  --text-headline--line-height: 1.02;
-  --text-title: clamp(1.45rem, 1.1rem + 1vw, 2.15rem);
-  --text-title--line-height: 1.12;
+  --text-mega: clamp(4rem, 0.5rem + 13vw, 15rem);
+  --text-mega--line-height: 0.86;
+  --text-giant: clamp(3rem, 0.8rem + 7vw, 8.5rem);
+  --text-giant--line-height: 0.9;
+  --text-headline: clamp(2.2rem, 1rem + 3.4vw, 4.8rem);
+  --text-headline--line-height: 0.98;
+  --text-title: clamp(1.4rem, 1.1rem + 0.9vw, 2.1rem);
+  --text-title--line-height: 1.1;
 }
 
 @layer base {
@@ -94,21 +94,21 @@
 }
 
 /* Título condensado en mayúsculas */
-/* Título editorial: serif fina, en tipo oración */
+/* Título: grotesca apretada */
 @utility display {
   font-family: var(--font-display);
-  font-weight: 400;
-  letter-spacing: -0.015em;
+  font-weight: 600;
+  letter-spacing: -0.045em;
 }
 
 /* Etiqueta de sección: "ABOUT US", "SERVICES"… */
-/* Etiqueta de sección: pequeña, mayúsculas espaciadas */
+/* Etiqueta de sección: pequeña, en mayúsculas */
 @utility label {
   font-family: var(--font-sans);
-  font-size: 0.72rem;
-  font-weight: 600;
+  font-size: 0.75rem;
+  font-weight: 500;
   line-height: 1.2;
-  letter-spacing: 0.22em;
+  letter-spacing: 0.02em;
   text-transform: uppercase;
 }
 
