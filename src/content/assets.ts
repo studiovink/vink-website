@@ -23,7 +23,7 @@ import manifest from "./media-manifest.json";
  */
 
 export type AssetSource = "higgsfield" | "chatgpt" | "real-photo" | "client" | "code";
-export type AssetTone = "burgundy" | "rose" | "cream" | "charcoal";
+export type AssetTone = "burgundy" | "rose" | "cream" | "charcoal" | "sage" | "light";
 
 export type Asset = {
   kind: "image" | "video";
@@ -413,7 +413,7 @@ export const assets = {
     alt: "",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "sage",
     brief: "Video cinematográfico de 8–12 s: villas frente al mar, hotel, interior premium o yate al atardecer en Los Cabos. Sin texto quemado. Entregar también la versión vertical 9:16.",
   },
   "numa.segment.hotels": {
@@ -424,7 +424,7 @@ export const assets = {
     alt: "Hoteles y resorts — NUMA Real Estate",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "sage",
     brief: "Fachada, alberca o suite de un hotel o resort.",
   },
   "numa.segment.vacation": {
@@ -435,7 +435,7 @@ export const assets = {
     alt: "Airbnb y rentas vacacionales — NUMA Real Estate",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "light",
     brief: "Interior o terraza de una renta vacacional.",
   },
   "numa.segment.sale": {
@@ -446,7 +446,7 @@ export const assets = {
     alt: "Propiedades en venta y renta — NUMA Real Estate",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "light",
     brief: "Casa o departamento residencial.",
   },
   "numa.segment.land": {
@@ -457,7 +457,7 @@ export const assets = {
     alt: "Terrenos y desarrollos — NUMA Real Estate",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "sage",
     brief: "Toma aérea de un terreno o desarrollo.",
   },
   "numa.segment.yachts": {
@@ -468,7 +468,7 @@ export const assets = {
     alt: "Yates y experiencias náuticas — NUMA Real Estate",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "sage",
     brief: "Yate o embarcación navegando, de preferencia en la zona hotelera.",
   },
   "numa.market.cabos": {
@@ -479,7 +479,7 @@ export const assets = {
     alt: "Los Cabos, Baja California Sur",
     source: "client",
     status: "pending",
-    tone: "burgundy",
+    tone: "sage",
     brief: "Paisaje o propiedad icónica de Los Cabos: mar, arco, marina o zona hotelera.",
   },
   "numa.market.gdl": {
@@ -490,7 +490,7 @@ export const assets = {
     alt: "Guadalajara, Jalisco",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "light",
     brief: "Propiedad residencial premium o vista urbana de Guadalajara (Zapopan, Puerta de Hierro, Providencia…).",
   },
   "numa.showcase.photo": {
@@ -501,7 +501,7 @@ export const assets = {
     alt: "Fotografía profesional de una propiedad",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "light",
     brief: "Foto profesional de interior o exterior de una propiedad real.",
   },
   "numa.showcase.drone": {
@@ -512,7 +512,7 @@ export const assets = {
     alt: "",
     source: "client",
     status: "pending",
-    tone: "burgundy",
+    tone: "sage",
     brief: "Toma aérea con dron de una propiedad, terreno o costa (6–10 s).",
   },
   "numa.showcase.tour": {
@@ -523,7 +523,7 @@ export const assets = {
     alt: "",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "light",
     brief: "Recorrido cinematográfico por una propiedad (6–10 s de muestra).",
   },
   "numa.showcase.reel": {
@@ -534,7 +534,7 @@ export const assets = {
     alt: "",
     source: "client",
     status: "pending",
-    tone: "burgundy",
+    tone: "sage",
     brief: "Reel vertical de una propiedad para Instagram/TikTok.",
   },
   "numa.showcase.yacht": {
@@ -545,7 +545,7 @@ export const assets = {
     alt: "",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "sage",
     brief: "Video de un yate o experiencia náutica (6–10 s).",
   },
   "numa.staging.before": {
@@ -556,7 +556,7 @@ export const assets = {
     alt: "Espacio original sin ambientar",
     source: "real-photo",
     status: "pending",
-    tone: "cream",
+    tone: "light",
     brief: "Foto real de un espacio vacío o sin ambientar. MISMO encuadre que numa.staging.after.",
   },
   "numa.staging.after": {
@@ -567,7 +567,7 @@ export const assets = {
     alt: "Espacio ambientado digitalmente",
     source: "higgsfield",
     status: "pending",
-    tone: "burgundy",
+    tone: "sage",
     brief: "El mismo espacio con ambientación virtual (muebles, decoración). Sin alterar la arquitectura real: se identifica como ambientación digital.",
   },
   "numa.listing.desktop": {
@@ -578,7 +578,7 @@ export const assets = {
     alt: "Página de propiedad diseñada por NUMA",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "light",
     brief: "Captura de una landing o ficha de propiedad en computadora (1440×900).",
   },
   "numa.listing.mobile": {
@@ -589,12 +589,12 @@ export const assets = {
     alt: "Página de propiedad vista en celular",
     source: "client",
     status: "pending",
-    tone: "charcoal",
+    tone: "light",
     brief: "Captura de la misma ficha en celular (390×844 o 3x).",
   },
   "numa.logo.white": {
     kind: "image",
-    ratio: "4:1",
+    ratio: "3:1",
     minWidth: 800,
     file: "/media/numa/numa-logo-white",
     alt: "NUMA Real Estate",
@@ -605,7 +605,7 @@ export const assets = {
   },
   "numa.logo.black": {
     kind: "image",
-    ratio: "4:1",
+    ratio: "3:1",
     minWidth: 800,
     file: "/media/numa/numa-logo-black",
     alt: "NUMA Real Estate",

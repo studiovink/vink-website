@@ -1,6 +1,6 @@
 # Formatos de imágenes y videos
 
-> Generado automáticamente por `npm run media:scan`. Progreso: **0 de 53** archivos.
+> Generado automáticamente por `npm run media:scan`. Progreso: **2 de 53** archivos.
 
 ## Cómo agregar un archivo
 
@@ -111,5 +111,5 @@ Reglas: las fotos de Pau y Dany son reales; el material de clientes debe estar a
 | ⬜ | `numa.staging.after` | Imagen | 4:5 · mín. 1600 px | `public/media/numa/numa-staging-after-4x5.jpg` | El mismo espacio con ambientación virtual (muebles, decoración). Sin alterar la arquitectura real: se identifica como ambientación digital. |
 | ⬜ | `numa.listing.desktop` | Imagen | 1440:900 · mín. 1440 px | `public/media/numa/numa-listing-desktop.jpg` | Captura de una landing o ficha de propiedad en computadora (1440×900). |
 | ⬜ | `numa.listing.mobile` | Imagen | 390:844 · mín. 390 px | `public/media/numa/numa-listing-mobile.jpg` | Captura de la misma ficha en celular (390×844 o 3x). |
-| ⬜ | `numa.logo.white` | Imagen | 4:1 · mín. 800 px | `public/media/numa/numa-logo-white.jpg` | Logo de NUMA en blanco, fondo transparente (SVG de preferencia, o PNG). Se usa sobre fondos oscuros. |
-| ⬜ | `numa.logo.black` | Imagen | 4:1 · mín. 800 px | `public/media/numa/numa-logo-black.jpg` | Logo de NUMA en negro, fondo transparente (SVG de preferencia, o PNG). Se usa sobre fondos claros. |
+| ✅ | `numa.logo.white` | Imagen | 3:1 · mín. 800 px | `public/media/numa/numa-logo-white.png` | Logo de NUMA en blanco, fondo transparente (SVG de preferencia, o PNG). Se usa sobre fondos oscuros. |
+| ✅ | `numa.logo.black` | Imagen | 3:1 · mín. 800 px | `public/media/numa/numa-logo-black.png` | Logo de NUMA en negro, fondo transparente (SVG de preferencia, o PNG). Se usa sobre fondos claros. |

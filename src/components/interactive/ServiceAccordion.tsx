@@ -27,13 +27,14 @@ export function ServiceAccordion({ items, dark = false }: { items: AccordionItem
         btnOpen: "border-burgundy bg-burgundy text-cream",
       }
     : {
+        // Versión clara (landing blanca de NUMA)
         rule: "border-charcoal/15",
         num: "text-charcoal-soft",
-        title: "text-charcoal group-hover:text-burgundy",
-        titleOpen: "text-burgundy",
+        title: "text-charcoal group-hover:text-numa",
+        titleOpen: "text-numa-deep",
         sub: "text-charcoal-soft",
-        btn: "border-charcoal/25 text-charcoal group-hover:border-burgundy group-hover:text-burgundy",
-        btnOpen: "border-burgundy bg-burgundy text-cream",
+        btn: "border-charcoal/25 text-charcoal group-hover:border-numa group-hover:text-numa",
+        btnOpen: "border-numa-deep bg-numa-deep text-numa-light",
       };
 
   return (

@@ -1,7 +1,5 @@
 import type { Metadata, Viewport } from "next";
 import { MotionConfig } from "motion/react";
-import { Header } from "@/components/layout/Header";
-import { Footer } from "@/components/layout/Footer";
 import { site } from "@/content/site";
 import { bodyFont, headingFont } from "./fonts";
 import "./globals.css";
@@ -30,11 +28,7 @@ export default function RootLayout({ children }: LayoutProps<"/">) {
       <body className="flex min-h-dvh flex-col">
         {/* reducedMotion="user": respeta la preferencia del dispositivo en todas las animaciones */}
         <MotionConfig reducedMotion="user">
-          <Header />
-          <main id="main" className="flex-1">
-            {children}
-          </main>
-          <Footer />
+          {children}
         </MotionConfig>
       </body>
     </html>

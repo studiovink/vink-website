@@ -400,6 +400,16 @@ El menú Services enlaza a `/#creative-studio`, `/#branding`, `/#web-studio`, `/
 | Acordeones, pestañas, visor (lightbox), vista Desktop/Mobile, anillo de pilares | Secciones 4, 6–9 | Enter/Espacio, flechas, Esc; el foco vuelve al cerrar |
 | Botones "Cotizar" | Secciones 6–9 | Bajan al formulario con el servicio preseleccionado |
 
+### VINK negro · NUMA blanco (15-nov-2026)
+
+- **VINK**: sitio negro con letras blancas y acentos vino.
+- **NUMA Real Estate**: landing independiente en `/numa-real-estate`, blanca, con header y footer propios,
+  paleta oficial del Manual de Identidad NUMA v1.0 (Vintage Green #687656, Fairway Dawn #FAF7EA,
+  Bluebird Morning #B1C2CF, Fresh-Cut #052F17), logo oficial y tipografía de VINK (Anton + Manrope).
+- Desde VINK se llega a NUMA con una pestaña fija (lengüeta derecha en escritorio, píldora en celular),
+  además del menú Services y el footer.
+- Rutas agrupadas: `src/app/(vink)` y `src/app/(numa)`, cada una con su layout.
+
 ### Texto original de las decisiones (histórico)
 
 **D1 — ¿Páginas propias por servicio?**

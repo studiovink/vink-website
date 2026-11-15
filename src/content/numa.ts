@@ -14,6 +14,10 @@ export const numa = {
   short: "NUMA",
   href: "/numa-real-estate",
   endorsement: "Una submarca de VINK Creative Studio",
+  /** Promesa de marca (Manual de Identidad NUMA, 1.5). */
+  promise: "Cada propiedad que representamos se comunica con el mismo nivel de exigencia que una marca de lujo.",
+  /** Tarjeta de autoridad (Manual, 2.3). */
+  authority: ["Lo que no se comunica,", "no se vende."],
   metaDescription:
     "Fotografía, video, dron, contenido y páginas web para hoteles, rentas vacacionales, propiedades, terrenos y yates en Los Cabos y Guadalajara.",
 
@@ -26,11 +30,11 @@ export const numa = {
 
   intro: {
     label: "Why NUMA",
-    lead: "Cada propiedad tiene una historia.",
-    rest: "Nosotros la contamos para que la quieran vivir.",
+    lead: "Una decisión inmobiliaria es una decisión de vida.",
+    rest: "Merece el mismo rigor de diseño y estrategia que cualquier marca premium.",
     text: [
-      "En el mercado inmobiliario y turístico, la primera impresión ocurre en una pantalla. Antes de una visita, una reserva o una llamada, las personas ven fotos, videos y una página.",
-      "NUMA combina la producción visual y la estrategia digital de VINK con un enfoque especializado en propiedades: mostramos cada espacio con calidad, honestidad y la estética que merece.",
+      "NUMA es property marketing: dirección de arte editorial, arquitectura y storytelling, combinados con estrategia comercial y campañas en Meta y TikTok.",
+      "Trabajamos con desarrolladores, constructoras, asesores, inversionistas, hoteles y empresas náuticas que quieren que su propiedad se comunique como una historia, no como un producto.",
     ],
   },
 

@@ -6,13 +6,20 @@ import { cn } from "@/lib/cn";
  * public/media/numa/ (numa-logo-white / numa-logo-black); si no, muestra
  * el nombre con la tipografía de VINK.
  */
-export function NumaLogo({ variant = "white", className }: { variant?: "white" | "black"; className?: string }) {
+export function NumaLogo({
+  variant = "white",
+  className = "h-10",
+}: {
+  variant?: "white" | "black";
+  /** Controla el alto (p. ej. "h-8"); el ancho se ajusta solo. */
+  className?: string;
+}) {
   const logo = getAsset(variant === "white" ? "numa.logo.white" : "numa.logo.black");
 
   if (logo.src) {
     return (
       // eslint-disable-next-line @next/next/no-img-element -- logo SVG/PNG de tamaño libre
-      <img src={logo.src} alt={logo.alt} className={cn("h-10 w-auto", className)} />
+      <img src={logo.src} alt={logo.alt} className={cn("w-auto max-w-none", className)} />
     );
   }
 

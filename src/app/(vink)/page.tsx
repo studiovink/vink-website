@@ -1,7 +1,6 @@
 import { ContactSection } from "@/components/sections/ContactSection";
 import { About } from "@/components/sections/home/About";
 import { Hero } from "@/components/sections/home/Hero";
-import { NumaTeaser } from "@/components/sections/home/NumaTeaser";
 import { OurServices } from "@/components/sections/home/OurServices";
 import { Philosophy } from "@/components/sections/home/Philosophy";
 import { SignatureWorkSection } from "@/components/sections/home/SignatureWorkSection";
@@ -14,7 +13,10 @@ import { WebStudioSection } from "@/components/sections/specialty/WebStudioSecti
  * Estructura de la página principal (documento "Website structure"):
  * 1 Header · 2 Hero · 3 About Us · 4 Our Philosophy · 5 Our Services ·
  * 6 Creative Studio · 7 Branding · 8 Web Studio · 9 Social & Content ·
- * Submarca NUMA Real Estate · 10 Our Work · 11 Let's Work Together · 12 Footer
+ * 10 Our Work · 11 Let's Work Together · 12 Footer
+ *
+ * NUMA Real Estate tiene su propia landing (/numa-real-estate), enlazada con
+ * la pestaña fija <NumaTab /> del layout de VINK.
  */
 export default function Home() {
   return (
@@ -27,7 +29,6 @@ export default function Home() {
       <BrandingSection />
       <WebStudioSection />
       <SocialContentSection />
-      <NumaTeaser />
       <SignatureWorkSection />
       <ContactSection />
     </>

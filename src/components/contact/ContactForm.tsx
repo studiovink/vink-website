@@ -10,7 +10,15 @@ import { serviceOptions, type ContactField, type ContactState } from "@/lib/cont
 
 const initial: ContactState = { status: "idle" };
 
-export function ContactForm({ defaultService = "" }: { defaultService?: string }) {
+export function ContactForm({
+  defaultService = "",
+  brand = "vink",
+}: {
+  defaultService?: string;
+  /** Color de acento del formulario: vino (VINK) o verde (NUMA). */
+  brand?: "vink" | "numa";
+}) {
+  const accent = brand === "numa" ? "[--accent:var(--color-numa-deep)]" : "[--accent:var(--color-burgundy)]";
   const [state, action, pending] = useActionState(sendContact, initial);
   const startedAt = useRef(0);
   const serviceRef = useRef<HTMLSelectElement>(null);
@@ -44,12 +52,12 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
 
   if (state.status === "success") {
     return (
-      <div role="status" className="rounded-[2rem] bg-cream p-8 text-charcoal md:p-10">
-        <p className="display text-5xl text-burgundy">¡Gracias!</p>
+      <div role="status" className={cn("rounded-[2rem] bg-cream p-8 text-charcoal md:p-10", accent)}>
+        <p className="display text-5xl text-(--accent)">¡Gracias!</p>
         <p className="mt-4 text-lg">
           Recibimos tu mensaje. Revisaremos tu idea y nos pondremos en contacto contigo muy pronto.
         </p>
-        <p className="display mt-8 text-2xl text-burgundy">Think with Vink.</p>
+        <p className="display mt-8 text-2xl text-(--accent)">{brand === "numa" ? "NUMA Real Estate" : "Think with Vink."}</p>
       </div>
     );
   }
@@ -59,8 +67,8 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
   const val = (f: ContactField) => (state.status === "error" ? state.values?.[f] : undefined);
 
   return (
-    <form action={submit} noValidate className="rounded-[2rem] bg-cream p-6 text-charcoal md:p-10">
-      <p className="display text-3xl text-burgundy md:text-4xl">Tell us about your project.</p>
+    <form action={submit} noValidate className={cn("rounded-[2rem] bg-cream p-6 text-charcoal md:p-10", accent)}>
+      <p className="display text-3xl text-(--accent) md:text-4xl">Tell us about your project.</p>
       <p className="mt-2 text-sm text-charcoal-soft">Nos encantaría conocer tu idea.</p>
 
       <div className="mt-8 grid gap-5 md:grid-cols-2">
@@ -78,7 +86,7 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
         />
         <div className="md:col-span-2">
           <label htmlFor="service" className="text-sm font-semibold">
-            ¿Qué servicio te interesa? <span aria-hidden className="text-burgundy">*</span>
+            ¿Qué servicio te interesa? <span aria-hidden className="text-(--accent)">*</span>
           </label>
           <select
             id="service"
@@ -103,7 +111,7 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
         </div>
         <div className="md:col-span-2">
           <label htmlFor="message" className="text-sm font-semibold">
-            Cuéntanos sobre tu proyecto <span aria-hidden className="text-burgundy">*</span>
+            Cuéntanos sobre tu proyecto <span aria-hidden className="text-(--accent)">*</span>
           </label>
           <textarea
             id="message"
@@ -137,11 +145,11 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
             defaultChecked={val("privacy") === "on"}
             aria-invalid={Boolean(err("privacy"))}
             aria-describedby={err("privacy") ? "privacy-error" : undefined}
-            className="mt-0.5 size-5 shrink-0 accent-burgundy"
+            className="mt-0.5 size-5 shrink-0 accent-(--accent)"
           />
           <span>
             He leído el{" "}
-            <Link href="/aviso-de-privacidad" className="font-semibold text-burgundy underline underline-offset-2">
+            <Link href="/aviso-de-privacidad" className="font-semibold text-(--accent) underline underline-offset-2">
               Aviso de Privacidad
             </Link>{" "}
             y conozco cómo se utilizarán mis datos para atender mi solicitud.
@@ -151,12 +159,12 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
       </div>
 
       {state.status === "error" && (
-        <p role="alert" className="mt-6 rounded-2xl bg-burgundy/10 px-4 py-3 text-sm text-burgundy">
+        <p role="alert" className="mt-6 rounded-2xl bg-(--accent)/10 px-4 py-3 text-sm text-(--accent)">
           {state.message}
         </p>
       )}
 
-      <PillButton type="submit" variant="burgundy" wide disabled={pending} className="mt-8">
+      <PillButton type="submit" variant={brand === "numa" ? "numa" : "burgundy"} wide disabled={pending} className="mt-8">
         {pending ? "Enviando…" : "Enviar solicitud"}
       </PillButton>
     </form>
@@ -165,8 +173,8 @@ export function ContactForm({ defaultService = "" }: { defaultService?: string }
 
 function inputClass(invalid: boolean) {
   return cn(
-    "mt-2 block min-h-12 w-full rounded-2xl border bg-white px-4 text-base text-charcoal outline-none transition-colors placeholder:text-charcoal/40 focus:border-burgundy",
-    invalid ? "border-burgundy" : "border-charcoal/15",
+    "mt-2 block min-h-12 w-full rounded-2xl border bg-white px-4 text-base text-charcoal outline-none transition-colors placeholder:text-charcoal/40 focus:border-(--accent)",
+    invalid ? "border-(--accent)" : "border-charcoal/15",
   );
 }
 
@@ -192,7 +200,7 @@ function Field({
   return (
     <div className={className}>
       <label htmlFor={name} className="text-sm font-semibold">
-        {label} {required && <span aria-hidden className="text-burgundy">*</span>}
+        {label} {required && <span aria-hidden className="text-(--accent)">*</span>}
       </label>
       <input
         id={name}
@@ -213,7 +221,7 @@ function Field({
 function FieldError({ id, message }: { id: string; message?: string }) {
   if (!message) return null;
   return (
-    <p id={id} className="mt-1.5 text-sm font-medium text-burgundy">
+    <p id={id} className="mt-1.5 text-sm font-medium text-(--accent)">
       {message}
     </p>
   );

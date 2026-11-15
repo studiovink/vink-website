@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import Link from "next/link";
 import { NumaLogo } from "@/components/brand/NumaLogo";
 import { ContactForm } from "@/components/contact/ContactForm";
 import { QuoteLink } from "@/components/contact/QuoteLink";
@@ -15,55 +14,63 @@ import { numa } from "@/content/numa";
 import { site, whatsappUrl } from "@/content/site";
 
 export const metadata: Metadata = {
-  title: numa.name,
+  title: { absolute: `${numa.name} — Property marketing en Los Cabos y Guadalajara` },
   description: numa.metaDescription,
 };
 
 const PAGE = numa.href;
 
+/** Overlay verde del manual de NUMA: Vintage Green en multiply sobre fotografía. */
+function GreenOverlay() {
+  return <div aria-hidden className="pointer-events-none absolute inset-0 bg-numa/45 mix-blend-multiply" />;
+}
+
 export default function NumaPage() {
   return (
-    <div className="bg-ink text-cream">
-      {/* Hero */}
-      <section aria-label={numa.name} className="relative isolate flex min-h-[100svh] flex-col overflow-hidden">
-        <MediaSlot id={numa.hero.media} fill priority className="-z-20" />
-        <div
-          aria-hidden
-          className="absolute inset-0 -z-10 bg-[linear-gradient(180deg,rgba(0,0,0,0.6)_0%,rgba(0,0,0,0)_35%,rgba(0,0,0,0)_55%,rgba(0,0,0,0.75)_100%)]"
-        />
-        <div className="container-vink flex flex-1 flex-col pb-6 pt-32 md:pb-8 md:pt-40">
-          <Reveal className="max-w-md" delay={0.4}>
-            <NumaLogo className="text-5xl md:text-6xl" />
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.18em] text-numa">{numa.hero.eyebrow}</p>
-            <p className="display mt-3 text-2xl leading-[1.05] md:text-[1.7rem]">{numa.hero.statement}</p>
-            <p className="mt-3 text-sm text-cream/80 md:text-base">{numa.hero.sub}</p>
-            <div className="mt-7 flex flex-wrap gap-3">
-              <QuoteLink service="numa-real-estate" page={PAGE}>
-                Cotizar mi propiedad
-              </QuoteLink>
-              <PillLink href="#services" variant="dark">
-                Ver servicios
-              </PillLink>
-            </div>
+    <>
+      {/* Hero blanco */}
+      <section aria-label={numa.name} className="pb-16 pt-10 md:pb-24 md:pt-16">
+        <div className="container-vink">
+          <Reveal className="flex flex-wrap items-baseline justify-between gap-3 border-b border-charcoal/10 pb-5">
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-numa">{numa.hero.eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.18em] text-charcoal/50">Los Cabos · Guadalajara</p>
           </Reveal>
-          <div className="mt-auto pt-16">
-            <h1 className="display text-mega">
-              <MaskLines lines={["NUMA", <span key="r" className="text-numa">Real Estate</span>]} delay={0.1} />
-            </h1>
-            <div className="mt-6 flex items-center justify-between text-xs text-cream/75 md:text-sm">
-              <Link href="/" className="hover:text-cream">
-                {numa.endorsement}
-              </Link>
-              <a href="#why" className="hover:text-cream">
-                (Scroll down)
-              </a>
-            </div>
+
+          <h1 className="mt-10 md:mt-14">
+            <span className="sr-only">{numa.name}</span>
+            <Reveal y={50}>
+              <NumaLogo variant="black" className="h-auto w-full" />
+            </Reveal>
+            <span aria-hidden className="display mt-3 block text-right text-title tracking-[0.4em] text-numa md:mt-5">
+              <MaskLines lines={["Real Estate"]} delay={0.2} />
+            </span>
+          </h1>
+
+          <div className="mt-12 grid gap-10 lg:grid-cols-12 lg:items-end">
+            <Reveal className="lg:col-span-5">
+              <p className="display text-title">{numa.hero.statement}</p>
+              <p className="mt-4 text-lg leading-relaxed text-charcoal/70">{numa.hero.sub}</p>
+              <div className="mt-8 flex flex-wrap gap-3">
+                <QuoteLink service="numa-real-estate" page={PAGE} variant="numa">
+                  Cotizar mi propiedad
+                </QuoteLink>
+                <PillLink href="#services" variant="numaOutline">
+                  Ver servicios
+                </PillLink>
+              </div>
+            </Reveal>
+            <Reveal className="lg:col-span-7" delay={0.1}>
+              <div className="relative aspect-video overflow-hidden rounded-[2rem]">
+                <MediaSlot id={numa.hero.media} fill priority sizes="(min-width: 1024px) 58vw, 100vw" />
+                <GreenOverlay />
+              </div>
+            </Reveal>
           </div>
         </div>
       </section>
 
       {/* Why NUMA */}
-      <section id="why" className="py-24 md:py-36">
+      <section id="why" className="bg-numa-light py-24 md:py-36">
         <div className="container-vink grid gap-6 lg:grid-cols-12">
           <p className="label text-numa lg:col-span-2 lg:pt-4">{numa.intro.label}</p>
           <div className="lg:col-span-10">
@@ -72,9 +79,9 @@ export default function NumaPage() {
               text={numa.intro.rest}
               className="display text-headline"
               leadClassName="text-numa"
-              wordClassName="text-cream"
+              wordClassName="text-charcoal"
             />
-            <Reveal className="mt-10 grid gap-6 text-lg leading-relaxed text-cream/75 md:grid-cols-2">
+            <Reveal className="mt-10 grid gap-6 text-lg leading-relaxed text-charcoal/70 md:grid-cols-2">
               {numa.intro.text.map((p) => (
                 <p key={p}>{p}</p>
               ))}
@@ -83,8 +90,19 @@ export default function NumaPage() {
         </div>
       </section>
 
-      {/* Segmentos: tarjetas interactivas */}
-      <section className="bg-numa-surface py-24 md:py-36">
+      {/* Tarjeta de autoridad (manual: fondo Bluebird Morning, mensaje corto) */}
+      <section aria-label="Postura de NUMA" className="bg-numa-sky py-20 md:py-28">
+        <Reveal className="container-vink text-center">
+          <p className="display text-giant text-numa-deep">
+            {numa.authority[0]} <br className="hidden md:block" />
+            {numa.authority[1]}
+          </p>
+          <p className="mt-6 text-sm font-semibold uppercase tracking-[0.18em] text-numa-deep/70">Así de simple.</p>
+        </Reveal>
+      </section>
+
+      {/* Segmentos */}
+      <section id="segments" className="scroll-mt-24 py-24 md:py-36">
         <div className="container-vink">
           <Reveal>
             <p className="label text-numa">{numa.segments.label}</p>
@@ -94,18 +112,21 @@ export default function NumaPage() {
             {numa.segments.items.map((s, i) => (
               <li key={s.key}>
                 <Reveal delay={i * 0.06}>
-                  <article tabIndex={0} className="group relative overflow-hidden rounded-[1.75rem] bg-numa-deep focus-visible:outline-offset-4">
+                  <article
+                    tabIndex={0}
+                    className="group relative overflow-hidden rounded-[1.75rem] bg-numa text-white focus-visible:outline-offset-4 focus-visible:outline-numa-deep"
+                  >
                     <div className="transition-transform duration-[900ms] ease-vink group-hover:scale-[1.06] group-focus-visible:scale-[1.06] motion-reduce:transition-none">
                       <MediaSlot id={s.media} quiet sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw" />
                     </div>
-                    <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-black/10" />
-                    <span className="absolute left-5 top-5 text-xs text-cream/80">(0{i + 1})</span>
+                    <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-numa-deep/90 via-numa-deep/20 to-transparent" />
+                    <span className="absolute left-5 top-5 text-xs text-white/80">(0{i + 1})</span>
                     <div className="absolute inset-x-0 bottom-0 p-5">
                       <h3 className="display text-3xl leading-[0.95]">{s.title}</h3>
                       <div className="grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-500 ease-vink [@media(hover:hover)]:grid-rows-[0fr] [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-focus-visible:grid-rows-[1fr] [@media(hover:hover)]:group-focus-visible:opacity-100 [@media(hover:hover)]:group-hover:grid-rows-[1fr] [@media(hover:hover)]:group-hover:opacity-100">
                         <div className="overflow-hidden">
-                          <p className="pt-3 text-sm leading-relaxed text-cream/85">{s.text}</p>
-                          <ul className="mt-3 space-y-1 text-xs text-cream/70">
+                          <p className="pt-3 text-sm leading-relaxed text-white/90">{s.text}</p>
+                          <ul className="mt-3 space-y-1 text-xs text-white/75">
                             {s.produce.map((p) => (
                               <li key={p}>— {p}</li>
                             ))}
@@ -122,13 +143,13 @@ export default function NumaPage() {
       </section>
 
       {/* Mercados */}
-      <section className="py-24 md:py-36">
+      <section id="markets" className="scroll-mt-24 bg-numa-light py-24 md:py-36">
         <div className="container-vink">
           <Reveal>
             <p className="label text-numa">{numa.markets.label}</p>
             <h2 className="display mt-4 text-giant">{numa.markets.title}</h2>
           </Reveal>
-          <div className="mt-14 grid gap-6 lg:grid-cols-2">
+          <div className="mt-14 grid gap-10 lg:grid-cols-2 lg:gap-6">
             {numa.markets.items.map((m, i) => (
               <Reveal key={m.key} delay={i * 0.1}>
                 <article className="group">
@@ -136,16 +157,16 @@ export default function NumaPage() {
                     <div className="transition-transform duration-[1000ms] ease-vink group-hover:scale-[1.04] motion-reduce:transition-none">
                       <MediaSlot id={m.media} sizes="(min-width: 1024px) 50vw, 100vw" />
                     </div>
-                    <div aria-hidden className="absolute inset-0 bg-gradient-to-t from-black/70 to-transparent" />
-                    <div className="absolute inset-x-0 bottom-0 p-6 md:p-8">
-                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-cream/75">{m.region}</p>
+                    <GreenOverlay />
+                    <div className="absolute inset-x-0 bottom-0 p-6 text-white md:p-8">
+                      <p className="text-xs font-semibold uppercase tracking-[0.18em] text-white/80">{m.region}</p>
                       <h3 className="display text-6xl md:text-7xl">{m.name}</h3>
                     </div>
                   </div>
-                  <p className="mt-6 max-w-xl text-lg leading-relaxed text-cream/75">{m.text}</p>
+                  <p className="mt-6 max-w-xl text-lg leading-relaxed text-charcoal/70">{m.text}</p>
                   <ul className="mt-4 flex flex-wrap gap-2">
                     {m.tags.map((t) => (
-                      <li key={t} className="rounded-full border border-cream/20 px-3.5 py-1.5 text-sm">
+                      <li key={t} className="rounded-full border border-numa/40 px-3.5 py-1.5 text-sm text-numa-deep">
                         {t}
                       </li>
                     ))}
@@ -158,7 +179,7 @@ export default function NumaPage() {
       </section>
 
       {/* Servicios */}
-      <section id="services" className="bg-numa-surface py-24 md:py-36">
+      <section id="services" className="scroll-mt-24 py-24 md:py-36">
         <div className="container-vink">
           <Reveal>
             <p className="label text-numa">{numa.services.label}</p>
@@ -166,12 +187,11 @@ export default function NumaPage() {
           </Reveal>
           <div className="mt-12">
             <ServiceAccordion
-              dark
               items={numa.services.items.map((s) => ({
                 key: s.title,
                 title: s.title,
                 subtitle: s.subtitle,
-                content: <p className="max-w-2xl text-base leading-relaxed text-cream/75 md:text-lg">{s.text}</p>,
+                content: <p className="max-w-2xl text-base leading-relaxed text-charcoal/70 md:text-lg">{s.text}</p>,
               }))}
             />
           </div>
@@ -179,14 +199,14 @@ export default function NumaPage() {
       </section>
 
       {/* Showcase */}
-      <section className="py-24 md:py-36">
+      <section className="bg-numa-light py-24 md:py-36">
         <div className="container-vink">
           <Reveal className="flex flex-wrap items-end justify-between gap-4">
             <div>
               <p className="label text-numa">{numa.showcase.label}</p>
               <h2 className="display mt-4 text-headline">{numa.showcase.title}</h2>
             </div>
-            <p className="max-w-xs text-sm text-cream/65">Toca cualquier pieza para verla completa.</p>
+            <p className="max-w-xs text-sm text-charcoal/60">Toca cualquier pieza para verla completa.</p>
           </Reveal>
           <Reveal className="mt-10" delay={0.08}>
             <LightboxGallery
@@ -203,14 +223,14 @@ export default function NumaPage() {
         </div>
       </section>
 
-      {/* Virtual staging */}
-      <section className="bg-numa-surface py-24 md:py-36">
+      {/* Ambientación digital */}
+      <section className="py-24 md:py-36">
         <div className="container-vink grid items-center gap-12 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
             <p className="label text-numa">{numa.staging.label}</p>
             <h2 className="display mt-4 text-headline">{numa.staging.title}</h2>
-            <p className="mt-6 max-w-md text-lg leading-relaxed text-cream/75">{numa.staging.text}</p>
-            <p className="mt-4 text-sm text-cream/60">Desliza para comparar · también con las flechas del teclado.</p>
+            <p className="mt-6 max-w-md text-lg leading-relaxed text-charcoal/70">{numa.staging.text}</p>
+            <p className="mt-4 text-sm text-charcoal/55">Desliza para comparar · también con las flechas del teclado.</p>
           </Reveal>
           <Reveal className="lg:col-span-6 lg:col-start-7" delay={0.1}>
             <BeforeAfterSlider
@@ -218,18 +238,19 @@ export default function NumaPage() {
               after={<MediaSlot id="numa.staging.after" sizes="(min-width: 1024px) 45vw, 100vw" quiet />}
               beforeLabel={numa.staging.before}
               afterLabel={numa.staging.after}
+              afterLabelClass="bg-numa-deep text-numa-light"
             />
           </Reveal>
         </div>
       </section>
 
-      {/* Página de propiedad */}
-      <section className="py-24 md:py-36">
+      {/* Página de propiedad (bloque Fresh-Cut) */}
+      <section className="bg-numa-deep py-24 text-numa-light md:py-36">
         <div className="container-vink">
           <Reveal className="mx-auto max-w-3xl text-center">
-            <p className="label text-numa">{numa.listing.label}</p>
+            <p className="label text-numa-sky">{numa.listing.label}</p>
             <h2 className="display mt-4 text-headline">{numa.listing.title}</h2>
-            <p className="mt-5 text-lg text-cream/75">{numa.listing.text}</p>
+            <p className="mt-5 text-lg text-numa-light/80">{numa.listing.text}</p>
           </Reveal>
           <Reveal className="mt-10" delay={0.1}>
             <DeviceToggle
@@ -241,7 +262,7 @@ export default function NumaPage() {
       </section>
 
       {/* Proceso */}
-      <section className="bg-numa-surface py-24 md:py-36">
+      <section id="process" className="scroll-mt-24 py-24 md:py-36">
         <div className="container-vink">
           <Reveal>
             <h2 className="display text-headline">{numa.process.title}</h2>
@@ -249,10 +270,10 @@ export default function NumaPage() {
           <ol className="mt-12 grid gap-3 md:grid-cols-5">
             {numa.process.steps.map((s, i) => (
               <li key={s.title}>
-                <Reveal delay={i * 0.06} className="flex h-full flex-col rounded-[1.5rem] border border-cream/15 p-6">
+                <Reveal delay={i * 0.06} className="flex h-full flex-col rounded-[1.5rem] border border-charcoal/12 p-6">
                   <span className="display text-5xl text-numa">0{i + 1}</span>
                   <span className="display mt-8 text-2xl leading-none">{s.title}</span>
-                  <span className="mt-3 text-sm leading-relaxed text-cream/70">{s.text}</span>
+                  <span className="mt-3 text-sm leading-relaxed text-charcoal/65">{s.text}</span>
                 </Reveal>
               </li>
             ))}
@@ -260,15 +281,16 @@ export default function NumaPage() {
         </div>
       </section>
 
-      {/* Contacto NUMA */}
-      <section id="contact" className="bg-numa-deep py-24 md:py-32">
+      {/* Contacto (Vintage Green, color dominante de NUMA) */}
+      <section id="contact" className="scroll-mt-20 bg-numa py-24 text-white md:py-32">
         <div className="container-vink grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="label text-cream/70">{numa.contact.label}</p>
+            <NumaLogo variant="white" className="h-12 md:h-14" />
+            <p className="label mt-10 text-white/80">{numa.contact.label}</p>
             <h2 className="display mt-4 text-headline">
-              {numa.contact.title[0]} <span className="text-cream/50">{numa.contact.title[1]}</span>
+              {numa.contact.title[0]} <span className="text-numa-deep">{numa.contact.title[1]}</span>
             </h2>
-            <p className="mt-6 text-lg leading-relaxed text-cream/80">{numa.contact.text}</p>
+            <p className="mt-6 text-lg leading-relaxed text-white/90">{numa.contact.text}</p>
             <ul className="mt-8 grid gap-3 sm:grid-cols-2 lg:grid-cols-1 xl:grid-cols-2">
               {site.contact.whatsapp.map((w) => (
                 <li key={w.number}>
@@ -276,29 +298,23 @@ export default function NumaPage() {
                     href={whatsappUrl(w.number, `Hola ${w.name}, quiero promocionar una propiedad con NUMA Real Estate.`)}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="group flex items-center justify-between gap-3 rounded-2xl border border-cream/20 px-4 py-3 transition-colors hover:border-cream/60 hover:bg-white/5"
+                    className="group flex items-center justify-between gap-3 rounded-2xl border border-white/30 px-4 py-3 transition-colors hover:border-white hover:bg-white/10"
                   >
                     <span>
-                      <span className="block text-xs uppercase tracking-[0.16em] text-cream/70">WhatsApp · {w.name}</span>
+                      <span className="block text-xs uppercase tracking-[0.16em] text-white/80">WhatsApp · {w.name}</span>
                       <span className="mt-0.5 block text-sm">{w.display}</span>
                     </span>
-                    <ArrowDot variant="burgundy" />
+                    <ArrowDot variant="numa" />
                   </a>
                 </li>
               ))}
             </ul>
-            <p className="mt-8 text-sm text-cream/60">
-              {numa.endorsement} ·{" "}
-              <Link href="/" className="underline underline-offset-4 hover:text-cream">
-                Conoce VINK
-              </Link>
-            </p>
           </div>
           <div className="lg:col-span-7">
-            <ContactForm defaultService="numa-real-estate" />
+            <ContactForm defaultService="numa-real-estate" brand="numa" />
           </div>
         </div>
       </section>
-    </div>
+    </>
   );
 }

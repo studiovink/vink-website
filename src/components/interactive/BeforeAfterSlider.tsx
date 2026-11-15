@@ -7,13 +7,21 @@ type Props = {
   after: ReactNode;
   beforeLabel: string;
   afterLabel: string;
+  /** Color de la etiqueta "después" (vino en VINK, verde en NUMA). */
+  afterLabelClass?: string;
 };
 
 /**
  * Comparador antes / después. Un <input type="range"> invisible cubre la
  * imagen: funciona con arrastre, toque y flechas del teclado.
  */
-export function BeforeAfterSlider({ before, after, beforeLabel, afterLabel }: Props) {
+export function BeforeAfterSlider({
+  before,
+  after,
+  beforeLabel,
+  afterLabel,
+  afterLabelClass = "bg-burgundy text-cream",
+}: Props) {
   const [pos, setPos] = useState(50);
 
   return (
@@ -26,7 +34,9 @@ export function BeforeAfterSlider({ before, after, beforeLabel, afterLabel }: Pr
       <span className="pointer-events-none absolute left-4 top-4 rounded-full bg-cream/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-charcoal">
         {beforeLabel}
       </span>
-      <span className="pointer-events-none absolute right-4 top-4 rounded-full bg-burgundy px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-cream">
+      <span
+        className={`pointer-events-none absolute right-4 top-4 rounded-full px-3 py-1.5 text-xs font-semibold uppercase tracking-wider ${afterLabelClass}`}
+      >
         {afterLabel}
       </span>
 

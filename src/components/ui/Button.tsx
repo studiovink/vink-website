@@ -2,18 +2,23 @@ import Link from "next/link";
 import type { ComponentProps } from "react";
 import { cn } from "@/lib/cn";
 
-type Variant = "light" | "dark" | "burgundy";
+type Variant = "light" | "dark" | "burgundy" | "numa" | "numaOutline";
 
 const pill: Record<Variant, string> = {
   light: "bg-cream text-charcoal",
   dark: "bg-ink-3 text-cream ring-1 ring-white/10",
   burgundy: "bg-burgundy text-cream",
+  /* NUMA: botón primario Fresh-Cut con texto Fairway Dawn; secundario con contorno. */
+  numa: "bg-numa-deep text-numa-light",
+  numaOutline: "bg-transparent text-numa-deep ring-1 ring-numa-deep",
 };
 
 const dot: Record<Variant, string> = {
   light: "bg-burgundy text-cream",
   dark: "bg-burgundy text-cream",
   burgundy: "bg-cream text-burgundy",
+  numa: "bg-numa-light text-numa-deep",
+  numaOutline: "bg-numa-deep text-numa-light",
 };
 
 /** Flecha dentro de un círculo, como en los CTA "Start a project". */

@@ -24,12 +24,13 @@
   --color-charcoal-soft: #5c5658;
 
   /*
-   * NUMA Real Estate — PROVISIONAL hasta recibir su paleta oficial.
-   * Cambia estos tres valores y toda la página de NUMA se actualiza.
+   * NUMA Real Estate — paleta oficial (Manual de Identidad v1.0).
+   * La landing de NUMA es blanca con texto negro; el verde se usa como acento.
    */
-  --color-numa: #c9506f;
-  --color-numa-deep: #3f1521;
-  --color-numa-surface: #121112;
+  --color-numa: #687656; /* Vintage Green — color principal */
+  --color-numa-light: #faf7ea; /* Fairway Dawn — neutro */
+  --color-numa-sky: #b1c2cf; /* Bluebird Morning — acento secundario */
+  --color-numa-deep: #052f17; /* Fresh-Cut — CTA y alto contraste */
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), "Arial Narrow", Impact, sans-serif;
