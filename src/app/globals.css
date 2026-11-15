@@ -25,12 +25,11 @@
 
   /*
    * NUMA Real Estate — paleta oficial (Manual de Identidad v1.0).
-   * La landing de NUMA es blanca con texto negro; el verde se usa como acento.
+   * La landing de NUMA es blanca y negra; el verde solo como detalle (etiquetas).
    */
-  --color-numa: #687656; /* Vintage Green — color principal */
+  --color-numa: #687656; /* Vintage Green — detalles */
   --color-numa-light: #faf7ea; /* Fairway Dawn — neutro */
-  --color-numa-sky: #b1c2cf; /* Bluebird Morning — acento secundario */
-  --color-numa-deep: #052f17; /* Fresh-Cut — CTA y alto contraste */
+  --color-numa-deep: #052f17; /* Fresh-Cut */
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), "Arial Narrow", Impact, sans-serif;

@@ -16,8 +16,6 @@ export const numa = {
   endorsement: "Una submarca de VINK Creative Studio",
   /** Promesa de marca (Manual de Identidad NUMA, 1.5). */
   promise: "Cada propiedad que representamos se comunica con el mismo nivel de exigencia que una marca de lujo.",
-  /** Tarjeta de autoridad (Manual, 2.3). */
-  authority: ["Lo que no se comunica,", "no se vende."],
   metaDescription:
     "Fotografía, video, dron, contenido y páginas web para hoteles, rentas vacacionales, propiedades, terrenos y yates en Los Cabos y Guadalajara.",
 
@@ -28,15 +26,6 @@ export const numa = {
     media: "numa.hero" as AssetId,
   },
 
-  intro: {
-    label: "Why NUMA",
-    lead: "Una decisión inmobiliaria es una decisión de vida.",
-    rest: "Merece el mismo rigor de diseño y estrategia que cualquier marca premium.",
-    text: [
-      "NUMA es property marketing: dirección de arte editorial, arquitectura y storytelling, combinados con estrategia comercial y campañas en Meta y TikTok.",
-      "Trabajamos con desarrolladores, constructoras, asesores, inversionistas, hoteles y empresas náuticas que quieren que su propiedad se comunique como una historia, no como un producto.",
-    ],
-  },
 
   segments: {
     label: "¿Para quién es NUMA?",
@@ -151,42 +140,9 @@ export const numa = {
     ],
   },
 
-  showcase: {
-    label: "Showcase",
-    title: "Así se ve una propiedad con NUMA.",
-    items: [
-      { id: "numa.showcase.photo" as AssetId, label: "Fotografía", className: "md:col-span-2" },
-      { id: "numa.showcase.reel" as AssetId, label: "Reel", className: "md:row-span-2" },
-      { id: "numa.showcase.drone" as AssetId, label: "Dron", className: "" },
-      { id: "numa.showcase.tour" as AssetId, label: "Recorrido", className: "" },
-      { id: "numa.showcase.yacht" as AssetId, label: "Yates", className: "md:col-span-2" },
-    ],
-  },
 
-  staging: {
-    label: "Virtual staging",
-    title: "Del espacio vacío al espacio que imaginas.",
-    text: "La ambientación digital ayuda a que compradores y huéspedes visualicen el potencial de un espacio. La arquitectura, las dimensiones y los acabados reales no se modifican.",
-    before: "Espacio original",
-    after: "Ambientación digital",
-  },
 
-  listing: {
-    label: "Listing pages",
-    title: "Una página para cada propiedad.",
-    text: "Fotos, video, recorrido, ubicación, amenidades y un botón directo a WhatsApp, en una página diseñada para verse perfecta en el celular.",
-  },
 
-  process: {
-    title: "Cómo trabajamos",
-    steps: [
-      { title: "Brief", text: "Conocemos la propiedad, su mercado y a quién queremos llegar." },
-      { title: "Visita y producción", text: "Fotografía, video y dron en sitio, en el mejor horario de luz." },
-      { title: "Edición", text: "Retoque, color, montaje y, si aplica, ambientación digital." },
-      { title: "Publicación", text: "Página de la propiedad, redes y portales listos para usarse." },
-      { title: "Campañas", text: "Opcional: anuncios en Meta para atraer prospectos calificados." },
-    ],
-  },
 
   contact: {
     label: "Let's list it",

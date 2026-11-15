@@ -1,6 +1,6 @@
 # Formatos de imágenes y videos
 
-> Generado automáticamente por `npm run media:scan`. Progreso: **2 de 53** archivos.
+> Generado automáticamente por `npm run media:scan`. Progreso: **2 de 44** archivos.
 
 ## Cómo agregar un archivo
 
@@ -93,7 +93,7 @@ Reglas: las fotos de Pau y Dany son reales; el material de clientes debe estar a
 
 | | ID | Tipo | Proporción | Archivo | Indicaciones |
 |---|---|---|---|---|---|
-| ⬜ | `numa.hero` | Video | 16:9 · mín. 1920 px | `public/media/numa/numa-hero-16x9.mp4` | Video cinematográfico de 8–12 s: villas frente al mar, hotel, interior premium o yate al atardecer en Los Cabos. Sin texto quemado. Entregar también la versión vertical 9:16. |
+| ⬜ | `numa.hero` | Video | 16:9 · mín. 1920 px | `public/media/numa/numa-hero-16x9.mp4` | Imagen o video de fondo para el inicio de NUMA, en tonos rojos/cálidos (atardecer, terracota, interiores con luz cálida). Sin texto. El logo de NUMA va encima en blanco, así que debe tener zonas oscuras o tranquilas. Entregar también la versión vertical 9:16. |
 | ⬜ | `numa.hero` (celular) | Video | 9:16 · mín. 1080 px | `public/media/numa/numa-hero-9x16.mp4` | Versión vertical del mismo video. |
 | ⬜ | `numa.segment.hotels` | Imagen | 4:5 · mín. 1200 px | `public/media/numa/numa-segment-hotels-4x5.jpg` | Fachada, alberca o suite de un hotel o resort. |
 | ⬜ | `numa.segment.vacation` | Imagen | 4:5 · mín. 1200 px | `public/media/numa/numa-segment-vacation-4x5.jpg` | Interior o terraza de una renta vacacional. |
@@ -102,14 +102,5 @@ Reglas: las fotos de Pau y Dany son reales; el material de clientes debe estar a
 | ⬜ | `numa.segment.yachts` | Imagen | 4:5 · mín. 1200 px | `public/media/numa/numa-segment-yachts-4x5.jpg` | Yate o embarcación navegando, de preferencia en la zona hotelera. |
 | ⬜ | `numa.market.cabos` | Imagen | 16:9 · mín. 2000 px | `public/media/numa/numa-market-cabos-16x9.jpg` | Paisaje o propiedad icónica de Los Cabos: mar, arco, marina o zona hotelera. |
 | ⬜ | `numa.market.gdl` | Imagen | 16:9 · mín. 2000 px | `public/media/numa/numa-market-gdl-16x9.jpg` | Propiedad residencial premium o vista urbana de Guadalajara (Zapopan, Puerta de Hierro, Providencia…). |
-| ⬜ | `numa.showcase.photo` | Imagen | 3:2 · mín. 2400 px | `public/media/numa/numa-showcase-photo-3x2.jpg` | Foto profesional de interior o exterior de una propiedad real. |
-| ⬜ | `numa.showcase.drone` | Video | 16:9 · mín. 1920 px | `public/media/numa/numa-showcase-drone-16x9.mp4` | Toma aérea con dron de una propiedad, terreno o costa (6–10 s). |
-| ⬜ | `numa.showcase.tour` | Video | 16:9 · mín. 1920 px | `public/media/numa/numa-showcase-tour-16x9.mp4` | Recorrido cinematográfico por una propiedad (6–10 s de muestra). |
-| ⬜ | `numa.showcase.reel` | Video | 9:16 · mín. 1080 px | `public/media/numa/numa-showcase-reel-9x16.mp4` | Reel vertical de una propiedad para Instagram/TikTok. |
-| ⬜ | `numa.showcase.yacht` | Video | 16:9 · mín. 1920 px | `public/media/numa/numa-showcase-yacht-16x9.mp4` | Video de un yate o experiencia náutica (6–10 s). |
-| ⬜ | `numa.staging.before` | Imagen | 4:5 · mín. 1600 px | `public/media/numa/numa-staging-before-4x5.jpg` | Foto real de un espacio vacío o sin ambientar. MISMO encuadre que numa.staging.after. |
-| ⬜ | `numa.staging.after` | Imagen | 4:5 · mín. 1600 px | `public/media/numa/numa-staging-after-4x5.jpg` | El mismo espacio con ambientación virtual (muebles, decoración). Sin alterar la arquitectura real: se identifica como ambientación digital. |
-| ⬜ | `numa.listing.desktop` | Imagen | 1440:900 · mín. 1440 px | `public/media/numa/numa-listing-desktop.jpg` | Captura de una landing o ficha de propiedad en computadora (1440×900). |
-| ⬜ | `numa.listing.mobile` | Imagen | 390:844 · mín. 390 px | `public/media/numa/numa-listing-mobile.jpg` | Captura de la misma ficha en celular (390×844 o 3x). |
 | ✅ | `numa.logo.white` | Imagen | 3:1 · mín. 800 px | `public/media/numa/numa-logo-white.png` | Logo de NUMA en blanco, fondo transparente (SVG de preferencia, o PNG). Se usa sobre fondos oscuros. |
 | ✅ | `numa.logo.black` | Imagen | 3:1 · mín. 800 px | `public/media/numa/numa-logo-black.png` | Logo de NUMA en negro, fondo transparente (SVG de preferencia, o PNG). Se usa sobre fondos claros. |

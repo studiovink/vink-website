@@ -11,7 +11,7 @@ export function NumaFooter() {
         <div className="md:col-span-5">
           <NumaLogo variant="black" className="h-12 md:h-14" />
           <p className="mt-6 max-w-sm text-sm leading-relaxed text-charcoal/70">{numa.promise}</p>
-          <Link href="/" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-numa hover:text-numa-deep">
+          <Link href="/" className="mt-6 inline-flex items-center gap-2 text-sm font-semibold text-charcoal underline-offset-4 hover:underline">
             {numa.endorsement} →
           </Link>
         </div>

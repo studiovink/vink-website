@@ -4,9 +4,9 @@ import { QuoteLink } from "@/components/contact/QuoteLink";
 
 const links = [
   { label: "Para quién", href: "#segments" },
-  { label: "Mercados", href: "#markets" },
   { label: "Servicios", href: "#services" },
-  { label: "Proceso", href: "#process" },
+  { label: "Mercados", href: "#markets" },
+  { label: "Contacto", href: "#contact" },
 ];
 
 /** Header de la landing de NUMA (blanco, independiente del de VINK). */
@@ -15,7 +15,7 @@ export function NumaHeader() {
     <header className="sticky top-0 z-50 border-b border-charcoal/10 bg-white/85 backdrop-blur-md">
       <a
         href="#main"
-        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-numa-deep focus:px-4 focus:py-2 focus:text-numa-light"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-4 focus:z-50 focus:rounded-full focus:bg-charcoal focus:px-4 focus:py-2 focus:text-cream"
       >
         Saltar al contenido
       </a>

@@ -18,7 +18,7 @@ export function ContactForm({
   /** Color de acento del formulario: vino (VINK) o verde (NUMA). */
   brand?: "vink" | "numa";
 }) {
-  const accent = brand === "numa" ? "[--accent:var(--color-numa-deep)]" : "[--accent:var(--color-burgundy)]";
+  const accent = brand === "numa" ? "[--accent:var(--color-charcoal)]" : "[--accent:var(--color-burgundy)]";
   const [state, action, pending] = useActionState(sendContact, initial);
   const startedAt = useRef(0);
   const serviceRef = useRef<HTMLSelectElement>(null);

@@ -27,6 +27,7 @@ const toneClasses: Record<AssetTone, string> = {
     "bg-[radial-gradient(120%_90%_at_60%_10%,#262324_0%,#121112_70%)] text-cream/40",
   /* NUMA (landing blanca) */
   sage: "bg-[radial-gradient(120%_90%_at_70%_20%,#8a977a_0%,#687656_55%,#4e5a40_100%)] text-white/60",
+  red: "bg-[radial-gradient(120%_90%_at_70%_25%,#b2462f_0%,#7a2418_45%,#2a0b07_100%)] text-white/60",
   light: "bg-[radial-gradient(120%_90%_at_50%_10%,#fdfcf6_0%,#f0ecdc_60%,#e2ddc8_100%)] text-charcoal/40",
 };
 
