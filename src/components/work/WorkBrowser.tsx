@@ -94,7 +94,7 @@ function WorkGrid({
         )}
       </AnimatePresence>
 
-      <p aria-live="polite" className="mt-6 text-sm text-charcoal-soft">
+      <p aria-live="polite" className="mt-6 text-sm text-cream/65">
         {shown.length === 1 ? "1 proyecto" : `${shown.length} proyectos`} · {label}
       </p>
 
@@ -120,9 +120,9 @@ function WorkGrid({
           </AnimatePresence>
         </motion.ul>
       ) : (
-        <div className="mt-8 rounded-[2rem] border border-dashed border-charcoal/20 px-6 py-16 text-center">
-          <p className="display text-4xl text-charcoal">Próximamente</p>
-          <p className="mx-auto mt-3 max-w-md text-charcoal-soft">
+        <div className="mt-8 rounded-[2rem] border border-dashed border-cream/20 px-6 py-16 text-center">
+          <p className="display text-4xl text-cream">Próximamente</p>
+          <p className="mx-auto mt-3 max-w-md text-cream/65">
             {projects.length === 0
               ? "Estamos preparando la selección de proyectos. Muy pronto podrás explorar nuestras producciones aquí."
               : "Todavía no hay proyectos publicados en esta categoría."}
@@ -154,11 +154,11 @@ function Chip({
       className={cn(
         "inline-flex items-center gap-2 rounded-full font-medium uppercase tracking-wide transition-colors duration-300",
         small ? "min-h-9 px-4 text-xs" : "min-h-11 px-5 text-[13px]",
-        active ? "bg-burgundy text-cream" : "bg-burgundy/8 text-burgundy hover:bg-burgundy/15",
+        active ? "bg-burgundy text-cream" : "bg-white/8 text-cream hover:bg-white/15",
       )}
     >
       {children}
-      {count !== undefined && <span className={cn("text-[11px]", active ? "text-rose" : "text-burgundy/50")}>{count}</span>}
+      {count !== undefined && <span className={cn("text-[11px]", active ? "text-cream/70" : "text-cream/50")}>{count}</span>}
     </button>
   );
 }

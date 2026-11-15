@@ -46,7 +46,7 @@ export function WorkCard({ project, wide = false }: { project: Project; wide?: b
 
         <div className="absolute inset-x-0 bottom-0 flex items-end justify-between gap-4 p-5 text-cream">
           <div>
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-rose">{categories}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cream/80">{categories}</p>
             <h3 className="display mt-1 text-3xl leading-none md:text-4xl">{project.title}</h3>
             {types && <p className="mt-1 text-xs text-cream/75">{types}</p>}
           </div>

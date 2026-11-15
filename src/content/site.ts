@@ -70,6 +70,16 @@ export const specialties: {
 /** Cada especialidad es una sección de la página principal. */
 export const serviceHref = (slug: ServiceSlug) => `/#${slug}`;
 
+/** Submarcas de VINK, con página propia. */
+export const subBrands = [
+  {
+    slug: "numa-real-estate",
+    name: "NUMA Real Estate",
+    summary: "Marketing para propiedades, hoteles y yates",
+    href: "/numa-real-estate",
+  },
+] as const;
+
 export const mainNav = [
   { label: "Home", href: "/" },
   { label: "About Us", href: "/#about" },

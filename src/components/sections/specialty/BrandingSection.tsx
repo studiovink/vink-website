@@ -19,7 +19,7 @@ const applications: { key: string; label: string; asset: AssetId }[] = [
 /** 07 — Branding: Brand Identity y Brand Applications. */
 export function BrandingSection() {
   const page = getServicePage("branding")!;
-  const t = themes.rose;
+  const t = themes.ink2;
   const [identity, apps] = page.offerings;
 
   return (
@@ -60,6 +60,7 @@ export function BrandingSection() {
         </Reveal>
         <Reveal className="mt-12" delay={0.1}>
           <MediaSwitcher
+            tone="dark"
             items={applications.map((a) => ({
               key: a.key,
               label: a.label,

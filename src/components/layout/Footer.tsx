@@ -6,6 +6,7 @@ import {
   serviceHref,
   site,
   specialties,
+  subBrands,
   whatsappUrl,
 } from "@/content/site";
 
@@ -17,7 +18,7 @@ export function Footer() {
   ];
 
   return (
-    <footer data-header="dark" className="bg-burgundy-deep text-cream">
+    <footer className="border-t border-white/10 bg-ink text-cream">
       <div className="container-vink pt-20 md:pt-28">
         <div className="grid gap-14 md:grid-cols-12">
           <div className="md:col-span-4">
@@ -41,6 +42,11 @@ export function Footer() {
                 {s.short}
               </FooterLink>
             ))}
+            {subBrands.map((b) => (
+              <FooterLink key={b.slug} href={b.href}>
+                {b.name}
+              </FooterLink>
+            ))}
           </FooterColumn>
 
           <div className="grid gap-14 sm:grid-cols-2 md:col-span-3 md:grid-cols-1 md:gap-10">
@@ -62,7 +68,7 @@ export function Footer() {
         </div>
 
         <p aria-hidden className="display mt-20 whitespace-nowrap text-center text-[13.5vw] leading-[0.8] text-cream md:mt-28">
-          Think with Vink.
+          Think with <span className="text-rose">Vink.</span>
         </p>
 
         <div className="flex flex-col gap-3 border-t border-cream/15 py-6 text-xs text-cream/60 sm:flex-row sm:items-center sm:justify-between">

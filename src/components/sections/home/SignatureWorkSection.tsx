@@ -12,11 +12,11 @@ export function SignatureWorkSection() {
   const hasProjects = highlights.length > 0;
 
   return (
-    <section id="work" className="bg-cream pt-24 md:pt-36">
+    <section id="work" className="bg-ink pt-24 md:pt-36">
       <div className="container-vink">
         <Reveal>
-          <p className="label text-charcoal">{work.label}</p>
-          <h2 className="display mt-3 text-giant text-charcoal">Our Signature Work</h2>
+          <p className="label text-cream">{work.label}</p>
+          <h2 className="display mt-3 text-giant text-cream">Our Signature Work</h2>
         </Reveal>
       </div>
 
@@ -46,18 +46,18 @@ export function SignatureWorkSection() {
       )}
 
       <div className="container-vink grid gap-8 pb-24 pt-14 md:grid-cols-2 md:pb-36">
-        <p className="max-w-lg text-lg leading-relaxed text-charcoal-soft">
+        <p className="max-w-lg text-lg leading-relaxed text-cream/65">
           {hasProjects
             ? "Different brands. Different ideas. Made with Vink."
             : work.empty}
         </p>
         <div className="flex flex-wrap items-start gap-3 md:justify-end">
           {hasProjects && (
-            <PillLink href="/work" variant="dark">
+            <PillLink href="/work" variant="burgundy">
               Explorar todos los proyectos
             </PillLink>
           )}
-          <PillLink href="/#contact" variant={hasProjects ? "light" : "dark"}>
+          <PillLink href="/#contact" variant="light">
             {work.cta}
           </PillLink>
         </div>

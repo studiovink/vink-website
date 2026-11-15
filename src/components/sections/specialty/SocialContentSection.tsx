@@ -20,7 +20,7 @@ const gallery: { id: AssetId; label: string }[] = [
 /** 09 — Social & Content: servicio mensual personalizado + Meta Ads opcional. */
 export function SocialContentSection() {
   const page = getServicePage("social-content")!;
-  const t = themes.creamDeep;
+  const t = themes.ink2;
   const approach = page.approach!;
   const addOn = page.addOn!;
 
@@ -30,9 +30,9 @@ export function SocialContentSection() {
       <WhatIs page={page} theme={t} />
 
       {/* Our approach */}
-      <div data-header="dark" className="bg-charcoal py-20 text-cream md:py-28">
+      <div className="bg-burgundy py-20 text-cream md:py-28">
         <div className="container-vink">
-          <p className="label text-rose">{approach.eyebrow}</p>
+          <p className="label text-cream/70">{approach.eyebrow}</p>
           <WordReveal text={approach.title} className="display mt-5 text-giant" />
           <div className="mt-12 grid gap-12 lg:grid-cols-12">
             <Reveal className="space-y-4 text-lg leading-relaxed text-cream/75 lg:col-span-5">
@@ -44,8 +44,8 @@ export function SocialContentSection() {
             <ul className="grid gap-3 sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
               {approach.aspects.map((a, i) => (
                 <li key={a.title}>
-                  <Reveal delay={i * 0.06} className="h-full rounded-[1.5rem] bg-white/[0.06] p-6">
-                    <p className="display text-2xl text-rose">{a.title}</p>
+                  <Reveal delay={i * 0.06} className="h-full rounded-[1.5rem] bg-black/25 p-6">
+                    <p className="display text-2xl text-cream">{a.title}</p>
                     <p className="mt-2 text-sm text-cream/75">{a.text}</p>
                   </Reveal>
                 </li>
@@ -83,7 +83,7 @@ export function SocialContentSection() {
 
       {/* Meta Ads: servicio adicional, separado del mensual */}
       <div className="container-vink">
-        <Reveal className="grid gap-8 rounded-[2rem] bg-burgundy p-8 text-cream md:grid-cols-12 md:p-12">
+        <Reveal className="grid gap-8 rounded-[2rem] border border-rose/40 bg-ink-3 p-8 text-cream md:grid-cols-12 md:p-12">
           <div className="md:col-span-5">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-rose">{addOn.eyebrow}</p>
             <h3 className="display mt-3 text-5xl md:text-6xl">{addOn.title}</h3>

@@ -12,12 +12,17 @@ export const SERVICE_EVENT = "vink:select-service";
  */
 export function QuoteLink({
   service,
+  page = "/",
   ...props
-}: Omit<ComponentProps<typeof PillLink>, "href"> & { service: ServiceSlug }) {
+}: Omit<ComponentProps<typeof PillLink>, "href"> & {
+  service: ServiceSlug | "numa-real-estate";
+  /** Página donde está el formulario (por defecto, la principal). */
+  page?: string;
+}) {
   return (
     <PillLink
       {...props}
-      href={`/?service=${service}#contact`}
+      href={`${page}?service=${service}#contact`}
       onClick={() => window.dispatchEvent(new CustomEvent(SERVICE_EVENT, { detail: service }))}
     />
   );

@@ -9,10 +9,10 @@ import { themes } from "./theme";
 /** 08 — Web Studio: Landing Pages, Business Websites y Digital Catalogs. */
 export function WebStudioSection() {
   const page = getServicePage("web-studio")!;
-  const t = themes.charcoal;
+  const t = themes.ink;
 
   return (
-    <section id="web-studio" data-header="dark" className={cn("space-y-24 py-24 md:space-y-36 md:py-36", t.bg, t.text)}>
+    <section id="web-studio" className={cn("space-y-24 py-24 md:space-y-36 md:py-36", t.bg, t.text)}>
       <SpecialtyIntro page={page} index={8} theme={t} />
 
       {/* Tres soluciones como tarjetas */}

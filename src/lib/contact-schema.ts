@@ -5,6 +5,7 @@ export const serviceOptions = [
   { value: "branding", label: "VINK Branding — Identidad de marca" },
   { value: "web-studio", label: "VINK Web Studio — Diseño y desarrollo web" },
   { value: "social-content", label: "VINK Social & Content — Redes sociales mensual" },
+  { value: "numa-real-estate", label: "NUMA Real Estate — Marketing para propiedades, hoteles y yates" },
   { value: "unsure", label: "No estoy seguro todavía" },
 ] as const;
 

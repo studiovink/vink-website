@@ -1,23 +1,35 @@
 @import "tailwindcss";
 
 /*
- * Tokens de marca VINK (documento maestro, punto 11.1), aplicados a una
- * dirección editorial de alto contraste:
- *   burgundy → hero, contacto, footer
- *   rose     → bloque de color (About)
- *   cream    → fondo general
- *   charcoal → sección oscura y tarjetas de contraste
+ * Paleta VINK — versión oscura:
+ *   ink / ink-2 / ink-3 → negro: fondo general, secciones alternas y tarjetas
+ *   cream               → blanco cálido: texto principal y superficies claras (botones, formulario)
+ *   burgundy            → vino de marca (#3F1521): bloques, botones y tarjetas de acento
+ *   rose                → vino claro (#C9506F): texto y líneas de acento sobre negro
+ *                         (el vino de marca no tiene contraste suficiente como letra sobre negro)
+ *   charcoal            → negro para texto sobre superficies claras
  */
 @theme {
+  --color-ink: #0a0a0a;
+  --color-ink-2: #121112;
+  --color-ink-3: #1b191a;
   --color-burgundy: #3f1521;
   --color-burgundy-deep: #2c0e17;
   --color-burgundy-soft: #5a2533;
-  --color-cream: #f5f0ea;
-  --color-cream-deep: #ebe2d8;
-  --color-rose: #d8b7af;
-  --color-rose-deep: #c99d93;
-  --color-charcoal: #171416;
-  --color-charcoal-soft: #4a4346;
+  --color-cream: #f7f5f2;
+  --color-cream-deep: #262324;
+  --color-rose: #c9506f;
+  --color-rose-deep: #a83b58;
+  --color-charcoal: #0a0a0a;
+  --color-charcoal-soft: #5c5658;
+
+  /*
+   * NUMA Real Estate — PROVISIONAL hasta recibir su paleta oficial.
+   * Cambia estos tres valores y toda la página de NUMA se actualiza.
+   */
+  --color-numa: #c9506f;
+  --color-numa-deep: #3f1521;
+  --color-numa-surface: #121112;
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), "Arial Narrow", Impact, sans-serif;
@@ -42,8 +54,8 @@
   }
 
   body {
-    background-color: var(--color-cream);
-    color: var(--color-charcoal);
+    background-color: var(--color-ink);
+    color: var(--color-cream);
     font-family: var(--font-sans);
     -webkit-font-smoothing: antialiased;
     text-rendering: optimizeLegibility;

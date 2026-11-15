@@ -32,7 +32,7 @@ export function SignatureWork({
   if (reduce) {
     return (
       <div className="container-vink">
-        <p aria-hidden className="display text-giant text-charcoal">
+        <p aria-hidden className="display text-giant text-cream">
           {left}
           {right}
         </p>
@@ -48,11 +48,11 @@ export function SignatureWork({
     <div ref={ref} className="relative h-[260vh]">
       <div className="sticky top-0 flex h-[100svh] items-center justify-center overflow-hidden">
         <div className="flex items-center justify-center gap-[1.5vw]">
-          <motion.span aria-hidden style={{ opacity: letters }} className="display text-[22vw] leading-[0.8] text-charcoal">
+          <motion.span aria-hidden style={{ opacity: letters }} className="display text-[22vw] leading-[0.8] text-cream">
             {left}
           </motion.span>
           <div className="relative" style={{ width: "22vw", height: "22vw" }} />
-          <motion.span aria-hidden style={{ opacity: letters }} className="display text-[22vw] leading-[0.8] text-charcoal">
+          <motion.span aria-hidden style={{ opacity: letters }} className="display text-[22vw] leading-[0.8] text-cream">
             {right}
           </motion.span>
         </div>

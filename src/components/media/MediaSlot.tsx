@@ -16,14 +16,15 @@ type MediaSlotProps = {
   videoMode?: "loop" | "preview";
 };
 
+/* Espacios reservados en tonos oscuros, con acento vino en algunos. */
 const toneClasses: Record<AssetTone, string> = {
   burgundy:
-    "bg-[radial-gradient(120%_90%_at_70%_20%,#6b2a3b_0%,#3f1521_45%,#2c0e17_100%)] text-cream/50",
-  rose: "bg-[radial-gradient(120%_90%_at_30%_20%,#ead0c9_0%,#d8b7af_50%,#c99d93_100%)] text-burgundy/50",
+    "bg-[radial-gradient(120%_90%_at_70%_20%,#5a2533_0%,#3f1521_45%,#1a0a0f_100%)] text-cream/50",
+  rose: "bg-[radial-gradient(120%_90%_at_30%_20%,#3a2028_0%,#20121a_60%,#120b0e_100%)] text-cream/50",
   cream:
-    "bg-[radial-gradient(120%_90%_at_50%_10%,#fbf8f4_0%,#ebe2d8_70%,#e0d4c7_100%)] text-burgundy/40",
+    "bg-[radial-gradient(120%_90%_at_50%_10%,#2e2b2d_0%,#1b191a_60%,#121112_100%)] text-cream/40",
   charcoal:
-    "bg-[radial-gradient(120%_90%_at_60%_10%,#3a3236_0%,#171416_70%)] text-cream/40",
+    "bg-[radial-gradient(120%_90%_at_60%_10%,#262324_0%,#121112_70%)] text-cream/40",
 };
 
 /**

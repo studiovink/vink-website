@@ -43,7 +43,7 @@ export function MediaSwitcher({ items, tone = "light" }: { items: SwitcherItem[]
               className={cn(
                 "group flex shrink-0 items-center gap-4 rounded-full px-5 py-3 text-left transition-colors lg:rounded-2xl lg:py-4",
                 tone === "dark"
-                  ? selected ? "bg-cream text-burgundy" : "bg-white/10 text-cream hover:bg-white/15"
+                  ? selected ? "bg-burgundy text-cream" : "bg-white/[0.06] text-cream hover:bg-white/10"
                   : selected ? "bg-burgundy text-cream" : "bg-burgundy/8 text-burgundy hover:bg-burgundy/15",
               )}
             >

@@ -6,9 +6,9 @@ import { hero } from "@/content/home";
 export function Hero() {
   return (
     <section
-      data-header="dark"
+     
       aria-label="VINK Creative Studio"
-      className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-burgundy text-cream"
+      className="relative isolate flex min-h-[100svh] flex-col overflow-hidden bg-ink text-cream"
     >
       <MediaSlot id="hero.video" fill priority className="-z-20" />
       {/* Velo para mantener el texto legible sobre cualquier video */}
@@ -28,7 +28,7 @@ export function Hero() {
 
         <div className="mt-auto pt-16">
           <h1 className="display text-mega">
-            <MaskLines lines={["VINK Creative", "Studio"]} delay={0.1} />
+            <MaskLines lines={["VINK Creative", <span key="s" className="text-rose">Studio</span>]} delay={0.1} />
           </h1>
           <div className="mt-6 flex items-center justify-between text-xs text-cream/80 md:text-sm">
             <p>© 2026 VINK Creative Studio.</p>

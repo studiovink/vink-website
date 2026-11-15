@@ -3,8 +3,8 @@ import { PillLink } from "@/components/ui/Button";
 export default function NotFound() {
   return (
     <section
-      data-header="dark"
-      className="flex min-h-[100svh] flex-col justify-end bg-burgundy pb-16 pt-36 text-cream"
+     
+      className="flex min-h-[100svh] flex-col justify-end bg-ink pb-16 pt-36 text-cream"
     >
       <div className="container-vink">
         <p className="label text-rose">Error 404</p>
@@ -14,7 +14,7 @@ export default function NotFound() {
         </p>
         <div className="mt-10 flex flex-wrap gap-3">
           <PillLink href="/">Volver al inicio</PillLink>
-          <PillLink href="/#contact" variant="burgundy" className="ring-1 ring-cream/30">
+          <PillLink href="/#contact" variant="burgundy">
             Let&apos;s talk
           </PillLink>
         </div>

@@ -23,7 +23,7 @@ export async function generateMetadata({ params }: PageProps<"/work/[slug]">): P
 
 export default function ProjectPage({ params }: PageProps<"/work/[slug]">) {
   return (
-    <Suspense fallback={<div data-header="dark" className="min-h-[100svh] bg-burgundy" />}>
+    <Suspense fallback={<div className="min-h-[100svh] bg-ink-2" />}>
       {params.then(({ slug }) => (
         <ProjectContent slug={slug} />
       ))}
@@ -41,7 +41,7 @@ function ProjectContent({ slug }: { slug: string }) {
 
   return (
     <article>
-      <header data-header="dark" className="bg-burgundy pb-16 pt-36 text-cream md:pt-44">
+      <header className="bg-ink-2 pb-16 pt-36 text-cream md:pt-44">
         <div className="container-vink">
           <Link href="/work" className="text-sm text-cream/75 hover:text-cream">
             ← Our Work
@@ -88,10 +88,10 @@ function ProjectContent({ slug }: { slug: string }) {
 
       <section className="container-vink grid gap-10 py-20 md:py-28 lg:grid-cols-12">
         <Reveal className="lg:col-span-4">
-          <p className="label text-burgundy">El concepto</p>
+          <p className="label text-rose">El concepto</p>
         </Reveal>
-        <Reveal className="space-y-5 text-lg leading-relaxed text-charcoal-soft lg:col-span-8">
-          <p className="display text-title text-charcoal">{project.summary}</p>
+        <Reveal className="space-y-5 text-lg leading-relaxed text-cream/65 lg:col-span-8">
+          <p className="display text-title text-cream">{project.summary}</p>
           {project.concept && <p>{project.concept}</p>}
         </Reveal>
       </section>
@@ -127,7 +127,7 @@ function ProjectContent({ slug }: { slug: string }) {
         </section>
       )}
 
-      <section data-header="dark" className="bg-charcoal py-20 text-cream md:py-28">
+      <section className="bg-charcoal py-20 text-cream md:py-28">
         <div className="container-vink flex flex-col gap-10 md:flex-row md:items-end md:justify-between">
           {next && next.slug !== project.slug ? (
             <Link href={`/work/${next.slug}`} className="group">

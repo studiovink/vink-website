@@ -6,7 +6,10 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "media:scan": "node scripts/scan-media.mjs",
+    "predev": "node scripts/scan-media.mjs",
+    "prebuild": "node scripts/scan-media.mjs"
   },
   "dependencies": {
     "clsx": "^2.1.1",

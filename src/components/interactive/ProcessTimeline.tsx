@@ -33,7 +33,7 @@ export function ProcessTimeline({ steps }: { steps: Step[] }) {
             transition={{ duration: 0.7, delay: i * 0.08 }}
             className="relative grid grid-cols-[2.5rem_1fr] gap-4 lg:block"
           >
-            <span className="relative z-10 flex size-9 items-center justify-center rounded-full bg-rose text-sm font-semibold text-burgundy">
+            <span className="relative z-10 flex size-9 items-center justify-center rounded-full bg-burgundy text-sm font-semibold text-cream ring-1 ring-rose/60">
               {i + 1}
             </span>
             <div className="lg:mt-6">

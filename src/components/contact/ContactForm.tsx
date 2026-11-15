@@ -10,7 +10,7 @@ import { serviceOptions, type ContactField, type ContactState } from "@/lib/cont
 
 const initial: ContactState = { status: "idle" };
 
-export function ContactForm() {
+export function ContactForm({ defaultService = "" }: { defaultService?: string }) {
   const [state, action, pending] = useActionState(sendContact, initial);
   const startedAt = useRef(0);
   const serviceRef = useRef<HTMLSelectElement>(null);
@@ -85,7 +85,7 @@ export function ContactForm() {
             name="service"
             required
             ref={serviceRef}
-            defaultValue={val("service") ?? ""}
+            defaultValue={val("service") ?? defaultService}
             aria-invalid={Boolean(err("service"))}
             aria-describedby={err("service") ? "service-error" : undefined}
             className={inputClass(Boolean(err("service")))}
@@ -156,7 +156,7 @@ export function ContactForm() {
         </p>
       )}
 
-      <PillButton type="submit" variant="dark" wide disabled={pending} className="mt-8">
+      <PillButton type="submit" variant="burgundy" wide disabled={pending} className="mt-8">
         {pending ? "Enviando…" : "Enviar solicitud"}
       </PillButton>
     </form>

@@ -37,7 +37,7 @@ export function SpecialtyIntro({ page, index, theme }: { page: ServicePage; inde
               {page.primaryCta}
             </QuoteLink>
             {page.secondaryCta && (
-              <PillLink href={page.secondaryCta.href} variant={theme.dark ? "burgundy" : "light"} className="ring-1 ring-current/20">
+              <PillLink href={page.secondaryCta.href} variant="burgundy">
                 {page.secondaryCta.label}
               </PillLink>
             )}

@@ -6,14 +6,14 @@ type Variant = "light" | "dark" | "burgundy";
 
 const pill: Record<Variant, string> = {
   light: "bg-cream text-charcoal",
-  dark: "bg-charcoal text-cream",
+  dark: "bg-ink-3 text-cream ring-1 ring-white/10",
   burgundy: "bg-burgundy text-cream",
 };
 
 const dot: Record<Variant, string> = {
   light: "bg-burgundy text-cream",
-  dark: "bg-rose text-burgundy",
-  burgundy: "bg-rose text-burgundy",
+  dark: "bg-burgundy text-cream",
+  burgundy: "bg-cream text-burgundy",
 };
 
 /** Flecha dentro de un círculo, como en los CTA "Start a project". */

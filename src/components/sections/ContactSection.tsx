@@ -7,11 +7,11 @@ export function ContactSection({ headingLevel = "h2" }: { headingLevel?: "h1" | 
   const Heading = headingLevel;
 
   return (
-    <section id="contact" data-header="dark" className="bg-burgundy pb-24 pt-32 text-cream md:pb-32 md:pt-40">
+    <section id="contact" className="bg-burgundy pb-24 pt-32 text-cream md:pb-32 md:pt-40">
       <div className="container-vink">
-        <p className="label text-rose">{contact.label}</p>
+        <p className="label text-cream/70">{contact.label}</p>
         <Heading className="display mt-4 text-giant">
-          <MaskLines lines={[contact.title[0], <span key="r" className="text-rose">{contact.title[1]}</span>]} />
+          <MaskLines lines={[contact.title[0], <span key="r" className="text-cream/45">{contact.title[1]}</span>]} />
         </Heading>
 
         <div className="mt-16 grid gap-14 lg:grid-cols-12">
@@ -25,7 +25,7 @@ export function ContactSection({ headingLevel = "h2" }: { headingLevel?: "h1" | 
               <div className="mt-4 flex flex-col gap-2">
                 <a
                   href={`mailto:${site.contact.email}`}
-                  className="display text-2xl underline decoration-rose decoration-1 underline-offset-4 hover:decoration-2 md:text-3xl"
+                  className="display text-2xl underline decoration-cream/40 decoration-1 underline-offset-4 hover:decoration-2 md:text-3xl"
                 >
                   {site.contact.email}
                 </a>
@@ -37,10 +37,10 @@ export function ContactSection({ headingLevel = "h2" }: { headingLevel?: "h1" | 
                       href={whatsappUrl(w.number, `Hola ${w.name}, tengo una idea para mi marca.`)}
                       target="_blank"
                       rel="noopener noreferrer"
-                      className="group flex items-center justify-between gap-3 rounded-2xl border border-cream/20 px-4 py-3 transition-colors hover:border-rose hover:bg-white/5"
+                      className="group flex items-center justify-between gap-3 rounded-2xl border border-cream/20 px-4 py-3 transition-colors hover:border-cream/60 hover:bg-white/5"
                     >
                       <span>
-                        <span className="block text-xs uppercase tracking-[0.16em] text-rose">WhatsApp · {w.name}</span>
+                        <span className="block text-xs uppercase tracking-[0.16em] text-cream/70">WhatsApp · {w.name}</span>
                         <span className="mt-0.5 block text-sm text-cream/85">{w.display}</span>
                       </span>
                       <span aria-hidden className="transition-transform group-hover:translate-x-1">→</span>
@@ -53,7 +53,7 @@ export function ContactSection({ headingLevel = "h2" }: { headingLevel?: "h1" | 
                   href={site.contact.instagram}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="text-sm text-cream/80 underline decoration-rose underline-offset-4 hover:text-cream"
+                  className="text-sm text-cream/80 underline decoration-cream/40 underline-offset-4 hover:text-cream"
                 >
                   Instagram {site.contact.instagramHandle}
                 </a>
@@ -61,7 +61,7 @@ export function ContactSection({ headingLevel = "h2" }: { headingLevel?: "h1" | 
             </Reveal>
 
             <Reveal className="mt-14" delay={0.15}>
-              <p className="label text-rose">¿Qué sucede después?</p>
+              <p className="label text-cream/70">¿Qué sucede después?</p>
               <ol className="mt-5 border-t border-cream/15">
                 {contact.steps.map((s) => (
                   <li key={s.n} className="grid grid-cols-[3rem_1fr] gap-2 border-b border-cream/15 py-4">

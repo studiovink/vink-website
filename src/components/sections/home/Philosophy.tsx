@@ -6,7 +6,7 @@ import { ProcessTimeline } from "@/components/interactive/ProcessTimeline";
 
 export function Philosophy() {
   return (
-    <section data-header="dark" className="bg-charcoal py-24 text-cream md:py-36">
+    <section className="bg-charcoal py-24 text-cream md:py-36">
       <div className="container-vink">
         <p className="label text-cream">{philosophy.label}</p>
         <WordReveal

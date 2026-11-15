@@ -13,13 +13,13 @@ import { serviceHref } from "@/content/site";
  */
 export function OurServices() {
   return (
-    <section id="services" className="bg-cream py-24 md:py-36">
+    <section id="services" className="bg-ink-2 py-24 md:py-36">
       <div className="container-vink">
         <Reveal>
-          <p className="label text-charcoal">{services.label}</p>
+          <p className="label text-cream">{services.label}</p>
           <div className="mt-3 flex flex-wrap items-end gap-x-6 gap-y-3">
-            <h2 className="display text-giant text-charcoal">{services.title}</h2>
-            <p className="max-w-[16rem] pb-3 text-sm text-charcoal-soft">{services.aside}</p>
+            <h2 className="display text-giant text-cream">{services.title}</h2>
+            <p className="max-w-[16rem] pb-3 text-sm text-cream/65">{services.aside}</p>
           </div>
         </Reveal>
 
@@ -66,11 +66,11 @@ export function OurServices() {
           ))}
         </ul>
 
-        <Reveal className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-charcoal/15 pt-8 md:flex-row md:items-center">
-          <p className="display text-2xl text-charcoal md:text-3xl">
-            Cada marca es diferente. <span className="text-burgundy">Nuestra forma de trabajar también.</span>
+        <Reveal className="mt-12 flex flex-col items-start justify-between gap-4 border-t border-cream/15 pt-8 md:flex-row md:items-center">
+          <p className="display text-2xl text-cream md:text-3xl">
+            Cada marca es diferente. <span className="text-rose">Nuestra forma de trabajar también.</span>
           </p>
-          <p className="max-w-md text-sm text-charcoal-soft">
+          <p className="max-w-md text-sm text-cream/65">
             Contrata un servicio específico, el servicio mensual de redes o un proyecto completamente personalizado.
           </p>
         </Reveal>

@@ -10,10 +10,10 @@ import { themes } from "./theme";
 /** 06 — Creative Studio: producción visual, campañas y Before/After. */
 export function CreativeStudioSection() {
   const page = getServicePage("creative-studio")!;
-  const t = themes.burgundy;
+  const t = themes.ink;
 
   return (
-    <section id="creative-studio" data-header="dark" className={cn("space-y-24 py-24 md:space-y-36 md:py-36", t.bg, t.text)}>
+    <section id="creative-studio" className={cn("space-y-24 py-24 md:space-y-36 md:py-36", t.bg, t.text)}>
       <SpecialtyIntro page={page} index={6} theme={t} />
       <WhatIs page={page} theme={t} />
       <Offerings page={page} theme={t} />

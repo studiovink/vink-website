@@ -24,7 +24,7 @@ export function ServiceAccordion({ items, dark = false }: { items: AccordionItem
         titleOpen: "text-rose",
         sub: "text-cream/60",
         btn: "border-cream/30 text-cream group-hover:border-rose group-hover:text-rose",
-        btnOpen: "border-rose bg-rose text-burgundy",
+        btnOpen: "border-burgundy bg-burgundy text-cream",
       }
     : {
         rule: "border-charcoal/15",

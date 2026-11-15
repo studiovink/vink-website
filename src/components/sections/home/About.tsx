@@ -6,25 +6,25 @@ import { about, meetFounders } from "@/content/home";
 import { cn } from "@/lib/cn";
 
 const cardTones = [
-  "bg-cream text-charcoal",
-  "bg-charcoal text-cream",
-  "bg-white text-charcoal",
+  "bg-ink-3 text-cream ring-1 ring-white/10",
   "bg-burgundy text-cream",
+  "bg-ink-3 text-cream ring-1 ring-white/10",
+  "bg-cream text-charcoal",
 ];
 
 /** 03 — About Us: quiénes somos, qué nos hace diferentes y Meet the Founders. */
 export function About() {
   return (
-    <section id="about" className="bg-rose text-burgundy">
+    <section id="about" className="bg-ink text-cream">
       <div className="container-vink py-24 md:py-36">
         <div className="grid gap-6 lg:grid-cols-12">
-          <p className="label lg:col-span-2 lg:pt-4">{about.label}</p>
+          <p className="label text-rose lg:col-span-2 lg:pt-4">{about.label}</p>
           <WordReveal
             lead={about.lead}
             text={about.statement}
             className="display text-headline lg:col-span-10"
-            leadClassName="text-burgundy"
-            wordClassName="text-burgundy"
+            leadClassName="text-rose"
+            wordClassName="text-cream"
           />
         </div>
 
@@ -36,11 +36,11 @@ export function About() {
           </Reveal>
 
           <div className="flex flex-col lg:col-span-7">
-            <Reveal className="max-w-2xl space-y-5 text-lg leading-relaxed md:text-xl">
+            <Reveal className="max-w-2xl space-y-5 text-lg leading-relaxed text-cream/80 md:text-xl">
               {about.body.map((p) => (
                 <p key={p}>{p}</p>
               ))}
-              <p className="display pt-2 text-3xl md:text-4xl">{about.closing}</p>
+              <p className="display pt-2 text-3xl text-cream md:text-4xl">{about.closing}</p>
             </Reveal>
 
             <ul className="mt-12 grid gap-3 sm:grid-cols-2">
@@ -68,7 +68,7 @@ export function About() {
       </div>
 
       {/* Meet the Founders */}
-      <div id="founders" data-header="dark" className="bg-burgundy py-24 text-cream md:py-36">
+      <div id="founders" className="bg-ink-2 py-24 text-cream md:py-36">
         <div className="container-vink">
           <div className="grid gap-6 lg:grid-cols-12">
             <p className="label text-rose lg:col-span-3 lg:pt-4">{meetFounders.label}</p>
@@ -89,7 +89,7 @@ export function About() {
                       <div className="transition-transform duration-[1000ms] ease-vink group-hover:scale-[1.04] motion-reduce:transition-none">
                         <MediaSlot id={f.image} sizes="(min-width: 768px) 45vw, 100vw" />
                       </div>
-                      <span className="absolute left-5 top-5 rounded-full bg-cream/90 px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-burgundy">
+                      <span className="absolute left-5 top-5 rounded-full bg-burgundy px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-cream">
                         0{i + 1} — {f.role}
                       </span>
                     </div>

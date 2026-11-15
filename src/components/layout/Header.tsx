@@ -6,16 +6,14 @@ import { useEffect, useId, useRef, useState } from "react";
 import { AnimatePresence, motion, useMotionValueEvent, useScroll } from "motion/react";
 import { Logo } from "@/components/brand/Logo";
 import { cn } from "@/lib/cn";
-import { mainNav, serviceHref, site, specialties } from "@/content/site";
+import { mainNav, serviceHref, site, specialties, subBrands } from "@/content/site";
 
 /**
- * Header flotante con navegación en píldoras.
- * Se adapta al fondo: las secciones oscuras se marcan con `data-header="dark"`.
+ * Header flotante con navegación en píldoras, sobre el sitio oscuro.
  */
 export function Header() {
   const pathname = usePathname();
   const [hidden, setHidden] = useState(false);
-  const [onDark, setOnDark] = useState(false);
   const [menuOpen, setMenuOpen] = useState(false);
   const { scrollY } = useScroll();
 
@@ -23,27 +21,6 @@ export function Header() {
     const prev = scrollY.getPrevious() ?? 0;
     setHidden(y > 200 && y > prev && !menuOpen);
   });
-
-  // Detecta si el header está sobre una sección oscura.
-  useEffect(() => {
-    const check = () => {
-      const probe = 40;
-      const dark = Array.from(document.querySelectorAll<HTMLElement>("[data-header='dark']")).some(
-        (el) => {
-          const r = el.getBoundingClientRect();
-          return r.top <= probe && r.bottom >= probe;
-        },
-      );
-      setOnDark(dark);
-    };
-    check();
-    window.addEventListener("scroll", check, { passive: true });
-    window.addEventListener("resize", check);
-    return () => {
-      window.removeEventListener("scroll", check);
-      window.removeEventListener("resize", check);
-    };
-  }, [pathname]);
 
   const [lastPath, setLastPath] = useState(pathname);
   if (pathname !== lastPath) {
@@ -59,7 +36,8 @@ export function Header() {
     return () => window.removeEventListener("keydown", onKey);
   }, [menuOpen]);
 
-  const dark = onDark || menuOpen;
+  // Todo el sitio es oscuro: el header usa siempre su versión clara sobre negro.
+  const dark = true;
 
   return (
     <>
@@ -151,7 +129,7 @@ const pillBase =
   "inline-flex min-h-10 items-center rounded-full px-5 text-[13px] font-medium uppercase tracking-wide backdrop-blur-md transition-colors duration-300";
 
 function pillTone(dark: boolean, active?: boolean) {
-  if (active) return dark ? "bg-cream text-burgundy" : "bg-burgundy text-cream";
+  if (active) return dark ? "bg-burgundy text-cream" : "bg-burgundy text-cream";
   return dark
     ? "bg-white/10 text-cream hover:bg-white/20"
     : "bg-burgundy/8 text-burgundy hover:bg-burgundy/15";
@@ -234,18 +212,33 @@ function ServicesPill({ label, href, dark }: { label: string; href: string; dark
             transition={{ duration: 0.2 }}
             className="absolute right-0 top-full w-80 pt-2"
           >
-            <ul className="overflow-hidden rounded-3xl bg-cream p-2 text-charcoal shadow-[0_30px_70px_-30px_rgba(23,20,22,0.55)]">
+            <ul className="overflow-hidden rounded-3xl border border-white/10 bg-ink-2/95 p-2 text-cream shadow-[0_30px_70px_-30px_rgba(0,0,0,0.9)] backdrop-blur-md">
               {specialties.map((s, i) => (
                 <li key={s.slug}>
                   <Link
                     href={serviceHref(s.slug)}
                     onClick={() => setOpen(false)}
-                    className="group flex items-center gap-4 rounded-2xl px-4 py-3 transition-colors hover:bg-cream-deep focus-visible:bg-cream-deep"
+                    className="group flex items-center gap-4 rounded-2xl px-4 py-3 transition-colors hover:bg-white/5 focus-visible:bg-white/5"
                   >
-                    <span className="text-xs text-charcoal-soft">(0{i + 1})</span>
+                    <span className="text-xs text-cream/50">(0{i + 1})</span>
                     <span className="flex flex-col">
-                      <span className="display text-xl leading-none text-burgundy">{s.short}</span>
-                      <span className="mt-1 text-xs text-charcoal-soft">{s.summary}</span>
+                      <span className="display text-xl leading-none text-cream transition-colors group-hover:text-rose">{s.short}</span>
+                      <span className="mt-1 text-xs text-cream/60">{s.summary}</span>
+                    </span>
+                  </Link>
+                </li>
+              ))}
+              {subBrands.map((b) => (
+                <li key={b.slug} className="mt-1 border-t border-white/10 pt-1">
+                  <Link
+                    href={b.href}
+                    onClick={() => setOpen(false)}
+                    className="group flex items-center gap-4 rounded-2xl px-4 py-3 transition-colors hover:bg-white/5 focus-visible:bg-white/5"
+                  >
+                    <span className="rounded-full bg-burgundy px-2 py-0.5 text-[10px] font-semibold uppercase tracking-wider">Sub</span>
+                    <span className="flex flex-col">
+                      <span className="display text-xl leading-none text-cream transition-colors group-hover:text-rose">{b.name}</span>
+                      <span className="mt-1 text-xs text-cream/60">{b.summary}</span>
                     </span>
                   </Link>
                 </li>
@@ -268,7 +261,7 @@ function SiteMenu({ pathname }: { pathname: string }) {
       animate={{ clipPath: "inset(0 0 0% 0)" }}
       exit={{ clipPath: "inset(0 0 100% 0)" }}
       transition={{ duration: 0.6, ease: [0.22, 1, 0.36, 1] }}
-      className="fixed inset-0 z-40 overflow-y-auto bg-burgundy text-cream"
+      className="fixed inset-0 z-40 overflow-y-auto bg-ink text-cream"
     >
       <div className="container-vink grid min-h-full gap-12 pb-12 pt-28 md:pt-36 lg:grid-cols-12">
         <ul className="lg:col-span-7">
@@ -298,6 +291,17 @@ function SiteMenu({ pathname }: { pathname: string }) {
                     className="flex min-h-11 items-center justify-between border-b border-cream/10 text-base text-cream/85 hover:text-cream"
                   >
                     {s.name}
+                    <span aria-hidden>→</span>
+                  </Link>
+                </li>
+              ))}
+              {subBrands.map((b) => (
+                <li key={b.slug}>
+                  <Link
+                    href={b.href}
+                    className="flex min-h-11 items-center justify-between border-b border-cream/10 text-base text-rose hover:text-cream"
+                  >
+                    {b.name}
                     <span aria-hidden>→</span>
                   </Link>
                 </li>
