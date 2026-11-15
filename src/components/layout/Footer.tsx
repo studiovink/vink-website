@@ -68,7 +68,7 @@ export function Footer() {
         </div>
 
         <p aria-hidden className="display mt-20 whitespace-nowrap text-center text-[11vw] leading-[0.9] text-cream md:mt-28 md:text-[9vw] uppercase">
-          Think with <span className="text-rose">Vink.</span>
+          Think with <span className="text-cream/50">Vink.</span>
         </p>
 
         <div className="flex flex-col gap-3 border-t border-cream/15 py-6 text-xs text-cream/60 sm:flex-row sm:items-center sm:justify-between">

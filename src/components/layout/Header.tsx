@@ -89,7 +89,7 @@ export function Header() {
           <div className="flex items-center gap-2">
             <Link
               href="/#contact"
-              className="hidden min-h-10 items-center rounded-full bg-cream px-5 text-[11px] font-semibold uppercase tracking-[0.04em] text-charcoal transition-opacity hover:opacity-90 sm:inline-flex"
+              className="hidden min-h-10 items-center rounded-full bg-burgundy px-5 text-[11px] font-semibold uppercase tracking-[0.04em] text-cream transition-opacity hover:opacity-90 sm:inline-flex"
             >
               Contact us
             </Link>
@@ -154,7 +154,7 @@ function SiteMenu({ pathname }: { pathname: string }) {
                 className="group flex items-baseline gap-4 py-3 md:py-4"
               >
                 <span className="text-xs text-cream/45">(0{i + 1})</span>
-                <span className="display text-5xl uppercase transition-colors group-hover:text-rose md:text-7xl">
+                <span className="display text-5xl uppercase transition-colors group-hover:text-cream/60 md:text-7xl">
                   {item.label}
                 </span>
               </Link>
@@ -180,7 +180,7 @@ function SiteMenu({ pathname }: { pathname: string }) {
                 <li key={b.slug}>
                   <Link
                     href={b.href}
-                    className="flex min-h-11 items-center justify-between border-b border-cream/10 text-base text-rose hover:text-cream"
+                    className="flex min-h-11 items-center justify-between border-b border-cream/10 text-base text-cream/50 hover:text-cream"
                   >
                     {b.name}
                     <span aria-hidden>→</span>
@@ -194,7 +194,7 @@ function SiteMenu({ pathname }: { pathname: string }) {
               {site.contact.email}
             </a>
             <p className="display mt-4 text-4xl uppercase">
-              Think with <span className="text-rose">Vink.</span>
+              Think with <span className="text-cream/50">Vink.</span>
             </p>
           </div>
         </div>

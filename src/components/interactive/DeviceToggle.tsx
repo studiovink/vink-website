@@ -40,7 +40,7 @@ export function DeviceToggle({ desktop, mobile }: { desktop: ReactNode; mobile: 
             >
               <div className="overflow-hidden rounded-2xl bg-charcoal-soft/60 ring-1 ring-white/10">
                 <div className="flex items-center gap-1.5 px-4 py-3" aria-hidden>
-                  <span className="size-2.5 rounded-full bg-rose" />
+                  <span className="size-2.5 rounded-full bg-burgundy" />
                   <span className="size-2.5 rounded-full bg-cream/40" />
                   <span className="size-2.5 rounded-full bg-cream/20" />
                   <span className="ml-4 h-5 flex-1 rounded-full bg-white/10" />

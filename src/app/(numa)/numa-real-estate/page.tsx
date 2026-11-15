@@ -56,7 +56,7 @@ export default function NumaPage() {
       </section>
 
       {/* About us */}
-      <section id="about" className="scroll-mt-20 bg-white py-24 md:py-32">
+      <section id="about" className="scroll-mt-20 bg-numa-soft py-24 md:py-32">
         <div className="container-vink grid gap-12 lg:grid-cols-12">
           <div className="grid grid-cols-3 gap-2 lg:col-span-4 lg:grid-cols-1">
             {[hotels, sale, land].map((s, i) => (
@@ -68,7 +68,7 @@ export default function NumaPage() {
             ))}
           </div>
           <div className="flex flex-col justify-end lg:col-span-7 lg:col-start-6">
-            <p className="label text-charcoal/50">{numa.about.label}</p>
+            <p className="label text-numa">{numa.about.label}</p>
             <Reveal>
               <p className="display mt-6 text-headline">{numa.about.statement}</p>
             </Reveal>
@@ -82,7 +82,7 @@ export default function NumaPage() {
       {/* Segmentos: carrusel con foco central */}
       <section id="selected" className="scroll-mt-20 bg-charcoal py-24 text-white md:py-32">
         <div className="container-vink">
-          <SectionLabel index={1}>{numa.segments.label}</SectionLabel>
+          <SectionLabel index={1} dotClass="bg-numa text-white">{numa.segments.label}</SectionLabel>
           <Reveal>
             <h2 className="display mt-8 max-w-4xl text-headline">{numa.segments.title}</h2>
           </Reveal>
@@ -102,7 +102,7 @@ export default function NumaPage() {
       {/* Servicios */}
       <section id="services" className="scroll-mt-20 bg-white py-24 md:py-32">
         <div className="container-vink">
-          <SectionLabel index={2} tone="light">
+          <SectionLabel index={2} tone="light" dotClass="bg-numa text-white">
             {numa.services.label}
           </SectionLabel>
           <div className="mt-10 grid gap-10 lg:grid-cols-12">
@@ -125,9 +125,9 @@ export default function NumaPage() {
       </section>
 
       {/* Mercados */}
-      <section id="markets" className="scroll-mt-20 border-t border-charcoal/10 bg-white py-24 md:py-32">
+      <section id="markets" className="scroll-mt-20 bg-numa-soft py-24 md:py-32">
         <div className="container-vink">
-          <SectionLabel index={3} tone="light">
+          <SectionLabel index={3} tone="light" dotClass="bg-numa text-white">
             {numa.markets.label}
           </SectionLabel>
           <Reveal>
@@ -158,7 +158,7 @@ export default function NumaPage() {
       <section id="contact" className="scroll-mt-20 bg-charcoal py-24 text-white md:py-32">
         <div className="container-vink grid gap-14 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <SectionLabel index={4}>{numa.contact.label}</SectionLabel>
+            <SectionLabel index={4} dotClass="bg-numa text-white">{numa.contact.label}</SectionLabel>
             <Reveal>
               <h2 className="display mt-10 text-giant">Let&apos;s work together.</h2>
             </Reveal>

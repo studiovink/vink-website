@@ -41,7 +41,7 @@ export function Hero() {
             <ul className="display mt-5 text-2xl uppercase leading-[1.05] md:text-[2rem]">
               {specialties.map((s) => (
                 <li key={s.slug}>
-                  <Link href={serviceHref(s.slug)} className="transition-colors hover:text-rose">
+                  <Link href={serviceHref(s.slug)} className="transition-colors hover:text-cream/60">
                     {s.short}
                   </Link>
                 </li>

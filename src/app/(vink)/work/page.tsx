@@ -22,7 +22,7 @@ export default function WorkPage() {
             <MaskLines lines={["Our Work"]} />
           </h1>
           <Reveal className="mt-8 grid gap-6 md:grid-cols-2">
-            <p className="display text-title text-rose">{work.title}</p>
+            <p className="display text-title text-cream/50">{work.title}</p>
             <p className="max-w-xl text-lg leading-relaxed text-cream/65">
               Cada proyecto es una oportunidad para explorar nuevas posibilidades y transformar una idea en algo
               visualmente extraordinario. Different brands. Different ideas. Made with Vink.

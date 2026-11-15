@@ -28,7 +28,7 @@ const toneClasses: Record<AssetTone, string> = {
   /* NUMA (landing blanca) */
   sage: "bg-[#e9e8e3] text-charcoal/40",
   red: "bg-[#e9e8e3] text-charcoal/40",
-  light: "bg-[#efeeea] text-charcoal/40",
+  light: "bg-[#e1e4dc] text-charcoal/40",
 };
 
 /**

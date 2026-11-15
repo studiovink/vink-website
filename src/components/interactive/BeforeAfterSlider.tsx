@@ -53,7 +53,7 @@ export function BeforeAfterSlider({
 
       {/* Línea y tirador (el foco del teclado se marca con un anillo) */}
       <div
-        className="pointer-events-none absolute inset-y-0 w-0.5 bg-cream peer-focus-visible:[&>span]:scale-110 peer-focus-visible:[&>span]:ring-4 peer-focus-visible:[&>span]:ring-rose"
+        className="pointer-events-none absolute inset-y-0 w-0.5 bg-cream peer-focus-visible:[&>span]:scale-110 peer-focus-visible:[&>span]:ring-4 peer-focus-visible:[&>span]:ring-cream/70"
         style={{ left: `${pos}%` }}
       >
         <span className="absolute left-1/2 top-1/2 flex size-14 -translate-x-1/2 -translate-y-1/2 items-center justify-center rounded-full bg-cream text-lg text-burgundy shadow-lg transition-transform">

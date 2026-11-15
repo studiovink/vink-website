@@ -16,7 +16,7 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
           <ol className="sticky top-28 space-y-2 border-l border-cream-deep pl-5 text-sm">
             {doc.sections.map((s) => (
               <li key={s.id}>
-                <a href={`#${s.id}`} className="text-cream/65 hover:text-rose">
+                <a href={`#${s.id}`} className="text-cream/65 hover:text-cream/60">
                   {s.title}
                 </a>
               </li>
@@ -33,7 +33,7 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
 
           {doc.sections.map((s) => (
             <section key={s.id} id={s.id} className="mt-14 scroll-mt-28">
-              <h2 className="display text-title text-rose">{s.title}</h2>
+              <h2 className="display text-title text-cream/50">{s.title}</h2>
               <div className="mt-4 space-y-4">
                 {s.body?.map((p) => <p key={p}>{p}</p>)}
                 {s.pending && <Pending>{s.pending}</Pending>}
@@ -49,8 +49,8 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
 /** Marca visible de contenido legal que falta completar antes del lanzamiento. */
 function Pending({ children }: { children: React.ReactNode }) {
   return (
-    <p className="rounded-xl border border-dashed border-rose/40 bg-ink-3 px-4 py-3 text-sm text-cream/65">
-      <span className="font-semibold text-rose">Pendiente de completar: </span>
+    <p className="rounded-xl border border-dashed border-burgundy bg-ink-3 px-4 py-3 text-sm text-cream/65">
+      <span className="font-semibold text-cream/50">Pendiente de completar: </span>
       {children}
     </p>
   );

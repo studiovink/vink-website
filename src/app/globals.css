@@ -30,6 +30,7 @@
   --color-numa: #687656; /* Vintage Green — detalles */
   --color-numa-light: #faf7ea; /* Fairway Dawn — neutro */
   --color-numa-deep: #052f17; /* Fresh-Cut */
+  --color-numa-soft: #eef1ea; /* Vintage Green muy bajito, para fondos */
 
   --font-sans: var(--font-body), ui-sans-serif, system-ui, sans-serif;
   --font-display: var(--font-heading), "Helvetica Neue", Arial, sans-serif;

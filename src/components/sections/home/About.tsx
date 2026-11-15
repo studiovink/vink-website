@@ -24,7 +24,7 @@ export function About() {
             lead={about.lead}
             text={about.statement}
             className="display text-headline uppercase lg:col-span-11"
-            leadClassName="text-rose"
+            leadClassName="text-cream/50"
             wordClassName="text-cream"
           />
         </div>
@@ -94,10 +94,10 @@ export function About() {
                         0{i + 1} — {f.role}
                       </span>
                     </div>
-                    <h3 className="display mt-6 text-mega uppercase leading-[0.8] transition-colors duration-500 group-hover:text-rose">
+                    <h3 className="display mt-6 text-mega uppercase leading-[0.8] transition-colors duration-500 group-hover:text-cream/60">
                       {f.name}
                     </h3>
-                    <p className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-rose">{f.role}</p>
+                    <p className="mt-3 text-sm font-semibold uppercase tracking-[0.16em] text-cream/50">{f.role}</p>
                     <div className="mt-5 space-y-4 text-base leading-relaxed text-cream/80 md:text-lg">
                       {f.bio.map((p) => (
                         <p key={p}>{p}</p>
@@ -113,7 +113,7 @@ export function About() {
             <p className="display text-headline lg:col-span-7">{meetFounders.closingTitle}</p>
             <div className="lg:col-span-5">
               <p className="text-lg leading-relaxed text-cream/80">{meetFounders.closing}</p>
-              <p className="display mt-6 text-3xl text-rose">Think with Vink.</p>
+              <p className="display mt-6 text-3xl text-cream/50">Think with Vink.</p>
             </div>
           </Reveal>
         </div>

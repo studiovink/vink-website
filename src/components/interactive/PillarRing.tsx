@@ -57,7 +57,7 @@ export function PillarRing({ items }: { items: Item[] }) {
             fill="none"
             strokeWidth="1.6"
             strokeLinecap="round"
-            className="stroke-rose"
+            className="stroke-burgundy"
             strokeDasharray={C}
             initial={false}
             animate={{ strokeDashoffset: C * (1 - segment) }}
@@ -76,7 +76,7 @@ export function PillarRing({ items }: { items: Item[] }) {
             >
               <p className="display text-5xl text-cream/35 md:text-6xl">{item.n}</p>
               <h3 className="display mt-3 text-4xl text-cream md:text-5xl">{item.title}</h3>
-              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-rose">
+              <p className="mt-2 text-sm font-semibold uppercase tracking-[0.16em] text-cream/50">
                 {item.subtitle}
               </p>
               <p className="mx-auto mt-4 max-w-xs text-sm text-cream/75 md:text-base">{item.text}</p>
@@ -102,7 +102,7 @@ export function PillarRing({ items }: { items: Item[] }) {
               <span
                 className={cn(
                   "block h-1.5 rounded-full transition-all duration-500",
-                  i === index ? "w-6 bg-rose" : "w-1.5 bg-cream/30",
+                  i === index ? "w-6 bg-burgundy" : "w-1.5 bg-cream/30",
                 )}
               />
             </button>

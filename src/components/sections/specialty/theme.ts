@@ -20,7 +20,7 @@ const base = {
   heading: "text-cream",
   muted: "text-cream/70",
   rule: "border-cream/15",
-  accent: "text-rose",
+  accent: "text-cream/50",
   chip: "border-cream/20 text-cream",
   dark: true,
 };

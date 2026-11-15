@@ -8,7 +8,10 @@ export function SectionLabel({
   children,
   className,
   tone = "dark",
+  dotClass,
 }: {
+  /** Color del punto ⊕ (por defecto, el vino de VINK sobre oscuro). */
+  dotClass?: string;
   index?: number;
   children: React.ReactNode;
   className?: string;
@@ -23,7 +26,7 @@ export function SectionLabel({
           aria-hidden
           className={cn(
             "inline-flex size-4 items-center justify-center rounded-full text-[10px] leading-none",
-            tone === "dark" ? "bg-cream text-charcoal" : "bg-charcoal text-cream",
+            dotClass ?? (tone === "dark" ? "bg-burgundy text-cream" : "bg-charcoal text-cream"),
           )}
         >
           +

@@ -83,9 +83,9 @@ export function SocialContentSection() {
 
       {/* Meta Ads: servicio adicional, separado del mensual */}
       <div className="container-vink">
-        <Reveal className="grid gap-8 rounded-2xl border border-rose/40 bg-ink-3 p-8 text-cream md:grid-cols-12 md:p-12">
+        <Reveal className="grid gap-8 rounded-2xl border border-burgundy bg-ink-3 p-8 text-cream md:grid-cols-12 md:p-12">
           <div className="md:col-span-5">
-            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-rose">{addOn.eyebrow}</p>
+            <p className="text-xs font-semibold uppercase tracking-[0.16em] text-cream/50">{addOn.eyebrow}</p>
             <h3 className="display mt-3 text-5xl md:text-6xl">{addOn.title}</h3>
           </div>
           <div className="md:col-span-7">

@@ -37,7 +37,7 @@ export function WebStudioSection() {
                 <ul className="mt-6 space-y-2 border-t border-current/15 pt-5">
                   {o.includes?.map((inc) => (
                     <li key={inc} className="flex items-start gap-3 text-sm">
-                      <span aria-hidden className={i === 1 ? "text-cream" : "text-rose"}>
+                      <span aria-hidden className={i === 1 ? "text-cream" : "text-cream/50"}>
                         ✓
                       </span>
                       {inc}

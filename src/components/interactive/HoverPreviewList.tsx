@@ -50,7 +50,7 @@ export function HoverPreviewList({ rows }: { rows: PreviewRow[] }) {
             >
               <div>
                 <p className="text-sm text-cream/50">({String(r.index).padStart(2, "0")})</p>
-                <h3 className="display mt-1 text-3xl transition-colors duration-300 group-hover:text-rose md:text-4xl">
+                <h3 className="display mt-1 text-3xl transition-colors duration-300 group-hover:text-cream/60 md:text-4xl">
                   {r.title}
                 </h3>
                 <p className="mt-3 max-w-md text-[13px] uppercase leading-relaxed tracking-[0.03em] text-cream/55">
@@ -61,7 +61,7 @@ export function HoverPreviewList({ rows }: { rows: PreviewRow[] }) {
                 {r.tags.map((t) => (
                   <li
                     key={t}
-                    className="rounded-full border border-cream/30 px-3 py-1 text-[11px] uppercase tracking-[0.03em] text-cream/80 transition-colors group-hover:border-cream/60"
+                    className="rounded-full border border-cream/30 px-3 py-1 text-[11px] uppercase tracking-[0.03em] text-cream/80 transition-colors duration-300 group-hover:border-burgundy group-hover:bg-burgundy group-hover:text-cream"
                   >
                     {t}
                   </li>

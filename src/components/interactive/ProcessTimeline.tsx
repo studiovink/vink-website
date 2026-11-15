@@ -19,7 +19,7 @@ export function ProcessTimeline({ steps }: { steps: Step[] }) {
     <div className="relative mt-12">
       <div aria-hidden className="absolute left-0 right-0 top-[1.15rem] hidden h-px bg-cream/15 lg:block">
         <motion.div
-          className="h-full origin-left bg-rose"
+          className="h-full origin-left bg-burgundy"
           style={{ scaleX: reduce ? 1 : scaleX }}
         />
       </div>
@@ -33,12 +33,12 @@ export function ProcessTimeline({ steps }: { steps: Step[] }) {
             transition={{ duration: 0.7, delay: i * 0.08 }}
             className="relative grid grid-cols-[2.5rem_1fr] gap-4 lg:block"
           >
-            <span className="relative z-10 flex size-9 items-center justify-center rounded-full bg-burgundy text-sm font-semibold text-cream ring-1 ring-rose/60">
+            <span className="relative z-10 flex size-9 items-center justify-center rounded-full bg-burgundy text-sm font-semibold text-cream ring-1 ring-burgundy">
               {i + 1}
             </span>
             <div className="lg:mt-6">
               <p className="display text-3xl">{s.title}</p>
-              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-rose">{s.subtitle}</p>
+              <p className="mt-1 text-xs font-semibold uppercase tracking-[0.16em] text-cream/50">{s.subtitle}</p>
               <p className="mt-3 text-sm leading-relaxed text-cream/70">{s.text}</p>
             </div>
           </motion.li>

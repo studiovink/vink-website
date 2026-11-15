@@ -132,7 +132,7 @@ function ProjectContent({ slug }: { slug: string }) {
           {next && next.slug !== project.slug ? (
             <Link href={`/work/${next.slug}`} className="group">
               <p className="text-sm text-cream/60">Siguiente proyecto</p>
-              <p className="display mt-2 text-headline transition-colors group-hover:text-rose">{next.title} →</p>
+              <p className="display mt-2 text-headline transition-colors group-hover:text-cream/60">{next.title} →</p>
             </Link>
           ) : (
             <p className="display text-headline">¿Tu marca podría ser nuestro próximo proyecto?</p>
