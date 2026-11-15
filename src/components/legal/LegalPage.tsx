@@ -4,7 +4,7 @@ export function LegalPage({ doc }: { doc: LegalDocument }) {
   return (
     <article className="container-vink pb-24 pt-36 md:pb-32 md:pt-44">
       <header className="max-w-3xl">
-        <p className="label text-rose">{doc.eyebrow}</p>
+        <p className="label text-cream/55">{doc.eyebrow}</p>
         <h1 className="display mt-4 text-giant text-cream">{doc.title}</h1>
         <p className="mt-6 text-sm text-cream/65">
           Última actualización: {doc.updatedAt ?? "pendiente de publicación"}

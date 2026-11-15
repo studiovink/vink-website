@@ -126,12 +126,12 @@ function isActive(pathname: string, href: string) {
 }
 
 const pillBase =
-  "inline-flex min-h-10 items-center rounded-full px-5 text-[13px] font-medium uppercase tracking-wide backdrop-blur-md transition-colors duration-300";
+  "inline-flex min-h-10 items-center rounded-full px-4 text-[12px] font-medium uppercase tracking-[0.14em] transition-colors duration-300";
 
 function pillTone(dark: boolean, active?: boolean) {
-  if (active) return dark ? "bg-burgundy text-cream" : "bg-burgundy text-cream";
+  if (active) return "text-cream ring-1 ring-white/20";
   return dark
-    ? "bg-white/10 text-cream hover:bg-white/20"
+    ? "text-cream/75 hover:text-cream hover:bg-white/[0.06]"
     : "bg-burgundy/8 text-burgundy hover:bg-burgundy/15";
 }
 
@@ -212,7 +212,7 @@ function ServicesPill({ label, href, dark }: { label: string; href: string; dark
             transition={{ duration: 0.2 }}
             className="absolute right-0 top-full w-80 pt-2"
           >
-            <ul className="overflow-hidden rounded-3xl border border-white/10 bg-ink-2/95 p-2 text-cream shadow-[0_30px_70px_-30px_rgba(0,0,0,0.9)] backdrop-blur-md">
+            <ul className="overflow-hidden rounded-3xl border border-white/10 bg-ink-2/95 p-2 text-cream backdrop-blur-md">
               {specialties.map((s, i) => (
                 <li key={s.slug}>
                   <Link
@@ -282,7 +282,7 @@ function SiteMenu({ pathname }: { pathname: string }) {
         </ul>
         <div className="flex flex-col justify-between gap-10 lg:col-span-4 lg:col-start-9">
           <div>
-            <p className="label text-rose">Services</p>
+            <p className="label text-cream/55">Services</p>
             <ul className="mt-5 space-y-1">
               {specialties.map((s) => (
                 <li key={s.slug}>

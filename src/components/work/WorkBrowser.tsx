@@ -120,7 +120,7 @@ function WorkGrid({
           </AnimatePresence>
         </motion.ul>
       ) : (
-        <div className="mt-8 rounded-[2rem] border border-dashed border-cream/20 px-6 py-16 text-center">
+        <div className="mt-8 rounded-2xl border border-dashed border-cream/20 px-6 py-16 text-center">
           <p className="display text-4xl text-cream">Próximamente</p>
           <p className="mx-auto mt-3 max-w-md text-cream/65">
             {projects.length === 0

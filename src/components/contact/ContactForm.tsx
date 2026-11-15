@@ -18,7 +18,7 @@ export function ContactForm({
   /** Color de acento del formulario: vino (VINK) o verde (NUMA). */
   brand?: "vink" | "numa";
 }) {
-  const accent = brand === "numa" ? "[--accent:var(--color-charcoal)]" : "[--accent:var(--color-burgundy)]";
+  const accent = brand === "numa" ? "[--accent:var(--color-numa-deep)]" : "[--accent:var(--color-burgundy)]";
   const [state, action, pending] = useActionState(sendContact, initial);
   const startedAt = useRef(0);
   const serviceRef = useRef<HTMLSelectElement>(null);
@@ -52,7 +52,7 @@ export function ContactForm({
 
   if (state.status === "success") {
     return (
-      <div role="status" className={cn("rounded-[2rem] bg-cream p-8 text-charcoal md:p-10", accent)}>
+      <div role="status" className={cn("rounded-2xl bg-cream p-8 text-charcoal md:p-10", accent)}>
         <p className="display text-5xl text-(--accent)">¡Gracias!</p>
         <p className="mt-4 text-lg">
           Recibimos tu mensaje. Revisaremos tu idea y nos pondremos en contacto contigo muy pronto.
@@ -67,7 +67,7 @@ export function ContactForm({
   const val = (f: ContactField) => (state.status === "error" ? state.values?.[f] : undefined);
 
   return (
-    <form action={submit} noValidate className={cn("rounded-[2rem] bg-cream p-6 text-charcoal md:p-10", accent)}>
+    <form action={submit} noValidate className={cn("rounded-2xl bg-cream p-6 text-charcoal md:p-10", accent)}>
       <p className="display text-3xl text-(--accent) md:text-4xl">Tell us about your project.</p>
       <p className="mt-2 text-sm text-charcoal-soft">Nos encantaría conocer tu idea.</p>
 

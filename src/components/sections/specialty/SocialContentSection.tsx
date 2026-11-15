@@ -44,7 +44,7 @@ export function SocialContentSection() {
             <ul className="grid gap-3 sm:grid-cols-2 lg:col-span-6 lg:col-start-7">
               {approach.aspects.map((a, i) => (
                 <li key={a.title}>
-                  <Reveal delay={i * 0.06} className="h-full rounded-[1.5rem] bg-black/25 p-6">
+                  <Reveal delay={i * 0.06} className="h-full rounded-xl bg-black/25 p-6">
                     <p className="display text-2xl text-cream">{a.title}</p>
                     <p className="mt-2 text-sm text-cream/75">{a.text}</p>
                   </Reveal>
@@ -83,7 +83,7 @@ export function SocialContentSection() {
 
       {/* Meta Ads: servicio adicional, separado del mensual */}
       <div className="container-vink">
-        <Reveal className="grid gap-8 rounded-[2rem] border border-rose/40 bg-ink-3 p-8 text-cream md:grid-cols-12 md:p-12">
+        <Reveal className="grid gap-8 rounded-2xl border border-rose/40 bg-ink-3 p-8 text-cream md:grid-cols-12 md:p-12">
           <div className="md:col-span-5">
             <p className="text-xs font-semibold uppercase tracking-[0.16em] text-rose">{addOn.eyebrow}</p>
             <h3 className="display mt-3 text-5xl md:text-6xl">{addOn.title}</h3>

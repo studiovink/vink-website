@@ -29,7 +29,7 @@ export function NumaTab() {
       href="/numa-real-estate"
       aria-label="Ir a NUMA Real Estate, submarca de VINK para propiedades, hoteles y yates"
       className={cn(
-        "group fixed z-40 flex items-center gap-2 bg-white text-charcoal shadow-[0_20px_50px_-20px_rgba(0,0,0,0.8)] transition-all duration-500 ease-vink",
+        "group fixed z-40 flex items-center gap-2 bg-white text-charcoal transition-all duration-500 ease-vink",
         // Celular: píldora inferior izquierda
         "bottom-4 left-4 rounded-full py-2 pl-3 pr-4",
         // Escritorio: lengüeta vertical en el borde derecho

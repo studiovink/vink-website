@@ -54,7 +54,7 @@ export function MediaSwitcher({ items, tone = "light" }: { items: SwitcherItem[]
         })}
       </div>
 
-      <div id={`${id}-panel`} role="tabpanel" aria-labelledby={`${id}-tab-${active}`} className="relative overflow-hidden rounded-[2rem] lg:col-span-8">
+      <div id={`${id}-panel`} role="tabpanel" aria-labelledby={`${id}-tab-${active}`} className="relative overflow-hidden rounded-2xl lg:col-span-8">
         <AnimatePresence mode="popLayout" initial={false}>
           <motion.div
             key={current.key}

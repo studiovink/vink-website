@@ -44,7 +44,7 @@ export function SpecialtyIntro({ page, index, theme }: { page: ServicePage; inde
           </div>
         </Reveal>
         <Reveal className="lg:col-span-7" delay={0.1}>
-          <div className="overflow-hidden rounded-[2rem]">
+          <div className="overflow-hidden rounded-2xl">
             <MediaSlot id={page.heroMedia} sizes="(min-width: 1024px) 58vw, 100vw" />
           </div>
         </Reveal>
@@ -166,7 +166,7 @@ export function Process({ page, theme }: { page: ServicePage; theme: Theme }) {
       >
         {steps.map((s, i) => (
           <li key={s.title} className="w-[72vw] max-w-xs shrink-0 snap-start lg:w-auto lg:max-w-none">
-            <Reveal delay={i * 0.06} className={cn("flex h-full flex-col rounded-[1.5rem] border p-6", theme.rule)}>
+            <Reveal delay={i * 0.06} className={cn("flex h-full flex-col rounded-xl border p-6", theme.rule)}>
               <span className={cn("display text-5xl", theme.accent)}>0{i + 1}</span>
               <span className={cn("display mt-8 text-2xl leading-none", theme.heading)}>{s.title}</span>
               <span className={cn("mt-3 text-sm leading-relaxed", theme.muted)}>{s.text}</span>

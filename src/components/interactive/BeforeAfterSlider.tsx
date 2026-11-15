@@ -25,7 +25,7 @@ export function BeforeAfterSlider({
   const [pos, setPos] = useState(50);
 
   return (
-    <div className="relative select-none overflow-hidden rounded-[2rem]">
+    <div className="relative select-none overflow-hidden rounded-2xl">
       <div className="[&>*]:block">{before}</div>
       <div className="absolute inset-0 [&>*]:!absolute [&>*]:inset-0 [&>*]:!h-full" style={{ clipPath: `inset(0 0 0 ${pos}%)` }}>
         {after}

@@ -41,7 +41,7 @@ export function BrandingSection() {
             ))}
           </ul>
         </Reveal>
-        <Reveal className="overflow-hidden rounded-[2rem] lg:col-span-7" delay={0.1}>
+        <Reveal className="overflow-hidden rounded-2xl lg:col-span-7" delay={0.1}>
           <MediaSlot id="branding.identity" sizes="(min-width: 1024px) 58vw, 100vw" />
         </Reveal>
       </div>

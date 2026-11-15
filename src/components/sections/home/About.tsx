@@ -6,10 +6,10 @@ import { about, meetFounders } from "@/content/home";
 import { cn } from "@/lib/cn";
 
 const cardTones = [
-  "bg-ink-3 text-cream ring-1 ring-white/10",
+  "text-cream ring-1 ring-white/12",
   "bg-burgundy text-cream",
-  "bg-ink-3 text-cream ring-1 ring-white/10",
-  "bg-cream text-charcoal",
+  "text-cream ring-1 ring-white/12",
+  "text-cream ring-1 ring-white/12",
 ];
 
 /** 03 — About Us: quiénes somos, qué nos hace diferentes y Meet the Founders. */
@@ -18,7 +18,7 @@ export function About() {
     <section id="about" className="bg-ink text-cream">
       <div className="container-vink py-24 md:py-36">
         <div className="grid gap-6 lg:grid-cols-12">
-          <p className="label text-rose lg:col-span-2 lg:pt-4">{about.label}</p>
+          <p className="label text-cream/55 lg:col-span-2 lg:pt-4">{about.label}</p>
           <WordReveal
             lead={about.lead}
             text={about.statement}
@@ -30,7 +30,7 @@ export function About() {
 
         <div className="mt-20 grid gap-12 md:mt-28 lg:grid-cols-12">
           <Reveal className="lg:col-span-5">
-            <div className="overflow-hidden rounded-[2rem] lg:sticky lg:top-28">
+            <div className="overflow-hidden rounded-2xl lg:sticky lg:top-28">
               <MediaSlot id={meetFounders.together} sizes="(min-width: 1024px) 40vw, 100vw" />
             </div>
           </Reveal>
@@ -46,7 +46,7 @@ export function About() {
             <ul className="mt-12 grid gap-3 sm:grid-cols-2">
               {about.differentiators.map((d, i) => (
                 <li key={d.n}>
-                  <Reveal delay={i * 0.08} className={cn("h-full rounded-[1.5rem] p-6", cardTones[i])}>
+                  <Reveal delay={i * 0.08} className={cn("h-full rounded-xl p-6", cardTones[i])}>
                     <p className="display text-6xl leading-none">
                       {d.n}
                       <span className="ml-1 text-2xl opacity-60">/04</span>
@@ -71,7 +71,7 @@ export function About() {
       <div id="founders" className="bg-ink-2 py-24 text-cream md:py-36">
         <div className="container-vink">
           <div className="grid gap-6 lg:grid-cols-12">
-            <p className="label text-rose lg:col-span-3 lg:pt-4">{meetFounders.label}</p>
+            <p className="label text-cream/55 lg:col-span-3 lg:pt-4">{meetFounders.label}</p>
             <div className="lg:col-span-9">
               <WordReveal text={meetFounders.title} className="display text-giant" />
               <Reveal>
@@ -85,7 +85,7 @@ export function About() {
               <li key={f.name} className={cn(i === 1 && "md:mt-24")}>
                 <Reveal delay={i * 0.1}>
                   <article className="group">
-                    <div className="relative overflow-hidden rounded-[2rem]">
+                    <div className="relative overflow-hidden rounded-2xl">
                       <div className="transition-transform duration-[1000ms] ease-vink group-hover:scale-[1.04] motion-reduce:transition-none">
                         <MediaSlot id={f.image} sizes="(min-width: 768px) 45vw, 100vw" />
                       </div>

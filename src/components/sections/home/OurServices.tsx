@@ -29,7 +29,7 @@ export function OurServices() {
               <Reveal delay={i * 0.08}>
                 <Link
                   href={serviceHref(s.slug)}
-                  className="group relative block overflow-hidden rounded-[1.75rem] bg-burgundy text-cream focus-visible:outline-offset-4"
+                  className="group relative block overflow-hidden rounded-2xl bg-burgundy text-cream focus-visible:outline-offset-4"
                 >
                   <div className="transition-transform duration-[900ms] ease-vink group-hover:scale-[1.06] group-focus-visible:scale-[1.06] motion-reduce:transition-none">
                     <MediaSlot id={s.image} videoMode="preview" quiet sizes="(min-width: 1024px) 25vw, (min-width: 640px) 50vw, 100vw" />

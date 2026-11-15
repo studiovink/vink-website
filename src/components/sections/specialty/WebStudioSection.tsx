@@ -26,18 +26,18 @@ export function WebStudioSection() {
               <Reveal
                 delay={i * 0.08}
                 className={cn(
-                  "group flex h-full flex-col rounded-[2rem] p-7 transition-colors duration-500 md:p-9",
-                  i === 1 ? "bg-cream text-charcoal" : "bg-white/[0.06] text-cream hover:bg-white/10",
+                  "group flex h-full flex-col rounded-2xl p-7 transition-colors duration-500 md:p-9",
+                  i === 1 ? "bg-burgundy text-cream" : "text-cream ring-1 ring-white/12 hover:bg-white/[0.03]",
                 )}
               >
                 <span className="display text-6xl opacity-40">0{i + 1}</span>
                 <h4 className="display mt-6 text-4xl leading-none">{o.title}</h4>
-                <p className={cn("mt-1 text-sm", i === 1 ? "text-charcoal-soft" : "text-cream/60")}>{o.subtitle}</p>
-                <p className={cn("mt-5 text-base leading-relaxed", i === 1 ? "text-charcoal-soft" : "text-cream/75")}>{o.text}</p>
+                <p className={cn("mt-1 text-sm", i === 1 ? "text-cream/70" : "text-cream/60")}>{o.subtitle}</p>
+                <p className={cn("mt-5 text-base leading-relaxed", i === 1 ? "text-cream/80" : "text-cream/75")}>{o.text}</p>
                 <ul className="mt-6 space-y-2 border-t border-current/15 pt-5">
                   {o.includes?.map((inc) => (
                     <li key={inc} className="flex items-start gap-3 text-sm">
-                      <span aria-hidden className={i === 1 ? "text-burgundy" : "text-rose"}>
+                      <span aria-hidden className={i === 1 ? "text-cream" : "text-rose"}>
                         ✓
                       </span>
                       {inc}
@@ -45,7 +45,7 @@ export function WebStudioSection() {
                   ))}
                 </ul>
                 {o.note && (
-                  <p className={cn("mt-auto pt-6 text-xs italic", i === 1 ? "text-charcoal-soft" : "text-cream/60")}>
+                  <p className={cn("mt-auto pt-6 text-xs italic", i === 1 ? "text-cream/70" : "text-cream/60")}>
                     {o.note}
                   </p>
                 )}

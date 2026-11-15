@@ -36,7 +36,7 @@ export function SignatureWork({
           {left}
           {right}
         </p>
-        <div className="relative mt-6 aspect-video overflow-hidden rounded-[1.5rem]">
+        <div className="relative mt-6 aspect-video overflow-hidden rounded-xl">
           {media}
           {overlay && <div className="absolute inset-0">{overlay}</div>}
         </div>
@@ -48,18 +48,18 @@ export function SignatureWork({
     <div ref={ref} className="relative h-[260vh]">
       <div className="sticky top-0 flex h-[100svh] items-center justify-center overflow-hidden">
         <div className="flex items-center justify-center gap-[1.5vw]">
-          <motion.span aria-hidden style={{ opacity: letters }} className="display text-[22vw] leading-[0.8] text-cream">
+          <motion.span aria-hidden style={{ opacity: letters }} className="display text-[18vw] leading-[0.85] text-cream">
             {left}
           </motion.span>
           <div className="relative" style={{ width: "22vw", height: "22vw" }} />
-          <motion.span aria-hidden style={{ opacity: letters }} className="display text-[22vw] leading-[0.8] text-cream">
+          <motion.span aria-hidden style={{ opacity: letters }} className="display text-[18vw] leading-[0.85] text-cream">
             {right}
           </motion.span>
         </div>
 
         <motion.div
           style={{ width, height, borderRadius: radius, rotate: tilt, x: "-50%", y: "-50%" }}
-          className="absolute left-1/2 top-1/2 overflow-hidden shadow-[0_40px_90px_-40px_rgba(23,20,22,0.7)]"
+          className="absolute left-1/2 top-1/2 overflow-hidden"
         >
           {media}
           {overlay && (

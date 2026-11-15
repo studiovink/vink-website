@@ -81,14 +81,14 @@ function ProjectContent({ slug }: { slug: string }) {
       </header>
 
       <div className="container-vink -mt-0 pt-12">
-        <Reveal className="overflow-hidden rounded-[2rem]">
+        <Reveal className="overflow-hidden rounded-2xl">
           <MediaSlot id={project.cover} priority sizes="100vw" />
         </Reveal>
       </div>
 
       <section className="container-vink grid gap-10 py-20 md:py-28 lg:grid-cols-12">
         <Reveal className="lg:col-span-4">
-          <p className="label text-rose">El concepto</p>
+          <p className="label text-cream/55">El concepto</p>
         </Reveal>
         <Reveal className="space-y-5 text-lg leading-relaxed text-cream/65 lg:col-span-8">
           <p className="display text-title text-cream">{project.summary}</p>
@@ -110,7 +110,7 @@ function ProjectContent({ slug }: { slug: string }) {
       {project.gallery.length > 0 && (
         <section className="container-vink grid gap-4 pb-20 md:grid-cols-2 md:pb-28">
           {project.gallery.map((id, i) => (
-            <Reveal key={`${id}-${i}`} className="overflow-hidden rounded-[1.75rem]" delay={(i % 2) * 0.08}>
+            <Reveal key={`${id}-${i}`} className="overflow-hidden rounded-2xl" delay={(i % 2) * 0.08}>
               <MediaSlot id={id} sizes="(min-width: 768px) 50vw, 100vw" />
             </Reveal>
           ))}

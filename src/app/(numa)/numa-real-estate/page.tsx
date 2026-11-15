@@ -61,12 +61,12 @@ export default function NumaPage() {
                 <Reveal delay={i * 0.05}>
                   <article
                     tabIndex={0}
-                    className="group relative overflow-hidden rounded-[1.5rem] bg-charcoal text-white focus-visible:outline-offset-4 focus-visible:outline-charcoal"
+                    className="group relative overflow-hidden rounded-xl bg-charcoal text-white focus-visible:outline-offset-4 focus-visible:outline-charcoal"
                   >
                     <div className="transition-transform duration-[900ms] ease-vink group-hover:scale-[1.06] group-focus-visible:scale-[1.06] motion-reduce:transition-none">
                       <MediaSlot id={s.media} quiet sizes="(min-width: 1024px) 20vw, (min-width: 640px) 50vw, 100vw" />
                     </div>
-                    <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-black/85 via-black/25 to-transparent" />
+                    <div aria-hidden className="pointer-events-none absolute inset-0 bg-gradient-to-t from-numa-deep/85 via-numa-deep/20 to-transparent" />
                     <div className="absolute inset-x-0 bottom-0 p-3 sm:p-5">
                       <h3 className="display text-lg leading-[0.95] sm:text-2xl xl:text-3xl">{s.title}</h3>
                       <div className="grid grid-rows-[1fr] transition-[grid-template-rows,opacity] duration-500 ease-vink [@media(hover:hover)]:grid-rows-[0fr] [@media(hover:hover)]:opacity-0 [@media(hover:hover)]:group-focus-visible:grid-rows-[1fr] [@media(hover:hover)]:group-focus-visible:opacity-100 [@media(hover:hover)]:group-hover:grid-rows-[1fr] [@media(hover:hover)]:group-hover:opacity-100">
@@ -115,7 +115,7 @@ export default function NumaPage() {
             {numa.markets.items.map((m, i) => (
               <Reveal key={m.key} delay={i * 0.08}>
                 <article className="group">
-                  <div className="relative overflow-hidden rounded-[1.75rem]">
+                  <div className="relative overflow-hidden rounded-2xl">
                     <div className="transition-transform duration-[1000ms] ease-vink group-hover:scale-[1.04] motion-reduce:transition-none">
                       <MediaSlot id={m.media} sizes="(min-width: 768px) 50vw, 100vw" />
                     </div>
@@ -134,10 +134,10 @@ export default function NumaPage() {
       </section>
 
       {/* Contacto */}
-      <section id="contact" className="scroll-mt-20 bg-charcoal py-20 text-cream md:py-28">
+      <section id="contact" className="scroll-mt-20 bg-numa-deep py-20 text-numa-light md:py-28">
         <div className="container-vink grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-5">
-            <p className="label text-numa">{numa.contact.label}</p>
+            <p className="label text-numa-light/60">{numa.contact.label}</p>
             <h2 className="display mt-4 text-headline">
               {numa.contact.title[0]} <span className="text-cream/50">{numa.contact.title[1]}</span>
             </h2>

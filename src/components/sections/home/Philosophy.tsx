@@ -29,7 +29,7 @@ export function Philosophy() {
 
         <div className="mt-24 md:mt-36">
           <Reveal>
-            <p className="label text-rose">{philosophy.process.label}</p>
+            <p className="label text-cream/55">{philosophy.process.label}</p>
             <h3 className="display mt-4 max-w-4xl text-headline">{philosophy.process.title}</h3>
           </Reveal>
           <ProcessTimeline steps={philosophy.process.steps} />

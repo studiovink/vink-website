@@ -38,7 +38,7 @@ export function DeviceToggle({ desktop, mobile }: { desktop: ReactNode; mobile: 
               transition={{ duration: 0.45 }}
               className="w-full max-w-5xl"
             >
-              <div className="overflow-hidden rounded-2xl bg-charcoal-soft/60 shadow-[0_40px_90px_-40px_rgba(0,0,0,0.8)] ring-1 ring-white/10">
+              <div className="overflow-hidden rounded-2xl bg-charcoal-soft/60 ring-1 ring-white/10">
                 <div className="flex items-center gap-1.5 px-4 py-3" aria-hidden>
                   <span className="size-2.5 rounded-full bg-rose" />
                   <span className="size-2.5 rounded-full bg-cream/40" />
@@ -57,7 +57,7 @@ export function DeviceToggle({ desktop, mobile }: { desktop: ReactNode; mobile: 
               transition={{ duration: 0.45 }}
               className="w-[min(78vw,20rem)]"
             >
-              <div className="overflow-hidden rounded-[2.75rem] bg-charcoal p-2.5 shadow-[0_40px_90px_-40px_rgba(0,0,0,0.8)] ring-1 ring-white/15">
+              <div className="overflow-hidden rounded-[2.75rem] bg-charcoal p-2.5 ring-1 ring-white/15">
                 <div className="overflow-hidden rounded-[2.2rem]">{mobile}</div>
               </div>
             </motion.div>

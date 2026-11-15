@@ -48,7 +48,7 @@ export function LightboxGallery({ items, className }: { items: LightboxItem[]; c
               type="button"
               onClick={() => setOpen(i)}
               aria-label={`Abrir ${item.label}`}
-              className="group relative block w-full overflow-hidden rounded-[1.5rem]"
+              className="group relative block w-full overflow-hidden rounded-xl"
             >
               <span className="block transition-transform duration-700 ease-vink group-hover:scale-[1.04]">
                 {item.thumb}
@@ -78,7 +78,7 @@ export function LightboxGallery({ items, className }: { items: LightboxItem[]; c
               key={items[open].key}
               initial={{ opacity: 0, scale: 0.96 }}
               animate={{ opacity: 1, scale: 1 }}
-              className={cn("w-full overflow-hidden rounded-[1.5rem]", "max-h-[85vh] max-w-[min(90vw,28rem)]")}
+              className={cn("w-full overflow-hidden rounded-xl", "max-h-[85vh] max-w-[min(90vw,28rem)]")}
             >
               {items[open].full}
             </motion.div>

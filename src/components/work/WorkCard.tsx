@@ -21,7 +21,7 @@ export function WorkCard({ project, wide = false }: { project: Project; wide?: b
     >
       <div
         className={cn(
-          "relative overflow-hidden rounded-[1.75rem] bg-burgundy",
+          "relative overflow-hidden rounded-2xl bg-burgundy",
           wide ? "aspect-[4/5] md:aspect-[16/10]" : "aspect-[4/5]",
         )}
       >

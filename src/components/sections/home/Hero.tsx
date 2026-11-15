@@ -28,7 +28,7 @@ export function Hero() {
 
         <div className="mt-auto pt-16">
           <h1 className="display text-mega">
-            <MaskLines lines={["VINK Creative", <span key="s" className="text-rose">Studio</span>]} delay={0.1} />
+            <MaskLines lines={["VINK Creative", <span key="s" className="italic text-rose">Studio</span>]} delay={0.1} />
           </h1>
           <div className="mt-6 flex items-center justify-between text-xs text-cream/80 md:text-sm">
             <p>© 2026 VINK Creative Studio.</p>

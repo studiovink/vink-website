@@ -9,8 +9,8 @@ const pill: Record<Variant, string> = {
   dark: "bg-ink-3 text-cream ring-1 ring-white/10",
   burgundy: "bg-burgundy text-cream",
   /* NUMA: blanco y negro. */
-  numa: "bg-charcoal text-cream",
-  numaLight: "bg-cream text-charcoal",
+  numa: "bg-numa-deep text-numa-light",
+  numaLight: "bg-white text-charcoal",
   numaOutline: "bg-transparent text-current ring-1 ring-current",
 };
 
@@ -18,9 +18,9 @@ const dot: Record<Variant, string> = {
   light: "bg-burgundy text-cream",
   dark: "bg-burgundy text-cream",
   burgundy: "bg-cream text-burgundy",
-  numa: "bg-cream text-charcoal",
-  numaLight: "bg-charcoal text-cream",
-  numaOutline: "bg-charcoal text-cream",
+  numa: "bg-numa-light text-numa-deep",
+  numaLight: "bg-numa-deep text-numa-light",
+  numaOutline: "bg-numa-deep text-numa-light",
 };
 
 /** Flecha dentro de un círculo, como en los CTA "Start a project". */
@@ -49,7 +49,7 @@ export function PillLink({ variant = "light", wide, className, children, ...prop
     <Link
       {...props}
       className={cn(
-        "group inline-flex min-h-12 items-center gap-4 rounded-full py-1.5 pl-6 pr-1.5 text-sm font-medium transition-shadow duration-300 hover:shadow-[0_10px_30px_-12px_rgba(0,0,0,0.45)]",
+        "group inline-flex min-h-11 items-center gap-4 rounded-full py-1 pl-5 pr-1 text-[13px] font-medium tracking-wide transition-opacity duration-300 hover:opacity-90",
         wide && "w-full justify-between",
         pill[variant],
         className,
@@ -68,7 +68,7 @@ export function PillButton({ variant = "light", wide, className, children, ...pr
     <button
       {...props}
       className={cn(
-        "group inline-flex min-h-12 items-center gap-4 rounded-full py-1.5 pl-6 pr-1.5 text-sm font-medium transition-shadow duration-300 hover:shadow-[0_10px_30px_-12px_rgba(0,0,0,0.45)] disabled:cursor-wait disabled:opacity-70",
+        "group inline-flex min-h-11 items-center gap-4 rounded-full py-1 pl-5 pr-1 text-[13px] font-medium tracking-wide transition-opacity duration-300 hover:opacity-90 disabled:cursor-wait disabled:opacity-70",
         wide && "w-full justify-between",
         pill[variant],
         className,

@@ -67,8 +67,8 @@ export function Footer() {
           </div>
         </div>
 
-        <p aria-hidden className="display mt-20 whitespace-nowrap text-center text-[13.5vw] leading-[0.8] text-cream md:mt-28">
-          Think with <span className="text-rose">Vink.</span>
+        <p aria-hidden className="display mt-20 whitespace-nowrap text-center text-[11vw] leading-[0.9] text-cream md:mt-28 md:text-[9vw]">
+          Think with <span className="italic text-rose">Vink.</span>
         </p>
 
         <div className="flex flex-col gap-3 border-t border-cream/15 py-6 text-xs text-cream/60 sm:flex-row sm:items-center sm:justify-between">
@@ -93,7 +93,7 @@ function FooterColumn({
 }) {
   return (
     <div className={className}>
-      <h2 className="label text-rose">{title}</h2>
+      <h2 className="label text-cream/55">{title}</h2>
       <ul className="mt-5 space-y-1">{children}</ul>
     </div>
   );

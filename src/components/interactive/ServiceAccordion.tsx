@@ -31,10 +31,10 @@ export function ServiceAccordion({ items, dark = false }: { items: AccordionItem
         rule: "border-charcoal/15",
         num: "text-charcoal-soft",
         title: "text-charcoal group-hover:text-numa",
-        titleOpen: "text-charcoal",
+        titleOpen: "text-numa-deep",
         sub: "text-charcoal-soft",
         btn: "border-charcoal/25 text-charcoal group-hover:border-numa group-hover:text-numa",
-        btnOpen: "border-charcoal bg-charcoal text-cream",
+        btnOpen: "border-numa-deep bg-numa-deep text-numa-light",
       };
 
   return (

@@ -17,7 +17,7 @@ export default function WorkPage() {
     <>
       <section className="bg-ink pb-24 pt-36 md:pb-36 md:pt-44">
         <div className="container-vink">
-          <p className="label text-rose">Selected work · Creative projects · Made by VINK</p>
+          <p className="label text-cream/55">Selected work · Creative projects · Made by VINK</p>
           <h1 className="display mt-4 text-mega text-cream">
             <MaskLines lines={["Our Work"]} />
           </h1>

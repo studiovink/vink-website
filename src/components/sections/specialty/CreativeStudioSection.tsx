@@ -46,13 +46,13 @@ export function CreativeStudioSection() {
           </p>
         </Reveal>
         <div className="mt-10 grid gap-4 md:grid-cols-5">
-          <Reveal className="group relative overflow-hidden rounded-[1.75rem] md:col-span-2">
+          <Reveal className="group relative overflow-hidden rounded-2xl md:col-span-2">
             <MediaSlot id="creative.on-location" sizes="(min-width: 768px) 40vw, 100vw" />
             <span className="absolute left-4 top-4 rounded-full bg-cream/90 px-3 py-1.5 text-xs font-semibold uppercase tracking-wider text-charcoal">
               Grabación en locación
             </span>
           </Reveal>
-          <Reveal className="group relative overflow-hidden rounded-[1.75rem] md:col-span-3" delay={0.08}>
+          <Reveal className="group relative overflow-hidden rounded-2xl md:col-span-3" delay={0.08}>
             <div className="relative aspect-video">
               <MediaSlot id="creative.drone" fill videoMode="preview" sizes="(min-width: 768px) 60vw, 100vw" />
             </div>

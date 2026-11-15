@@ -410,6 +410,15 @@ El menú Services enlaza a `/#creative-studio`, `/#branding`, `/#web-studio`, `/
   además del menú Services y el footer.
 - Rutas agrupadas: `src/app/(vink)` y `src/app/(numa)`, cada una con su layout.
 
+### Versión minimalista (15-nov-2026)
+
+- Títulos en serif editorial fina (Instrument Serif, en tipo oración); texto y etiquetas en Manrope.
+  Sustituye a Anton.
+- Escala de títulos más contenida, etiquetas pequeñas en mayúsculas espaciadas, esquinas más suaves,
+  sin sombras pesadas y tarjetas con contorno fino.
+- VINK: negro con acentos vino (vino empolvado #B85A6F para texto, #3F1521 para bloques).
+- NUMA: blanco con su verde (Fresh-Cut #052F17 en botones y contacto, Vintage Green en detalles).
+
 ### Texto original de las decisiones (histórico)
 
 **D1 — ¿Páginas propias por servicio?**
