@@ -4,7 +4,9 @@ import { ContactForm } from "@/components/contact/ContactForm";
 import { FocusCarousel } from "@/components/interactive/FocusCarousel";
 import { ServiceAccordion } from "@/components/interactive/ServiceAccordion";
 import { MediaSlot } from "@/components/media/MediaSlot";
+import { ParallaxMedia } from "@/components/motion/ParallaxMedia";
 import { MaskLines, Reveal } from "@/components/motion/Reveal";
+import { ExpandingFrame } from "@/components/numa/ExpandingFrame";
 import { SectionLabel } from "@/components/ui/SectionLabel";
 import { numa } from "@/content/numa";
 import { site, whatsappUrl } from "@/content/site";
@@ -16,7 +18,8 @@ export const metadata: Metadata = {
 
 /*
  * Landing de NUMA, estilo editorial blanco y negro con el verde como detalle.
- * Inicio a pantalla completa con foto; carrusel con foco central.
+ * Inicio a pantalla completa: la foto se expande desde un encuadre (ExpandingFrame);
+ * carrusel con foco central.
  */
 export default function NumaPage() {
   const [hotels, , sale, land] = numa.segments.items;
@@ -25,7 +28,9 @@ export default function NumaPage() {
     <>
       {/* Inicio */}
       <section aria-label={numa.name} className="relative isolate overflow-hidden bg-charcoal text-white">
-        <MediaSlot id={numa.hero.media} fill priority className="-z-20" />
+        <ExpandingFrame>
+          <MediaSlot id={numa.hero.media} fill priority />
+        </ExpandingFrame>
         <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-t from-black/60 via-black/10 to-black/30" />
         <div className="container-vink grid min-h-[100svh] grid-rows-[1fr_auto] pb-8 pt-28 md:pb-12">
           <div className="flex flex-col justify-center gap-10 md:flex-row md:items-end md:justify-between">
@@ -61,9 +66,9 @@ export default function NumaPage() {
           <div className="grid grid-cols-3 gap-2 lg:col-span-4 lg:grid-cols-1">
             {[hotels, sale, land].map((s, i) => (
               <Reveal key={s.key} delay={i * 0.08} className="overflow-hidden">
-                <div className="relative aspect-[4/3]">
+                <ParallaxMedia fill distance={12} className="relative aspect-[4/3]">
                   <MediaSlot id={s.media} fill quiet sizes="(min-width: 1024px) 30vw, 33vw" />
-                </div>
+                </ParallaxMedia>
               </Reveal>
             ))}
           </div>
@@ -139,7 +144,9 @@ export default function NumaPage() {
                 <article className="group">
                   <div className="overflow-hidden">
                     <div className="transition-transform duration-[1200ms] ease-vink group-hover:scale-[1.03] motion-reduce:transition-none">
-                      <MediaSlot id={m.media} sizes="(min-width: 768px) 50vw, 100vw" />
+                      <ParallaxMedia distance={20}>
+                        <MediaSlot id={m.media} sizes="(min-width: 768px) 50vw, 100vw" />
+                      </ParallaxMedia>
                     </div>
                   </div>
                   <div className="mt-5 flex items-baseline justify-between gap-4">

@@ -39,7 +39,7 @@ export function PillLink({ variant = "light", wide, className, children, ...prop
     <Link
       {...props}
       className={cn(
-        "group inline-flex min-h-11 items-center gap-3 rounded-full px-6 text-[13px] font-medium tracking-wide transition-opacity duration-300 hover:opacity-90",
+        "group inline-flex min-h-11 items-center gap-3 rounded-full px-6 text-[13px] font-medium tracking-wide transition-[opacity,scale] duration-300 hover:opacity-90 active:scale-[0.98] motion-reduce:active:scale-100",
         wide && "w-full justify-between",
         pill[variant],
         className,
@@ -58,7 +58,7 @@ export function PillButton({ variant = "light", wide, className, children, ...pr
     <button
       {...props}
       className={cn(
-        "group inline-flex min-h-11 items-center gap-3 rounded-full px-6 text-[13px] font-medium tracking-wide transition-opacity duration-300 hover:opacity-90 disabled:cursor-wait disabled:opacity-70",
+        "group inline-flex min-h-11 items-center gap-3 rounded-full px-6 text-[13px] font-medium tracking-wide transition-[opacity,scale] duration-300 hover:opacity-90 active:scale-[0.98] motion-reduce:active:scale-100 disabled:cursor-wait disabled:opacity-70",
         wide && "w-full justify-between",
         pill[variant],
         className,

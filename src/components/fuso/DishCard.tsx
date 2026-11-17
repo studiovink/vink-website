@@ -1,9 +1,17 @@
 import Image from "next/image";
 import { FUSO_IMAGES, fuso, type FusoDish } from "@/content/fuso";
 
-export function DishCard({ dish, showAllergens }: { dish: FusoDish; showAllergens?: boolean }) {
+export function DishCard({
+  dish,
+  showAllergens,
+  className,
+}: {
+  dish: FusoDish;
+  showAllergens?: boolean;
+  className?: string;
+}) {
   return (
-    <article className="fu-dish-card">
+    <article className={`fu-dish-card ${className ?? ""}`}>
       <Image
         className="fu-dish-img"
         src={`${FUSO_IMAGES}/${dish.image}`}

@@ -1,4 +1,5 @@
 import { MediaSlot } from "@/components/media/MediaSlot";
+import { ParallaxMedia } from "@/components/motion/ParallaxMedia";
 import { Reveal } from "@/components/motion/Reveal";
 import { WordReveal } from "@/components/motion/WordReveal";
 import { PillLink } from "@/components/ui/Button";
@@ -88,7 +89,9 @@ export function About() {
                   <article className="group">
                     <div className="relative overflow-hidden rounded-2xl">
                       <div className="transition-transform duration-[1000ms] ease-vink group-hover:scale-[1.04] motion-reduce:transition-none">
-                        <MediaSlot id={f.image} sizes="(min-width: 768px) 45vw, 100vw" />
+                        <ParallaxMedia>
+                          <MediaSlot id={f.image} sizes="(min-width: 768px) 45vw, 100vw" />
+                        </ParallaxMedia>
                       </div>
                       <span className="absolute left-5 top-5 rounded-full bg-burgundy px-3 py-1.5 text-[11px] font-semibold uppercase tracking-wider text-cream">
                         0{i + 1} — {f.role}

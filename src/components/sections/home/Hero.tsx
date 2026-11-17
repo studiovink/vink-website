@@ -3,16 +3,20 @@ import { LiveClock } from "@/components/interactive/LiveClock";
 import { MediaSlot } from "@/components/media/MediaSlot";
 import { MaskLines, Reveal } from "@/components/motion/Reveal";
 import { hero } from "@/content/home";
+import { HeroBackdrop, HeroDrift } from "./HeroScroll";
 import { serviceHref, specialties } from "@/content/site";
 
 /**
  * Inicio editorial: foto/video a pantalla completa con tinte vino que se
  * funde en negro, "VINK®" y "STUDIO" escalonados, servicios y hora local.
+ * Al hacer scroll la imagen se acerca y el título se abre (ver HeroScroll).
  */
 export function Hero() {
   return (
     <section aria-label="VINK Creative Studio" className="relative isolate overflow-hidden bg-ink text-cream">
-      <MediaSlot id="hero.video" fill priority className="-z-30" />
+      <HeroBackdrop>
+        <MediaSlot id="hero.video" fill priority />
+      </HeroBackdrop>
       {/* Tinte vino sobre la imagen */}
       <div aria-hidden className="absolute inset-0 -z-20 bg-burgundy/60 mix-blend-multiply" />
       <div aria-hidden className="absolute inset-0 -z-10 bg-gradient-to-b from-black/30 via-transparent via-55% to-ink" />
@@ -20,7 +24,7 @@ export function Hero() {
       <div className="container-vink flex min-h-[100svh] flex-col pb-10 pt-32 md:pb-14 md:pt-40">
         <h1 className="display uppercase leading-[0.82]">
           <span className="sr-only">{hero.title}</span>
-          <span aria-hidden className="block text-mega">
+          <HeroDrift toward="left" className="block text-mega">
             <MaskLines
               lines={[
                 <span key="v">
@@ -29,10 +33,10 @@ export function Hero() {
               ]}
               delay={0.1}
             />
-          </span>
-          <span aria-hidden className="mt-2 block text-right text-mega md:-mt-2">
+          </HeroDrift>
+          <HeroDrift toward="right" className="mt-2 block text-right text-mega md:-mt-2">
             <MaskLines lines={["Studio"]} delay={0.25} />
-          </span>
+          </HeroDrift>
         </h1>
 
         <div className="mt-auto grid gap-10 pt-14 md:grid-cols-2 md:items-end">

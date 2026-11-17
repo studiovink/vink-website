@@ -642,6 +642,8 @@ body:has(.fuso) {
   /* Espacio */
   .fu-atmosphere {
     position: relative;
+    /* clip (no hidden): recorta sin volverse contenedor de scroll, para que la foto siga el scroll de la página */
+    overflow: clip;
     display: flex;
     align-items: flex-end;
     min-height: 780px;
@@ -1184,6 +1186,35 @@ body:has(.fuso) {
   &.fu-enhanced .fu-reveal:not(.fu-shown) {
     opacity: 0;
     translate: 0 36px;
+  }
+
+  /* Los platos entran uno tras otro, como salen de cocina. */
+  .fu-featured-grid .fu-dish-card:nth-child(2) {
+    transition-delay: 0.09s;
+  }
+
+  .fu-featured-grid .fu-dish-card:nth-child(3) {
+    transition-delay: 0.18s;
+  }
+
+  .fu-featured-grid .fu-dish-card:nth-child(4) {
+    transition-delay: 0.27s;
+  }
+
+  /*
+   * Descubrimiento de la foto del espacio: se asienta de 1.14 a 1 mientras el
+   * panel entra en pantalla. Mejora progresiva: sin soporte, la foto queda fija.
+   */
+  @supports (animation-timeline: view()) {
+    .fu-atmosphere-photo {
+      animation: fu-discover linear both;
+      animation-timeline: view();
+      animation-range: entry 0% cover 55%;
+    }
+  }
+
+  &[data-motion="paused"] .fu-atmosphere-photo {
+    animation: none;
   }
 
   &[data-motion="paused"] .fu-strip-inner {
@@ -1804,6 +1835,15 @@ body:has(.fuso) {
 @media (prefers-reduced-motion: reduce) {
   html:has(.fuso) {
     scroll-behavior: auto;
+  }
+}
+
+@keyframes fu-discover {
+  from {
+    scale: 1.14;
+  }
+  to {
+    scale: 1;
   }
 }
 

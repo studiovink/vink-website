@@ -40,7 +40,7 @@ export function StorySection() {
   );
 }
 
-/** Carta destacada: cuatro platos escalonados y la copa de aperitivo a un lado. */
+/** Carta destacada: cuatro platos que entran escalonados y la copa de aperitivo a un lado. */
 export function FeaturedMenu() {
   const { menu } = fuso;
   return (
@@ -52,9 +52,9 @@ export function FeaturedMenu() {
         <p>{menu.intro}</p>
       </div>
       <div className="fu-menu-layout">
-        <div className="fu-featured-grid fu-reveal">
+        <div className="fu-featured-grid">
           {menu.items.slice(0, 4).map((dish) => (
-            <DishCard key={dish.id} dish={dish} />
+            <DishCard key={dish.id} dish={dish} className="fu-reveal" />
           ))}
         </div>
         <aside className="fu-aperitivo fu-reveal" aria-label="Aperitivo">
@@ -83,7 +83,10 @@ export function FeaturedMenu() {
   );
 }
 
-/** Espacio: la foto del interior a escala amplia con un bloque berenjena sólido. */
+/**
+ * Espacio: la foto del interior a escala amplia con un bloque berenjena sólido.
+ * Al entrar en pantalla la foto se descubre con un cambio leve de escala (CSS).
+ */
 export function SpaceSection() {
   const { space } = fuso;
   return (
